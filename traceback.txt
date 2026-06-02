@@ -1,0 +1,57 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 59, in script
+    strange "{b}{sc}WHAT ARE YOU DOING ??????{/b}{/sc}"
+  File "game/kinetic_text_tags.rpy", line 596, in scare_tag
+    elif not my_style.add_tags(text):
+             ~~~~~~~~~~~~~~~~~^^^^^^ 
+  File "game/kinetic_text_tags.rpy", line 79, in add_tags
+    self.tags.pop(tag)
+    ~~~~~~~~~~~~~^^^^^
+KeyError: 'b'
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "game/script.rpy", line 59, in script
+    strange "{b}{sc}WHAT ARE YOU DOING ??????{/b}{/sc}"
+  File "renpy/ast.py", line 2935, in execute
+    Say.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "renpy/ast.py", line 994, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/sayexports.py", line 129, in say
+    who(what, *args, **kwargs)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1565, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1220, in do_display
+    display_say(who, what, self.do_show, **display_args)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 880, in display_say
+    what_text.update()
+    ~~~~~~~~~~~~~~~~^^
+  File "renpy/text/text.py", line 2473, in update
+    tokens = self.apply_custom_tags(tokens)
+             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "renpy/text/text.py", line 3058, in apply_custom_tags
+    new_contents = func(tag, value, contents)
+                   ~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "game/kinetic_text_tags.rpy", line 596, in scare_tag
+    elif not my_style.add_tags(text):
+             ~~~~~~~~~~~~~~~~~^^^^^^ 
+  File "game/kinetic_text_tags.rpy", line 79, in add_tags
+    self.tags.pop(tag)
+    ~~~~~~~~~~~~~^^^^^
+  File "renpy/revertable.py", line 81, in do_mutation
+    return method(self, *args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'b'
+
+Linux-6.8.0-117-generic-x86_64-with-glibc2.39 x86_64
+Ren'Py 8.5.3.26051504
+debug 0.1
+Tue Jun  2 12:21:00 2026
