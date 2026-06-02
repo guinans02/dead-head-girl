@@ -1,32 +1,32 @@
-2026-06-02 19:22:26 UTC
+2026-06-02 21:35:19 UTC
 Linux-6.8.0-117-generic-x86_64-with-glibc2.39
 Ren'Py 8.5.3.26051504
 
-Early init took 33 ms
-Loading error handling took 13 ms
-Loading script took 100 ms
-Loading save slot metadata took 14 ms
+Early init took 99 ms
+Loading error handling took 37 ms
+Loading script took 325 ms
+Loading save slot metadata took 48 ms
 Loading persistent took 0 ms
-Running init code took 38 ms
-Loading analysis data took 7 ms
-Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 2 ms
+Running init code took 124 ms
+Loading analysis data took 19 ms
+Analyze and compile ATL took 3 ms
+Reloading save slot metadata took 7 ms
 Backing up script files to '/home/sophie/.renpy/backups/petals_of_rust':
-Dump and make backups took 1 ms
+Dump and make backups took 2 ms
 Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 28 ms
+Making clean stores took 1 ms
+Initial gc took 69 ms
 DPI scale factor: 1.000000
-Creating interface object took 0 ms
+Creating interface object took 1 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
 Load screen analysis took 0 ms
-Analyze screens took 7 ms
-Save screen analysis took 7 ms
+Analyze screens took 19 ms
+Save screen analysis took 25 ms
 Save pyanalysis took 0 ms
-Save bytecode took 18 ms
+Save bytecode took 50 ms
 Running _start took 1 ms
-Interface start took 207 ms
+Interface start took 551 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1500, 1000)
