@@ -1,26 +1,28 @@
 ﻿# Declare characters used by this game.
-define wren = Character(_("Wren"), color="#ffffff")
-define ines = Character(_("Ines"), color="#fd9855")
-define kat = Character(_("Katriel"), color="#d161a2")
+define wren = Character(name="Wren", color="#ffffff") #white
+define ines = Character(name="Ines", color="#fd9855") #light orange
+define kat = Character(name="Katriel", color="#d161a2") #light magenta
 define mom = Character(
     name="Mom", 
     font="fonts/EBGaramond-VariableFont_wght.ttf", 
     what_font="fonts/EBGaramond-VariableFont_wght.ttf"
     )
 define phone = Character(
-    _("Phone"), 
-    color="#097969", 
+    name="Phone", 
+    color="#097969", #cadmium green
     font="fonts/SpaceMono-Regular.ttf", 
     what_font="fonts/SpaceMono-Regular.ttf"
     )
-define strange = Character(_("Stranger"))
+define strange = Character(name="Stranger")
 
 #transform for all foreground images to make them the same height
 transform max_y:
     ysize(600)
     fit "contain"
+   
 
 #animation for moving sprites around the screen
+#default pos0 current position?
 transform mv(pos0, pos1, spd=1.0):
     pos0
     linear spd pos1
@@ -36,12 +38,16 @@ label val_scenes:
 
     #Intro scene, Wren at home
     scene house
-    show borzoi at max_y, center with fade #get more silly with this i think
+    show borzoi at max_y, center#get more silly with this i think
+    
+    # python:
+    #     for i in range(1, 10):
+    #         renpy.show("borzoi", atl=chromatic(i))
+
     #no name, mirror. chromatic abberation? blur?
     "It's okay."
     "It's just odd that it happened twice."
-    #edit these out when art has been installed
-    show borzoi at max_y, center#, linear 1.0 offscreenright
+    show borzoi at max_y, center
     hide borzoi
 
     "*wren steps outside into-*"
@@ -86,7 +92,6 @@ label val_scenes:
     wren "I'm here to volunteer though…"
     #ines is introduced ?
     ines "Oh. OH! Omg ur the new volunteer they assigned me hey thnxxxx"
-
     return
 
 label end_demo:
