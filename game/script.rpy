@@ -20,15 +20,11 @@ transform max_y:
     ysize(600)
     fit "contain"
 
-#animations for inserting and remove sprites from screen
-transform offleft_2_right:
-    offscreenleft
-    linear 1.0 right # linear x, where x is the speed of the animation
+#animation for moving sprites around the screen
+transform mv(pos0, pos1, spd=1.0):
+    pos0
+    linear spd pos1
 
-transform offright_2_right:
-    offscreenright
-    linear 0.25 right #fast!
-    
 # The game starts here.
 label start:
     stop music
@@ -51,7 +47,7 @@ label val_scenes:
     "*wren steps outside into-*"
 
     show whitney at left, max_y
-    show borzoi at offleft_2_right, max_y
+    show borzoi at max_y, mv(offscreenleft, right, 1.0)
     mom "Wren? Are you okay?"
     #wren's name is now known to the reader
     wren "Why?"
@@ -83,7 +79,7 @@ label val_scenes:
     "She starts playing with a flower bud, eventually crushing it."
     wren "{i}Wow.{/i}"
     "She reaches out and-"
-    show gs_dog at offright_2_right, max_y
+    show gs_dog at mv(offscreenright, right, 0.25), max_y #ines jumpscare
     strange "{b}{sc}WHAT ARE YOU DOING ??????{/sc}{/b}"
     wren "Nothing."
     strange "Oh my god, seriously? That wasn't even one that needed pruning?? Get out!!"
