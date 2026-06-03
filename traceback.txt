@@ -1,18 +1,18 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-Compiling ATL code at game/script.rpy:12
-  File "game/script.rpy", line 33, in script
-    show whitney at left, max_y
-  File "game/script.rpy", line 12, in <module>
-    fit(contain)
-        ^^^^^^^ 
-NameError: name 'contain' is not defined
+Compiling ATL code at game/script.rpy:25
+  File "game/script.rpy", line 48, in script
+    show borzoi at offleft_2_right, max_y
+  File "game/script.rpy", line 25, in <module>
+    offscreen_left
+    ^^^^^^^^^^^^^^
+NameError: name 'offscreen_left' is not defined. Did you mean: 'offscreenleft'?
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 33, in script
-    show whitney at left, max_y
+  File "game/script.rpy", line 48, in script
+    show borzoi at offleft_2_right, max_y
   File "renpy/ast.py", line 1364, in execute
     show_imspec(self.imspec, atl=getattr(self, "atl", None))
     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -36,6 +36,9 @@ Traceback (most recent call last):
   File "renpy/display/scenelists.py", line 464, in add
     thing.visit_all(lambda d: None)
     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 460, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
   File "renpy/display/displayable.py", line 451, in visit_all
     for d in self.visit():
              ~~~~~~~~~~^^ 
@@ -48,8 +51,8 @@ Traceback (most recent call last):
   File "renpy/atl.py", line 847, in compile
     statements = [i.compile(ctx) for i in self.statements]
                   ~~~~~~~~~^^^^^                          
-  File "renpy/atl.py", line 1185, in compile
-    value = ctx.eval(expr)
+  File "renpy/atl.py", line 1150, in compile
+    child = ctx.eval(expr)
             ~~~~~~~~^^^^^^
   File "renpy/atl.py", line 308, in eval
     return renpy.python.py_eval(expr, locals=self.context)
@@ -60,12 +63,12 @@ Traceback (most recent call last):
   File "renpy/python.py", line 1301, in py_eval_bytecode
     return eval(bytecode, globals, locals)
            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/script.rpy", line 12, in <module>
-    fit(contain)
-        ^^^^^^^ 
-NameError: name 'contain' is not defined
+  File "game/script.rpy", line 25, in <module>
+    offscreen_left
+    ^^^^^^^^^^^^^^
+NameError: name 'offscreen_left' is not defined. Did you mean: 'offscreenleft'?
 
 Linux-6.8.0-117-generic-x86_64-with-glibc2.39 x86_64
 Ren'Py 8.5.3.26051504
 Petals of Rust 0.1
-Tue Jun  2 14:00:49 2026
+Wed Jun  3 10:02:38 2026

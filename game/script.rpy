@@ -2,8 +2,17 @@
 define wren = Character(_("Wren"), color="#ffffff")
 define ines = Character(_("Ines"), color="#fd9855")
 define kat = Character(_("Katriel"), color="#d161a2")
-define mom = Character(_("Mom"))
-define phone = Character(_("Phone"), color="#097969")
+define mom = Character(
+    name="Mom", 
+    font="EBGaramond-VariableFont_wght.ttf", 
+    what_font="EBGaramond-VariableFont_wght.ttf"
+    )
+define phone = Character(
+    _("Phone"), 
+    color="#097969", 
+    font="SpaceMono-Regular.ttf", 
+    what_font="SpaceMono-Regular.ttf"
+    )
 define strange = Character(_("Stranger"))
 
 #transform for all foreground images to make them the same height
@@ -11,18 +20,23 @@ transform max_y:
     ysize(600)
     fit "contain"
 
-
+#animations for inserting and remove sprites from screen
+transform offleft_2_right:
+    offscreenleft
+    linear 1.0 right # linear x, where x is the speed of the animation
+    
 # The game starts here.
 label start:
     jump val_scenes
+    jump end_demo
     return
 
 label val_scenes:
 
     #Intro scene, Wren at home
     scene bg_thevoid
-    show borzoi at max_y
-    #no name
+    show borzoi at max_y, center with fade #get more silly with this i think
+    #no name, mirror. chromatic abberation? blur?
     "It's okay."
     "It's just odd that it happened twice."
     #edit these out when art has been installed
@@ -31,7 +45,7 @@ label val_scenes:
     "*wren steps outside into a hot summer day*"
 
     show whitney at left, max_y
-    show borzoi at right, max_y
+    show borzoi at offleft_2_right, max_y
     mom "Wren? Are you okay?"
     #wren's name is now known to the reader
     wren "Why?"
@@ -47,9 +61,7 @@ label val_scenes:
 
     show borzoi at max_y
     phone "{sc}-bzzzzzzz-{/sc}"
-    # import a monospaced font .ttf file
-    # e.g. "Try out the {font=mikachan.ttf}mikachan font{/font}."
-    phone "{font=SpaceMono-Regular.ttf}Reminder: Volunteer work.{/font}"
+    phone "Reminder: Volunteer work."
     wren "{i}Why did they HAVE to assign me to the garden? There really wasn't anything else there?{/i}"
     hide borzoi
 
@@ -60,7 +72,7 @@ label val_scenes:
     wren "{i}Someone else should be here by now.{/i}"
 
     "She starts playing with a flower bud, eventually crushing it."
-    wren "{i}Wow{/i}."
+    wren "{i}Wow.{/i}"
     "She reaches out and-"
     show gs_dog at right, max_y
     strange "{b}{sc}WHAT ARE YOU DOING ??????{/sc}{/b}"
@@ -70,20 +82,9 @@ label val_scenes:
     #ines is introduced ?
     ines "Oh. OH! Omg ur the new volunteer they assigned me hey thnxxxx"
 
-    jump end_demo
     return
 
 label end_demo:
     scene bg_thevoid
     "End of Demo."
-    return
-
-label test:
-
-    scene bg_thevoid
-    show borzoi
-    wren "I'm wren!!"
-    show gs_dog
-    ines "wowie."
-
     return
