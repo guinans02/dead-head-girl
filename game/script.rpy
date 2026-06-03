@@ -4,14 +4,14 @@ define ines = Character(_("Ines"), color="#fd9855")
 define kat = Character(_("Katriel"), color="#d161a2")
 define mom = Character(
     name="Mom", 
-    font="EBGaramond-VariableFont_wght.ttf", 
-    what_font="EBGaramond-VariableFont_wght.ttf"
+    font="fonts/EBGaramond-VariableFont_wght.ttf", 
+    what_font="fonts/EBGaramond-VariableFont_wght.ttf"
     )
 define phone = Character(
     _("Phone"), 
     color="#097969", 
-    font="SpaceMono-Regular.ttf", 
-    what_font="SpaceMono-Regular.ttf"
+    font="fonts/SpaceMono-Regular.ttf", 
+    what_font="fonts/SpaceMono-Regular.ttf"
     )
 define strange = Character(_("Stranger"))
 
@@ -86,11 +86,6 @@ label val_scenes:
     wren "I'm here to volunteer though…"
     #ines is introduced ?
     ines "Oh. OH! Omg ur the new volunteer they assigned me hey thnxxxx"
-
-    return
-
-label credits:
-    scene bg_thevoid
 
     return
 
