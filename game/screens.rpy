@@ -550,44 +550,54 @@ screen about():
 
             hbox:
                 spacing 15
-                text _("Updated Character Art") style "about_small"
-                text _("Deji")
-
+                text _("Writing") style "about_small"
+                text _("Valentine Urquiza")
+            
             hbox:
                 spacing 15
-                text _("Original Character Art") style "about_small"
-                text _("Derik")
+                text _("Coding") style "about_small"
+                text _("Sophie Guinan")
 
-            null height 15
+            # hbox:
+            #     spacing 15
+            #     text _("Updated Character Art") style "about_small"
+            #     text _("Deji")
 
-            hbox:
-                spacing 15
-                text _("Updated Background Art") style "about_small"
-                text _("Mugenjohncel")
+            # hbox:
+            #     spacing 15
+            #     text _("Original Character Art") style "about_small"
+            #     text _("Derik")
 
-            hbox:
-                spacing 15
-                text _("Original Background Art") style "about_small"
-                text _("DaFool")
+            # null height 15
 
-            null height 15
+            # hbox:
+            #     spacing 15
+            #     text _("Updated Background Art") style "about_small"
+            #     text _("Mugenjohncel")
 
-            hbox:
-                spacing 15
-                text _("Music By") style "about_small"
-                text _("Alessio")
+            # hbox:
+            #     spacing 15
+            #     text _("Original Background Art") style "about_small"
+            #     text _("DaFool")
 
-            null height 15
+            # null height 15
 
-            hbox:
-                spacing 15
-                text _("Update Written By") style "about_small"
-                text _("Lore")
+            # hbox:
+            #     spacing 15
+            #     text _("Music By") style "about_small"
+            #     text _("Alessio")
 
-            hbox:
-                spacing 15
-                text _("Originally Written By ") style "about_small"
-                text _("mikey (ATP Projects)")
+            # null height 15
+
+            # hbox:
+            #     spacing 15
+            #     text _("Update Written By") style "about_small"
+            #     text _("Lore")
+
+            # hbox:
+            #     spacing 15
+            #     text _("Originally Written By ") style "about_small"
+            #     text _("mikey (ATP Projects)")
 
 
             text _("\nMade with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only]")

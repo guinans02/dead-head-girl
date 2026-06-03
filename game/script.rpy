@@ -24,6 +24,10 @@ transform max_y:
 transform offleft_2_right:
     offscreenleft
     linear 1.0 right # linear x, where x is the speed of the animation
+
+transform offright_2_right:
+    offscreenright
+    linear 0.25 right #fast!
     
 # The game starts here.
 label start:
@@ -35,7 +39,7 @@ label start:
 label val_scenes:
 
     #Intro scene, Wren at home
-    scene bg_thevoid
+    scene house
     show borzoi at max_y, center with fade #get more silly with this i think
     #no name, mirror. chromatic abberation? blur?
     "It's okay."
@@ -44,7 +48,7 @@ label val_scenes:
     show borzoi at max_y, center#, linear 1.0 offscreenright
     hide borzoi
 
-    "*wren steps outside into a hot summer day*"
+    "*wren steps outside into-*"
 
     show whitney at left, max_y
     show borzoi at offleft_2_right, max_y
@@ -61,6 +65,8 @@ label val_scenes:
     hide borzoi
     "*wren is finally allowed to leave*"
 
+    #out in public
+    show bg_thevoid
     show borzoi at max_y
     phone "{sc}-bzzzzzzz-{/sc}"
     phone "Reminder: Volunteer work."
@@ -68,6 +74,7 @@ label val_scenes:
     hide borzoi
 
     #Garden Scene
+    show garden
     "At the garden..."
     show borzoi at left, max_y
     "She goes to the garden and no one is there. She feels numb/cold looking at all the wilting flowers."
@@ -76,13 +83,18 @@ label val_scenes:
     "She starts playing with a flower bud, eventually crushing it."
     wren "{i}Wow.{/i}"
     "She reaches out and-"
-    show gs_dog at right, max_y
+    show gs_dog at offright_2_right, max_y
     strange "{b}{sc}WHAT ARE YOU DOING ??????{/sc}{/b}"
     wren "Nothing."
     strange "Oh my god, seriously? That wasn't even one that needed pruning?? Get out!!"
     wren "I'm here to volunteer though…"
     #ines is introduced ?
     ines "Oh. OH! Omg ur the new volunteer they assigned me hey thnxxxx"
+
+    return
+
+label credits:
+    scene bg_thevoid
 
     return
 
