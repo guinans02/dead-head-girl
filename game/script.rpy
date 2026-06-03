@@ -27,6 +27,7 @@ transform offleft_2_right:
     
 # The game starts here.
 label start:
+    stop music
     jump val_scenes
     jump end_demo
     return
@@ -40,6 +41,7 @@ label val_scenes:
     "It's okay."
     "It's just odd that it happened twice."
     #edit these out when art has been installed
+    show borzoi at max_y, center#, linear 1.0 offscreenright
     hide borzoi
 
     "*wren steps outside into a hot summer day*"

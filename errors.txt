@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 24: end of line expected.
-    transform offleft_2_right: pass
-                               ^
+File "game/script.rpy", line 43: end of line expected.
+    show borzoi at max_y, center, linear 1.0 offscreenright
+                                         ^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Wed Jun  3 09:57:09 2026
+Wed Jun  3 11:02:42 2026
