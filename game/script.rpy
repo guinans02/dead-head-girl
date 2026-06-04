@@ -30,8 +30,8 @@ transform mv(pos0, pos1, spd=1.0):
 # The game starts here.
 label start:
     stop music
-    call wren_research
     call val_scenes
+    call wren_research
     call end_demo
     return
 
@@ -45,54 +45,89 @@ label val_scenes:
     #     for i in range(1, 10):
     #         renpy.show("wren_fg", atl=chromatic(i))
 
-    #no name, mirror. chromatic abberation? blur?
-    "It's okay."
-    "It's just odd that it happened twice."
+    # mirror. chromatic abberation? blur?
+    wren "It's okay."
+    wren "It's just odd that it happened twice."
     show wren_fg at max_y, center
     hide wren_fg
 
     "*wren steps outside into-*"
 
-    show whitney at left, max_y
+    show mom_fg at left, max_y
     show wren_fg at max_y, mv(offscreenleft, right, 1.0)
-    mom "Wren? Are you okay?"
+    wren "Mother?"
     #wren's name is now known to the reader
-    wren "Why?"
-    mom "You look pale. Have you been getting enough Vitamin A?"
-    wren "Yes mother. "
-    mom "Well. Good then. " 
-    mom "It's because you haven't spent enough time with your little friends. Loneliness is worse for you than cigarettes. "
+    mom "I told you, you don't need to ask me to sign any forms. Ive already shown you my signature."
+    wren "..."
+    wren "I've been feeling kind of sick. I-"
+    mom "You spend far too much time in your room, Wren. How many times do I need to tell you that fresh air and time in nature is what you need?"
+    wren "It's-" 
+    mom "Or get some little friends to spend time with. Loneliness is worse for you than cigarettes!"
     wren "{i}You don't have any friends, mother.{/i}"
-    wren "Yes mother. I'll do that mother."
-    hide whitney
-    hide wren_fg
-    "*wren is finally allowed to leave*"
+    wren "Thank you for the advice."
+    show wren_fg at max_y, mv(right, offscreenright, 0.5)
+    ""
+    hide mom_fg
+    
+    #walking to internship
+    show wren_fg at max_y, mv(offscreenleft, center, 1.0)
+    wren """
+        yes thank you mother 3 bags full mother
 
-    #out in public
-    show bg_thevoid
-    show wren_fg at max_y
-    phone "{sc}-bzzzzzzz-{/sc}"
-    phone "Reminder: Volunteer work."
-    wren "{i}Why did they HAVE to assign me to the garden? There really wasn't anything else there?{/i}"
-    hide wren_fg
+        Maybe if I didn't need to get perfect grades I'd have some friends.
 
+        Maybe if you got off your lazy ass and actually parented me I'd be better at talking to people.
+
+        ...that's not fair. I'm sorry. I know she's trying her best. It's not easy.
+
+        ...It's not easy...
+
+        Could it not get any hotter? I'm already feeling faint.
+        """
+    show wren_fg at max_y, mv(center, offscreenright, 1.0)
     #Garden Scene
-    show garden
-    "At the garden..."
-    show wren_fg at left, max_y
-    "She goes to the garden and no one is there. She feels numb/cold looking at all the wilting flowers."
-    wren "{i}Someone else should be here by now.{/i}"
+    scene garden
+    show wren_fg at max_y, mv(offscreenleft, center, 1.0)
+    #transform flip wren horiz too goofy?
+    wren """
+        Hello?
 
-    "She starts playing with a flower bud, eventually crushing it."
-    wren "{i}Wow.{/i}"
-    "She reaches out and-"
+        Is anyone here?
+
+        Excuse me?
+
+        Sure. I guess. That's okay.
+        """ 
+
+    show wren_fg at mv(center, left, 1.0), max_y
+
+    wren "{i}What am I supposed to...?{/i}"
+
+    "She starts playing with a flower bud."
+
+    wren "{i}Hm.{/i}"
+
+    "She's crushed it."
+
+    #Sound effect, boss music?
     show gs_dog at mv(offscreenright, right, 0.25), max_y #ines jumpscare
-    strange "{sc}{b}WHAT ARE YOU DOING ??????{/b}{/sc}"
+    strange "I- {b}excuse me!? {/b}{sc}{b}What are you doing??{/b}{/sc}"
     wren "Nothing."
-    strange "Oh my god, seriously? That wasn't even one that needed pruning?? Get out!!"
-    wren "I'm here to volunteer though…"
+    strange "Seriously? You didn't even pick it... get out! Open hours are closed!"
+    wren "I was supposed to volunteer here..."
     #ines is introduced ?
-    ines "Oh. OH! Omg ur the new volunteer they assigned me hey thnxxxx"
+    ines "Oh. OH!"
+    ines "Sorry! I'm Ines, sorry for yelling."
+    wren "I'm Wren. Thanks."
+    ines "Welcome to the Local Gardens! So, how'd you get started with us here?"
+    wren "It's the closest to my house that accepts volunteers."
+    ines "Oh. Okay. Do you have any experience gardening?"
+    wren "No."
+    ines "Haha ummmm that's okay, I'll teach you! Do you have a favorite plant?"
+    wren "No." #Girlboss behavior right there
+    ines "That's..." 
+    # Ines nervous smile
+    ines "...so..."
     return
 
 label wren_research:
@@ -166,9 +201,9 @@ label wren_research:
     wren "{i}Click.{/i}"
     com "Welcome MARCUS WERNER. Due to high demand, patients are encouraged to join the waitlist as soon as possible."
     com "Submitting the form costs $30, with an expediency fee of $40, combined with a 25\% administrative surcharge due to high demand."
-    wren "{i}God, Mom is going to kill me.{/i}"
+    stop music fadeout 2.0
+    wren "{i}God, mother is going to kill me.{/i}"
 
-    stop music fadeout 1.0
     return
 
 label end_demo:
