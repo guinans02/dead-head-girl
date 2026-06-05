@@ -1,49 +1,40 @@
-2026-06-05 02:29:25 UTC
+2026-06-05 22:07:19 UTC
 Linux-6.8.0-124-generic-x86_64-with-glibc2.39
 Ren'Py 8.5.3.26051504
 
-Early init took 48 ms
-Loading error handling took 19 ms
-Loading script took 143 ms
-Loading save slot metadata took 20 ms
+Early init took 31 ms
+Loading error handling took 14 ms
+Loading script took 98 ms
+Loading save slot metadata took 14 ms
 Loading persistent took 0 ms
-Running init code took 51 ms
-Loading analysis data took 11 ms
-Analyze and compile ATL took 3 ms
-Reloading save slot metadata took 4 ms
+Running init code took 35 ms
+Loading analysis data took 6 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 3 ms
 Backing up script files to '/home/sophie/.renpy/backups/petals_of_rust':
 Dump and make backups took 1 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 35 ms
+Initial gc took 25 ms
 DPI scale factor: 1.000000
 Creating interface object took 0 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
 Load screen analysis took 0 ms
-Analyze screens took 9 ms
-Save screen analysis took 11 ms
+Analyze screens took 6 ms
+Save screen analysis took 7 ms
 Save pyanalysis took 0 ms
-Save bytecode took 0 ms
+Save bytecode took 17 ms
 Running _start took 1 ms
-Interface start took 300 ms
+Interface start took 192 ms
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1536, 864)
+primary display bounds: (0, 0, 1500, 1000)
 swap interval: 1 frames
 Windowed mode.
 Vendor: 'Intel'
 Renderer: 'Mesa Intel(R) Iris(R) Xe Graphics (TGL GT2)'
 Version: '4.6 (Compatibility Profile) Mesa 25.2.8-0ubuntu0.24.04.1'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1536, 'current_h': 864, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1500, 'current_h': 1000, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
 Screen sizes: virtual=(1280, 720) physical=(1280, 720) drawable=(1280, 720)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1280, 720) physical=(1280, 720) drawable=(1280, 720)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1280, 720) physical=(1536, 795) drawable=(1536, 795)
-Maximum texture size: 4096x4096
-Resize event: <Event(65533-VIDEORESIZE h=795, mod=0, size=(1536, 795), w=1536)>
-Cleaning stores took 0 ms
-Load screen analysis took 39 ms
-Analyze screens took 0 ms
-Running _start took 3 ms

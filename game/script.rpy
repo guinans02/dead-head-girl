@@ -1,4 +1,19 @@
-﻿# Declare characters used by this game.
+﻿#run this python code on startup
+init python:
+    #class for recording affection data for each character
+    class MC:
+        def __init__(self, character:Character, init_score:int=0):
+            self.ch = character
+            self.score = init_score
+            return
+        
+        def update_score(n:int):
+            self.score += n
+
+        def get_score():
+            return self.score
+
+# Declare characters used by this game.
 define wren = Character(name="Wren", color="#ffffff") #white
 define ines = Character(name="Ines", color="#fd9855") #light orange
 define kat = Character(name="Katriel", color="#d161a2") #light magenta
@@ -14,6 +29,10 @@ define phone = Character(
     what_font="fonts/SpaceMono-Regular.ttf"
     )
 define strange = Character(name="Stranger")
+
+#declare love objects
+$ ines_obj = MC(ines)
+$ kat_obj = MC(kat)
 
 #transform for all foreground images to make them the same height
 transform max_y:
