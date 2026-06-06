@@ -85,6 +85,10 @@ define gui.notify_text_size = 16
 ## The size of the game's title.
 define gui.title_text_size = 50
 
+#title text outline
+define gui.title_text_outlines = [(2, "#000", 0, 0)]
+
+define gui.title_text_font = "fonts/LexendGiga-VariableFont_wght.ttf"
 
 ## Main and Game Menus #########################################################
 

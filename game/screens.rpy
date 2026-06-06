@@ -4,6 +4,10 @@
 
 init offset = -1
 
+# init python:
+#     def text_outline(tag, text:str): #color:str, size:int
+        
+#         out = renpy.Text(text)
 
 ################################################################################
 ## Styles
@@ -131,6 +135,13 @@ style window:
     ysize gui.textbox_height
 
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+
+    #this works
+    #background Image("images/sleeping_dog@2.png", xalign=0.5, yalign=1.0)
+
+    # since the 'say' screen is especially reserved by renpy, i think it would be easiest
+    # to include any logic that changes the textbox in this function.
+    # should work just fine since the code executes every time the say command is used
 
 style namebox:
     xpos gui.name_xpos
@@ -353,6 +364,7 @@ screen main_menu():
 
     ## This empty frame darkens the main menu.
     frame:
+        #why is renpy like this
         pass
 
     ## The use statement includes another screen inside this one. The actual
@@ -393,6 +405,7 @@ style main_menu_text:
 
 style main_menu_title:
     properties gui.text_properties("title")
+    color "#FF7A00"
 
 style main_menu_version:
     properties gui.text_properties("version")

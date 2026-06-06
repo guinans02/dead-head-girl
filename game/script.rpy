@@ -15,7 +15,12 @@ init python:
 
 # Declare characters used by this game.
 define wren = Character(name="Wren", color="#ffffff") #white
-define ines = Character(name="Ines", color="#fd9855") #light orange
+define ines = Character(
+    name="Ines", 
+    color="#fd9855", #light orange
+    font="SofiaSans-VariableFont_wght.ttf",
+    what_font="SofiaSans-VariableFont_wght.ttf"
+    )
 define kat = Character(name="Katriel", color="#d161a2") #light magenta
 define mom = Character(
     name="Mom", 
@@ -30,7 +35,7 @@ define phone = Character(
     )
 define strange = Character(name="Stranger")
 
-#declare love objects
+#declare love interest objects
 $ ines_obj = MC(ines)
 $ kat_obj = MC(kat)
 
@@ -38,7 +43,6 @@ $ kat_obj = MC(kat)
 transform max_y:
     ysize(600)
     fit "contain"
-   
 
 #animation for moving sprites around the screen
 #default pos0 current position?
@@ -49,6 +53,7 @@ transform mv(pos0, pos1, spd=1.0):
 # The game starts here.
 label start:
     stop music
+    
     call val_scenes
     call wren_research
     call end_demo
