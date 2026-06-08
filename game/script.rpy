@@ -1,20 +1,58 @@
 ﻿#run this python code on startup
 init python:
-    #class for recording affection data for each character
+    import os, random, time
+    #class for recording the individual data for each character
+
+    #paraphrased from Bored Chris on youtube
+    def voice(event, **kwargs):
+        i = 0
+        voice_path="game/audio/voices/"
+        #make a list of the files in the voicepath directory that we're going to use
+        # voices = [voice_path + fname for fname in os.listdir(voice_path)]
+        voices = ["audio/voices/" + fname for fname in os.listdir(voice_path)]
+
+        num_voices =  len(voices)
+        
+        while i < 50: #avoids infinite loops
+            #get a random voice from our list of voices
+            sfx = voices[random.randint(0, num_voices - 1)]
+            #when to talk...
+            if event == "show":
+                #renpy.music.play(filenames=sfx, channel="sound", loop=True)
+                #renpy.music.queue(filenames="untitled.opus", channel="sound", loop=False)
+                renpy.music.queue(filenames=sfx, channel="sound", loop=False)
+                print(renpy.music.get_playing(channel="sound"))
+            #...and when to not
+            elif event == "slow_done" or event == "end":
+                print("stop")
+                renpy.music.stop(channel="sound")
+            
+            i += 1
+
     class MC:
-        def __init__(self, character:Character, init_score:int=0):
+        callback = voice # does this work?
+        def __init__(self, character:Character=None, init_score:int=0):
             self.ch = character
             self.score = init_score
             return
         
-        def update_score(n:int):
+        def update_score(self, n:int):
             self.score += n
 
-        def get_score():
+        def get_score(self):
             return self.score
+        
+        def get_name(self):
+            return self.ch.name
+
+
 
 # Declare characters used by this game.
-define wren = Character(name="Wren", color="#ffffff") #white
+define wren = Character(
+    name="Wren", 
+    color="#ffffff", #white
+    callback=store.voice
+    )
 define ines = Character(
     name="Ines", 
     color="#fd9855", #light orange
@@ -36,8 +74,11 @@ define phone = Character(
 define strange = Character(name="Stranger")
 
 #declare love interest objects
-$ ines_obj = MC(ines)
-$ kat_obj = MC(kat)
+default wren_obj = store.MC(wren)
+#no way this works
+#wren_obj.ch.callback = wren_obj.voice
+default ines_obj = store.MC(ines)
+default kat_obj = store.MC(kat)
 
 #transform for all foreground images to make them the same height
 transform max_y:
@@ -54,9 +95,13 @@ transform mv(pos0, pos1, spd=1.0):
 label start:
     stop music
     
+    # call debug
     call val_scenes
     call wren_research
     call end_demo
+    return
+
+label debug:
     return
 
 label val_scenes:
@@ -162,25 +207,28 @@ label wren_research:
     name="user1", 
     color="#097969", #cadmium green
     font="fonts/SpaceMono-Regular.ttf", 
-    what_font="fonts/SpaceMono-Regular.ttf"
+    what_font="fonts/SpaceMono-Regular.ttf",
+    text_cps=renpy.random.randint(50, 60)
     )
 
     define user2 = Character(
     name="user2", 
     color="#097969", #cadmium green
     font="fonts/SpaceMono-Regular.ttf", 
-    what_font="fonts/SpaceMono-Regular.ttf"
+    what_font="fonts/SpaceMono-Regular.ttf",
+    text_cps=renpy.random.randint(30, 40)
     )
 
     define com = Character(
     name="Computer", 
     color="#097969", #cadmium green
     font="fonts/SpaceMono-Regular.ttf", 
-    what_font="fonts/SpaceMono-Regular.ttf"
+    what_font="fonts/SpaceMono-Regular.ttf",
+    text_cps=0 #computer is always instant
     )
 
     image black = "#000"
-    play music "music/johnny_ripper - gare du nord.mp3" fadein 1.0 loop
+    play music "audio/music/johnny_ripper - gare du nord.mp3" fadein 1.0 loop
 
     scene black #bedroom?
     show wren_fg at center, max_y
