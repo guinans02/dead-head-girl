@@ -1,15 +1,15 @@
 ﻿#run this python code on startup
 init python:
-    import os, random, time
+    import os, random, functools
     #class for recording the individual data for each character
 
     #paraphrased from Bored Chris on youtube
-    def voice(event, **kwargs):
+    def voice(event, character="default", **kwargs):
         i = 0
-        voice_path="game/audio/voices/"
+        voice_path="game/audio/voices/" + character + "/"
         #make a list of the files in the voicepath directory that we're going to use
-        # voices = [voice_path + fname for fname in os.listdir(voice_path)]
-        voices = ["audio/voices/" + fname for fname in os.listdir(voice_path)]
+        #inconsistent because apparently python and renpy CWDs aren't consistent??
+        voices = ["audio/voices/" + character + "/" + fname for fname in os.listdir(voice_path)]
 
         num_voices =  len(voices)
         
@@ -18,13 +18,9 @@ init python:
             sfx = voices[random.randint(0, num_voices - 1)]
             #when to talk...
             if event == "show":
-                #renpy.music.play(filenames=sfx, channel="sound", loop=True)
-                #renpy.music.queue(filenames="untitled.opus", channel="sound", loop=False)
                 renpy.music.queue(filenames=sfx, channel="sound", loop=False)
-                print(renpy.music.get_playing(channel="sound"))
             #...and when to not
             elif event == "slow_done" or event == "end":
-                print("stop")
                 renpy.music.stop(channel="sound")
             
             i += 1
@@ -51,7 +47,8 @@ init python:
 define wren = Character(
     name="Wren", 
     color="#ffffff", #white
-    callback=store.voice
+    callback=functools.partial(store.voice, character="wren")
+    #callback=store.voice
     )
 define ines = Character(
     name="Ines", 
@@ -156,6 +153,7 @@ label val_scenes:
     show wren_fg at max_y, mv(center, offscreenright, 1.0)
     #Garden Scene
     scene garden
+    play music "audio/music/garden_bg_music.opus"
     show wren_fg at max_y, mv(offscreenleft, center, 1.0)
     #transform flip wren horiz too goofy?
     wren """

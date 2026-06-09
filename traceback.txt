@@ -1,53 +1,33 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 99, in script call
-    call val_scenes
-  File "game/script.rpy", line 118, in script
-    wren "It's okay."
-  File "game/script.rpy", line 12, in voice
-    voices = [fname for fname in os.listdir(voice_path)]
-  File "game/script.rpy", line 12, in <lambda>
-    voices = [fname for fname in os.listdir(voice_path)]
-                                 ~~~~~~~~~~^^^^^^^^^^^^ 
-FileNotFoundError: [Errno 2] No such file or directory: 'audio/voices/'
+  File "game/script.rpy", line 47, in script
+    define wren = Character(
+  File "game/script.rpy", line 50, in <module>
+    callback=store.voice(character="wren")
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+TypeError: voice() missing 1 required positional argument: 'event'
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 99, in script call
-    call val_scenes
-  File "game/script.rpy", line 118, in script
-    wren "It's okay."
-  File "renpy/ast.py", line 2935, in execute
-    Say.execute(self)
-    ~~~~~~~~~~~^^^^^^
-  File "renpy/ast.py", line 994, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/sayexports.py", line 129, in say
-    who(what, *args, **kwargs)
-    ~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/character.py", line 1565, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/character.py", line 1220, in do_display
-    display_say(who, what, self.do_show, **display_args)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/character.py", line 704, in display_say
-    callback("begin")
-    ~~~~~~~~^^^^^^^^^
-  File "renpy/character.py", line 90, in __call__
-    c(*args, **kwargs)
-    ~^^^^^^^^^^^^^^^^^
-  File "game/script.rpy", line 12, in voice
-    voices = [fname for fname in os.listdir(voice_path)]
-  File "game/script.rpy", line 12, in <lambda>
-    voices = [fname for fname in os.listdir(voice_path)]
-                                 ~~~~~~~~~~^^^^^^^^^^^^ 
-FileNotFoundError: [Errno 2] No such file or directory: 'audio/voices/'
+  File "game/script.rpy", line 47, in script
+    define wren = Character(
+  File "renpy/ast.py", line 2473, in execute
+    self.set()
+    ~~~~~~~~^^
+  File "renpy/ast.py", line 2485, in set
+    value = renpy.python.py_eval_bytecode(self.code.bytecode)
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1301, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 50, in <module>
+    callback=store.voice(character="wren")
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+TypeError: voice() missing 1 required positional argument: 'event'
 
 Linux-6.8.0-124-generic-x86_64-with-glibc2.39 x86_64
 Ren'Py 8.5.3.26051504
 Petals of Rust 0.1
-Mon Jun  8 10:10:05 2026
+Tue Jun  9 10:43:58 2026
