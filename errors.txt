@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 16: invalid syntax
-    play "sound"
-             ^^^^^^^
+File "game/script.rpy", line 81: expected 'word' not found.
+    define "ambience" = music.register_channel("ambience")
+           ^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Mon Jun  8 09:11:18 2026
+Tue Jun  9 16:48:15 2026

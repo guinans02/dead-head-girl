@@ -841,9 +841,9 @@ screen preferences():
 
                 vbox:
 
-                    label _("Text Speed")
+                #     label _("Text Speed")
 
-                    bar value Preference("text speed")
+                #     bar value Preference("text speed")
 
                     label _("Auto-Forward Time")
 
