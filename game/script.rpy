@@ -104,7 +104,7 @@ label start:
     stop music
     
     # call debug
-    call wren_selfcare
+    #call wren_selfcare
     call val_scenes
     call wren_research
     call end_demo
@@ -155,8 +155,9 @@ label val_scenes:
     ""
     hide mom_fg
     stop music
-    
+
     #walking to internship
+    scene bg_thevoid
     show wren_fg at max_y, mv(offscreenleft, center, 1.0)
     wren """
         yes thank you mother 3 bags full mother
@@ -325,7 +326,9 @@ label val_scenes:
         """
     
     label wren_work:
-    scene bg_thevoid
+    scene office_bg
+    show wren_fg at max_y, center
+
     """
     Wren walks into busy office. No one says hi to her. 
 
