@@ -103,7 +103,7 @@ transform mv(pos0, pos1, spd=1.0):
 label start:
     stop music
     
-    # call debug
+    #call debug
     #call wren_selfcare
     call val_scenes
     call wren_research
@@ -111,13 +111,32 @@ label start:
     return
 
 label debug:
+    init python:
+        def hide_target():
+            global target_visible
+            target_visible = False
+            renpy.restart_interaction()
+
+        def hit_target():
+            global score, target_visible
+            #replace with the sound of wren taking a ragged breath
+            #renpy.play("audio/Gun1.ogg")
+            score += 1
+            target_visible = False
+            renpy.restart_interaction()
+    $ score = 0
+    $ time_left = 10
+    "Ready to shoot? Hit as many targets as you can!"
+    $ renpy.pause(1.0)
+    call screen target_shooter
+    
     return
 
 label val_scenes:
 
     define audio.house_music  = "audio/music/Insurrection Bimbo - traverse mes mains, mes bras, mon ventre.mp3"
     define audio.garden_amb   = "audio/music/garden_bg_music.opus"
-    define audio.garden_music =  "audio/music/Rrrrrose Azerty - Feverish Soundtrack.ogg"
+    define audio.garden_music = "audio/music/Rrrrrose Azerty - Feverish Soundtrack.ogg"
     #create ambient sound channel for this tbh
 
     #Intro scene, Wren at home
@@ -177,6 +196,7 @@ label val_scenes:
     show wren_fg at max_y, mv(center, offscreenright, 1.0)
     #Garden Scene
     scene garden
+    #something weird going on here. only birdsong
     play ambience garden_amb
     play music garden_music
     show wren_fg at max_y, mv(offscreenleft, center, 1.0)
@@ -445,11 +465,139 @@ label wren_research:
     return
 
 label wren_selfcare:
-
+    #wren tries to masturbate or something
     wren "{i}Yawwwwwwn"
     wren "Fuck this, I'm going to bed."
     "Wren wakes up in"
 
+    return
+
+label qte_fail:
+    stop music
+    scene bg_thevoid
+    show wren at max_y, center
+
+    wren """
+        ...
+
+        I've had enough.
+
+        I'm going to lay down.
+        """
+    #Screen goes red and shaky
+    wren "No one checks in on me. I do so much for others."
+
+    #Screen starts dripping
+    wren "People are all terrible anyways."
+
+    #Scary music
+    wren "{i}ragged breath{/i}"
+
+    wren """
+        I hope whoever cleans my body has a ball.
+
+        Bye Ines.
+
+        Bye Katriel.
+
+        Bye, wr-
+
+        Okay, Wren. It's okay.
+        """
+    #screen goes black, zoom out
+
+    #wren is lying face down on her floor
+
+    #fly buzzing sounds. she's alone
+
+    #Flowers and petals and blood and leaves form in a pool around her.
+
+    #There's a blank piece of paper
+
+    #End of game.
+
+    return
+
+label wren_choses:
+    scene bg_thevoid
+    show wren at max_y, center
+    image black = "#000"
+
+    wren """
+        I don't want to.
+
+        Ah, I just need to stop being a whiny bitch and choose.
+
+        I'd literally rather die.
+        """
+
+    #screen goes bloody, cough SFX
+    wren "{i}wheeeeeze{/i}"
+    #screen goes black
+    scene black
+
+    wren "Ugh. Ugh!"
+    menu wren_favorite
+    "Fine. I pick:"
+
+    default choice = ""
+
+    "Ines."
+        choice = "Ines"
+        jump fave_choice_out
+    
+    "Katriel."
+        choice = "Kat"
+        jump fave_choice_out
+
+    "Myself."
+        choice = "Wren"
+        jump wren_chooses_wren
+
+    label fave_choice_out:
+    scene bg_thevoid
+    wren "Why do I feel so nauseous."
+    "wren taps away at her phone"
+    wren """
+        I have to. It's because I have to.
+        
+        Mother doesn't keep any alcohol in the house.
+
+        Well, she'd kill me if I tasted her wine anyways.
+
+        I'm wasting time.
+
+        God.
+
+        Fine fine fine.
+        """
+    
+    if choice != "Wren":
+        #cut to wren phone
+        phone "Hey, " + " can we meet tonight? I have something to tell you."
+
+    if choice == "Ines":
+        phone "okay!!! <3 <3 <3"
+    
+    elif choice == "Kat":
+        phone "I'll be there."
+    
+    return
+    
+label katriel_meetup:
+    kat "I'm here."
+    wren "{i}sputters, chokes{/i}"
+    kat "What did you want to tell me, Wren?"
+    wren "I-"
+    kat "Don't tell me it's terminal. I'm not ready to mourn you."
+    "*Katriel chuckles*"
+    wren "It's not that, it's-"
+    "Wren swallows down a lump of petals."
+    wren "I love you."
+    wren "That's what I wanted to say."
+    "Wren turns bright red and walks away."
+
+    call kat_end
     return
 
 label end_demo:

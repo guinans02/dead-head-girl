@@ -1559,3 +1559,27 @@ style slider_pref_slider:
 style main_menu_vbox:
     variant "small"
     xsize 900
+
+default target_visible = False
+screen target_shooter():
+    timer 1.0 repeat True action If(time_left > 0, [SetVariable('time_left', time_left - 1), Function(spawn_target)], Return())
+
+    if target_visible:
+        imagebutton:
+            idle "target.png"
+            xpos target_x
+            ypos target_y
+            action Function(hit_target)
+    else:
+        timer 0.5 action Function(hide_target)
+
+init python:
+    import random
+    def spawn_target():
+        global target_visible, target_x, target_y
+        if time_left <= 0:
+            return
+        target_visible = True
+        target_x = random.randint(50, 700)
+        target_y = random.randint(150, 450)
+        renpy.restart_interaction()

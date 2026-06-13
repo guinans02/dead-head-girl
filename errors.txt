@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 81: expected 'word' not found.
-    define "ambience" = music.register_channel("ambience")
-           ^
+File "game/script.rpy", line 153: 'call' is not a keyword argument or valid child of the screen statement.
+    call screen target_shooter
+        ^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Tue Jun  9 16:48:15 2026
+Fri Jun 12 21:52:38 2026
