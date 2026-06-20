@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 153: 'call' is not a keyword argument or valid child of the screen statement.
-    call screen target_shooter
-        ^
+File "game/script.rpy", line 576: end of line expected.
+    phone "Hey, " + "[choice]" + " can we meet tonight? I have something to tell you."
+                  ^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Fri Jun 12 21:52:38 2026
+Sat Jun 20 11:59:10 2026

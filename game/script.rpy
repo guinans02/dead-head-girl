@@ -104,7 +104,7 @@ label start:
     stop music
     
     #call debug
-    #call wren_selfcare
+    #call wren_chooses
     call val_scenes
     call wren_research
     call end_demo
@@ -140,7 +140,7 @@ label val_scenes:
     #create ambient sound channel for this tbh
 
     #Intro scene, Wren at home
-    scene house #bathroom?
+    scene bathroom #bathroom?
     play music house_music
     show wren_fg at max_y, center#get more silly with this i think
     
@@ -154,6 +154,7 @@ label val_scenes:
     show wren_fg at max_y, center
     hide wren_fg
 
+    scene house
     "*wren steps outside into-*"
 
     show mom_fg at left, max_y
@@ -413,10 +414,9 @@ label wren_research:
     #text_cps=0 #computer is always instant
     )
 
-    image black = "#000"
     play music "audio/music/johnny_ripper - gare du nord.mp3" fadein 1.0 loop
 
-    scene black #bedroom?
+    scene wren_bedroom
     show wren_fg at center, max_y
     #desk, glow effect from screen
     #Wren clearly hasnt been sleeping.
@@ -474,7 +474,7 @@ label wren_selfcare:
 
 label qte_fail:
     stop music
-    scene bg_thevoid
+    scene wren_bedroom
     show wren at max_y, center
 
     wren """
@@ -518,9 +518,9 @@ label qte_fail:
 
     return
 
-label wren_choses:
-    scene bg_thevoid
-    show wren at max_y, center
+label wren_chooses:
+    scene wren_bedroom
+    show wren_fg at max_y, center
     image black = "#000"
 
     wren """
@@ -537,22 +537,21 @@ label wren_choses:
     scene black
 
     wren "Ugh. Ugh!"
-    menu wren_favorite
-    "Fine. I pick:"
-
     default choice = ""
+    menu wren_favorite:
+        "Fine. I pick:"
 
-    "Ines."
-        choice = "Ines"
-        jump fave_choice_out
-    
-    "Katriel."
-        choice = "Kat"
-        jump fave_choice_out
+        "Ines.":
+            $choice = "Ines"
+            jump fave_choice_out
+        
+        "Katriel.":
+            $choice = "Kat"
+            jump fave_choice_out
 
-    "Myself."
-        choice = "Wren"
-        jump wren_chooses_wren
+        "Myself.":
+            $choice = "Wren"
+            jump wren_chooses_wren
 
     label fave_choice_out:
     scene bg_thevoid
@@ -574,7 +573,8 @@ label wren_choses:
     
     if choice != "Wren":
         #cut to wren phone
-        phone "Hey, " + " can we meet tonight? I have something to tell you."
+        #$ choice = "Hey, " + choice + " can we meet tonight? I have something to tell you."
+        phone "Hey, [choice] can we meet tonight? I have something to tell you."
 
     if choice == "Ines":
         phone "okay!!! <3 <3 <3"
