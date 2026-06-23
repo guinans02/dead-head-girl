@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Petals of Rust")
+define config.name = _("Dead Head Girl")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -138,15 +138,15 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "petals_of_rust"
+define config.save_directory = "dead_head_girl"
 
 
 ## Icon ########################################################################
 ##
 ## The icon displayed on the taskbar or dock.
 
-define config.window_icon = "gui/window_icon.png"
-
+#define config.window_icon = "gui/window_icon.png"
+define config.window_icon = "images/wren_fg.jpeg"
 
 ## Build configuration #########################################################
 ##

@@ -99,10 +99,19 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
-screen say(who, what):
+screen say(who, what, tb="textbox"):
 
+    default window_choice = "window"
+    if tb != "textbox":
+        default tb_path = ""
+        #current possibilities include:
+        #"gui/textbox_ines.png" and "gui/textbox_kat.png"
+        $tb_path = f"gui/{tb}"
+        $window_choice = "ines_window"
+    
+    
     window:
-        id "window"
+        id window_choice
 
         if who is not None:
 
@@ -142,6 +151,26 @@ style window:
     # since the 'say' screen is especially reserved by renpy, i think it would be easiest
     # to include any logic that changes the textbox in this function.
     # should work just fine since the code executes every time the say command is used
+
+#there is absolutely a cleaner way to do this
+style ines_window is default
+
+style ines_window:
+    xalign 0.5
+    xfill True
+    yalign gui.textbox_yalign
+    ysize gui.textbox_height
+    background Image("gui/ines_textbox.png", xalign=0.5, yalign=1.0)
+
+style ines_window is default
+
+style ines_window:
+    xalign 0.5
+    xfill True
+    yalign gui.textbox_yalign
+    ysize gui.textbox_height
+    background Image("gui/kat_textbox.png", xalign=0.5, yalign=1.0)
+
 
 style namebox:
     xpos gui.name_xpos
@@ -405,7 +434,8 @@ style main_menu_text:
 
 style main_menu_title:
     properties gui.text_properties("title")
-    color "#FF7A00"
+    #color "#FF7A00"
+    color "FFF"
 
 style main_menu_version:
     properties gui.text_properties("version")

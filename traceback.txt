@@ -1,27 +1,52 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 107, in script call
-    call wren_chooses
-  File "game/script.rpy", line 554, in script
-    jump wren_chooses_wren
-renpy.script.LabelNotFound: could not find label 'wren_chooses_wren'. Did you mean: 'wren_chooses'?
+  File "game/screens.rpy", line 137, in <module>
+    background Image(tb, xalign=0.5, yalign=1.0)
+                     ^^                         
+NameError: name 'tb' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 107, in script call
-    call wren_chooses
-  File "game/script.rpy", line 554, in script
-    jump wren_chooses_wren
-  File "renpy/ast.py", line 1938, in execute
-    rv = renpy.game.script.lookup(target)
-         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
-  File "renpy/script.py", line 1217, in lookup
-    raise LabelNotFound(original)
-renpy.script.LabelNotFound: could not find label 'wren_chooses_wren'. Did you mean: 'wren_chooses'?
+  File "renpy/common/00start.rpy", line 216, in script
+    python:
+  File "renpy/ast.py", line 1193, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1276, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/00start.rpy", line 217, in <module>
+    _init_language()
+    ~~~~~~~~~~~~~~^^
+  File "renpy/common/00start.rpy", line 86, in _init_language
+    renpy.change_language(language, force=True)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/translation/__init__.py", line 848, in change_language
+    run_blocks()
+    ~~~~~~~~~~^^
+  File "renpy/translation/__init__.py", line 803, in run_blocks
+    new_change_language(tl, language, changed)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/translation/__init__.py", line 747, in new_change_language
+    i.apply()
+    ~~~~~~~^^
+  File "renpy/ast.py", line 2689, in apply
+    value = renpy.python.py_eval(expr)
+            ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "renpy/python.py", line 1308, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1301, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/screens.rpy", line 137, in <module>
+    background Image(tb, xalign=0.5, yalign=1.0)
+                     ^^                         
+NameError: name 'tb' is not defined
 
 Linux-6.8.0-124-generic-x86_64-with-glibc2.39 x86_64
 Ren'Py 8.5.3.26051504
-Petals of Rust 0.1
-Sat Jun 20 12:04:29 2026
+Dead Head Girl 0.1
+Sat Jun 20 13:00:58 2026

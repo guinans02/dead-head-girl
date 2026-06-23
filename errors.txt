@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 576: end of line expected.
-    phone "Hey, " + "[choice]" + " can we meet tonight? I have something to tell you."
-                  ^
+File "game/screens.rpy", line 159: style property show is not known.
+    show Image("gui/ines_textbox.png", xalign=0.5, yalign=1.0)
+        ^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Sat Jun 20 11:59:10 2026
+Sat Jun 20 13:23:46 2026

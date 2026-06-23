@@ -44,7 +44,7 @@ init python:
 # Declare characters used by this game.
 define strange = Character(
     name="Stranger",
-    callback=functools.partial(store.voice, character="mom")
+    callback=functools.partial(store.voice, character="default")
     )
 define wren = Character(
     name="Wren", 
@@ -62,13 +62,15 @@ define ines = Character(
 define kat = Character(
     name="Katriel", 
     color="#d161a2", #light magenta
-    kind=strange
+    kind=strange,
+    callback=functools.partial(store.voice, character="kat")
     )
 define mom = Character(
     name="Mom", 
     font="fonts/EBGaramond-VariableFont_wght.ttf", 
     what_font="fonts/EBGaramond-VariableFont_wght.ttf",
-    kind=strange
+    kind=strange,
+    callback=functools.partial(store.voice, character="mom")
     )
 define phone = Character(
     name="Phone", 
@@ -103,7 +105,7 @@ transform mv(pos0, pos1, spd=1.0):
 label start:
     stop music
     
-    #call debug
+    call debug
     #call wren_chooses
     call val_scenes
     call wren_research
@@ -111,6 +113,13 @@ label start:
     return
 
 label debug:
+    scene bg_thevoid
+    show wren_fg at center, max_y
+    kat "the quick brown fox jumped over the lazy dog."
+    strange "I agree wholeheartedly."
+    return
+
+label shoot:
     init python:
         def hide_target():
             global target_visible
@@ -174,7 +183,6 @@ label val_scenes:
     show wren_fg at max_y, mv(right, offscreenright, 0.5)
     ""
     hide mom_fg
-    stop music
 
     #walking to internship
     scene bg_thevoid
