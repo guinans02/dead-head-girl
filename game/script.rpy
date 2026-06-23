@@ -1,4 +1,5 @@
 ﻿#run this python code on startup
+#test
 init python:
     import os, random, functools
     #class for recording the individual data for each character
