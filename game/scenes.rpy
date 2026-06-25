@@ -2,30 +2,149 @@
 # The game starts here.
 label start:
     stop music
-    
-    call val_scenes_1
-    call garden_day1
-    call wren_work
-    call wren_research
+    call day1
     call end_demo
     return
 
-label wren_work:
+label day1:
+    call home_day1
+    call garden_day1
+    call work_day1
+    call wren_research
+    return
+
+label work_day1:
     scene office_bg
     show wren_fg at max_y, center
 
-    """
-    Wren walks into busy office. No one says hi to her. 
+    "The office is busy and no one says hi to her."
 
-    She overhears a conversation: maybe something about kink? And his disgusting it is? Office gossip? Trans phobia? Homophobia? It's not pleasant.
-    """
+    "When she sits down at her desk, she overhears a conversation."
+    cow1 "Hey, do you know why Liza's been out for the past few days?"
+    cow2 "Don't tell anyone else I said this, but it's because her daughter eloped with some {i}woman!{/i}"
+    cow1 "And I thought she was normal... How could she do that to her mother?"
+    wren "{i}Sigh.{\i}"
     wren "{i}It's a paycheck. I'm getting money for this.{\i}"
     wren "{i}They can't fix the office door?{\i}"
 
     "The hours pass by in a blur."
+    #blurry image
+    #wren aberrates chromatically
+    phone "{sc}Riiiiiiing{/sc}"
 
-    "*Wren leaves work*"
+    wren "(on the phone) yes ma'am. No sir. Let me check that with my supervisor."
+    cow1 "Hey um. Uhm. Hey you."
+    wren "Yes? 
+    cow1 "Mind swinging by the lab and dropping this package off?"
+    wren "I've never been…"
+    cow1 "Oh, it's gonna lab B, 2 doors down and a left."
+    cow1 "Careful! That lab equipments expensive!"
+    wren "{i}If it matters so much, why don't you take it then?{/i}"
 
+    "Wren sees someone familiar through a laboratory window."
+    wren "…Kat."
+    wren "That's got to be Kat. But what is she doing here? The last time I talked to her she seemed so serious on disavowing everything related to the medical world." 
+    wren "But that's unmistakably Kat."
+    kat "Wren…!?""
+    wren "(doesn't know but is happy Kat recognized her) Why are you here? You said you were going quit-"
+
+    "{i}Footsteps go by.{/i}" 
+
+    kat "{b}Shhh!{/b}"
+
+    "Katriel quickly pulls Wren into a nearby storage closet."
+
+    wren """{i}
+    The only sounds I can hear are our breathing. 
+
+    I've known Katriel since elementary school, back when mother still cared and everything was simpler.
+
+    Kat is still everything mom wanted me to be: long soft hair, pale flushed skin, always in a pretty skirt with lacy ruffles… 
+
+    And I adored her. She was my best friend, and I would have rather died than to not be her friend. She cared more about me than mother ever did. She's the only one who cares about me.
+
+    We were inseparable for years, until… 
+    """
+
+    #Flashback to school
+    kat "What's on your mind, Wren? You've been so quiet recently."
+    wren "I don't really know how to say it."
+    kat "What, did someone hurt you? Or did you hurt someone? That's okay. I'll do anything for you."
+    wren "Anything…?"
+
+    footsteps go by again 
+
+    kat "Shh."
+    "she leans in closer to W and covers W's face. They're very close together. after a pause"
+    kat "I think we're in the clear now. So, what's going on with you?"
+    wren "Um… so…"
+    wren "Are you… do you think…"
+    wren "What are your thoughts on uh if uh a… girl dates a girl…? 
+
+    kat "is silent for a few long seconds and shoves W away"
+    kat "…"
+    kat "I'm not a lesbian." 
+    wren "I- I'm not saying you are one, but I'm okay with it if you-"
+    kat "What the fuck are you talking about? "
+    wren "Wow you're mad I'm sorry I didn't realize-"
+    kat "Let's not do this. I have to go. I'll talk to you later. "
+
+    "She stopped responding to me after that. "
+
+    #snap back to reality
+    "{i}Katriel clears her throat.{/i}"
+
+    kat "It's been a while. "
+    wren "{i}Is this how it's going to be?{/i}"
+    wren "Yes, it has. What have you been up to? "
+    kat "I've mostly been supporting the research and development division at work. We're currently working on a new prototype with a different chemical formulation"
+    wren "Mhm… "
+    kat "I'm specifically looking into bioconjugation, which would make our process much more efficient. "
+    kat "Oh, for context, I recently went to a talk given by Dr. Bella Donna, the recent Violet Prize winner. She had an interesting perspective on the advances in identifying the glycosylation of nuclear proteins through treatment with an analogue containing an azide moiety. It's all rather exciting and—"
+    kat "I hope I'm not boring you. "
+    wren "It's interesting, go on. (mutters) I just thought you were done with this stuff."
+    kat "I've never said anything of the sort (smiles). I don't even know why you would bring that up."
+    wren "Yes… you're clearly doing well for yourself now."
+    kat "And how are you doing? Running papers I see… I'm working on publishing a paper in Nature, so we're alike in a sense."
+    kat "How about joining me on my walk home together after work? We can catch up."
+    wren "(mumbles) Whatever you want."
+    kat "What?"
+    wren "I said yes."
+    kat "Great! Let's get out of this stuffy room now. And don't mention whatever nonsense about me quitting. I don't do office rumors and I hate lying bitches. ^v^"
+
+    """~ fake pleasantry ~
+
+    They're walking now. K is holding W's bag for her. The streets are dimly lit by streetlights and silent other than the occasional buzz of cicadas. 
+    """
+    #we need cicada ambience stat
+
+    menu kat_one:
+        "Why did you ignore all of my messages after graduation?":
+            #+1 kat affection
+            $kat_obj.update_score(1)
+
+            kat "Whatever do you mean? "
+            wren "You know what I'm talking about. After that conversation, you just stopped talking to me entirely."
+            kat "I don't recall that."
+            wren "Does the word L-E-S-B-I-A-N mean anything to you? "
+            kat "Shut the fuck up, you don't know anything about me. "
+            wren "Make me. "
+            "{i} Katriel looks like she's about to say something and clenches her fists.{/i}"
+            
+        
+        "How's your parents' business? Still booming?":
+            kat "They're doing better than ever. My father's taking a trip to Shanghai to promote the business right now. "
+            wren "How lovely. "
+            kat "How are yours doing? Is your dad still gone and your mom still <crazy>? "
+            wren "… Fuck you."
+            kat "Ha. I bet you would like that, wouldn't you?"
+            "{i}Wren can't think of a proper reply.{/i}"
+
+    "{i}They reach their houses, which are within a block from each other.{/i}"
+
+    "{i}Kat smiles.{/i}"
+    kat "Bye, Wren. It was wonderful catching up with you!"
+    
     return
 
 label garden_day1:
@@ -163,7 +282,7 @@ label garden_day1:
     strange "Hey Ines, come say hi to the fresh meat."
     ines "aw, don't be mean Macy."
     ines "hi everyone! I'm Ines, the vice president of the art club here!"
-    ines "“Heya, I'm Ines, the vice president of the art club. You all came at the perfect time! I've just put the final touches on my painting! *spins around* Isn’t it pretty?"
+    ines "“Heya, I'm Ines, the vice president of the art club. You all came at the perfect time! I've just put the final touches on my painting! *spins around* Isn't it pretty?"
     strange - "The colors are gorgeous!"
     wren "(wasn't paying attention, but speaks in shock) Is that… a dead bird?"
     ines "Yes! What, do you think the shading is off?" 
@@ -211,21 +330,34 @@ label garden_day1:
         #if ines' opinion of wren increased during the garden scene
         if ines_obj.get_score() > ines_initial_score:
             #player chose "who, me?"
-            pass
+            wren "I've never looked like this." 
+            ines "yes you do. When I look at you. I can see what you keep hidden underneath that layer of grime"
+            wren "excuse me? I Literally showered this morning?" 
+            ines "not like that!"
+            ines "I mean to say, I see you."
+
         
         else:
             #player chose "stop making fun of me"
-            
-            
+            wren "you really weren't lying"
+            ines "I love showing people a new way of seeing the world. "
+            ines "it's stupid to not see the beauty in yourself." 
+            wren "don't call me stupid." 
+            ines "god, I just can't say the right thing." 
+            ines "I mean to say, I see you."
 
-    ines "You're-"
+            
+    #Phone alert
+    phone "{i}Bzzzzzzz.{/i}"
+    wren "And that's time. I'm out of here."
+    ines "What?!"
     ines "You're going to come back, right?"
     wren "I have to. I committed to the hours."
-    wren "And I need a good letter of recommendation."
-    ines "Okay! So you're not mad at me!! You'll work with me!!!"
+    wren "{i}And I need to do something that isn't staying at home.{/i}"
+    ines "I knew you didn't hate me! It'll be so much fun to work with you!!"
     wren "Work?"
-    ines "I'm trying to flesh out my portfolio... I need someone to pose for me?"
-    wren "Okay?"
+    ines "I want a really big piece for my portfolio, need someone to pose for me an oil painting?"
+    wren "Um?"
     ines "Oh..."
     wren "I gotta go now."
     ines "Fine! I'll do your part of the garden work! Just let me draw you! I promise, it'll be really easy!"
@@ -242,14 +374,14 @@ label garden_day1:
     wren """
         {i}I spent way longer than I intended.
 
-        I don't even have any time to lay down, I already have to go to my job.
+        I don't even have any time to lay down, why is my shift so soon...
 
-        I can't believe she said I was cute...{\i}
+        I can't believe she wants me to model...{\i}
         """
     return
 
 
-label val_scenes_1:
+label home_day1:
     #Intro scene, Wren at home
     scene bathroom #bathroom?
     play music house_music

@@ -106,6 +106,9 @@ define com = Character(
     #text_cps=0 #computer is always instant
     )
 
+define cow1 = Character(name="Coworker 1", kind=strange)
+define cow2 = Character(name="Coworker 2", kind=strange)
+
 #declare ambience audio channel
 define ambience = renpy.music.register_channel("ambience")
 
