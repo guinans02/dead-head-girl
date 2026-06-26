@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 91: Line is indented, but the preceding define statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    define user2 = Character(
-    ^
+File "game/scenes.rpy", line 365: expected ':' not found.
+    label ines_day1_post_choice
+                               ^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Tue Jun 23 15:44:27 2026
+Fri Jun 26 09:11:38 2026

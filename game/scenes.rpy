@@ -1,4 +1,3 @@
-
 # The game starts here.
 label start:
     stop music
@@ -13,6 +12,7 @@ label day1:
     call wren_research
     return
 
+# DAY ONE SCENES
 label work_day1:
     scene office_bg
     show wren_fg at max_y, center
@@ -34,32 +34,40 @@ label work_day1:
 
     wren "(on the phone) yes ma'am. No sir. Let me check that with my supervisor."
     cow1 "Hey um. Uhm. Hey you."
-    wren "Yes? 
+    wren "Yes? "
     cow1 "Mind swinging by the lab and dropping this package off?"
     wren "I've never been…"
     cow1 "Oh, it's gonna lab B, 2 doors down and a left."
     cow1 "Careful! That lab equipments expensive!"
     wren "{i}If it matters so much, why don't you take it then?{/i}"
 
+    #wren walks to the lab
+    show wren_fg at mv(center, offscreenright, spd=1.0), max_y
+
+    show wren_fg at mv(offscreenleft, left, spd=1.0), max_y
+
     "Wren sees someone familiar through a laboratory window."
+
+    show kat_fg at right, max_y
     wren "…Kat."
     wren "That's got to be Kat. But what is she doing here? The last time I talked to her she seemed so serious on disavowing everything related to the medical world." 
     wren "But that's unmistakably Kat."
-    kat "Wren…!?""
-    wren "(doesn't know but is happy Kat recognized her) Why are you here? You said you were going quit-"
+    kat "Wren…!?"
+    #wren happy
+    wren "Why are you here? You said you were going quit-"
 
-    "{i}Footsteps go by.{/i}" 
+    "{i}Footsteps go by.{/i}"
 
     kat "{b}Shhh!{/b}"
 
     "Katriel quickly pulls Wren into a nearby storage closet."
 
-    wren """{i}
-    The only sounds I can hear are our breathing. 
+    wren """
+    The only sounds I can hear are our breathing.
 
     I've known Katriel since elementary school, back when mother still cared and everything was simpler.
 
-    Kat is still everything mom wanted me to be: long soft hair, pale flushed skin, always in a pretty skirt with lacy ruffles… 
+    Kat is still everything mom wanted me to be/: long soft hair, pale flushed skin, always in a pretty skirt with lacy ruffles… 
 
     And I adored her. She was my best friend, and I would have rather died than to not be her friend. She cared more about me than mother ever did. She's the only one who cares about me.
 
@@ -72,14 +80,14 @@ label work_day1:
     kat "What, did someone hurt you? Or did you hurt someone? That's okay. I'll do anything for you."
     wren "Anything…?"
 
-    footsteps go by again 
+    #footsteps go by again 
 
     kat "Shh."
     "she leans in closer to W and covers W's face. They're very close together. after a pause"
     kat "I think we're in the clear now. So, what's going on with you?"
     wren "Um… so…"
     wren "Are you… do you think…"
-    wren "What are your thoughts on uh if uh a… girl dates a girl…? 
+    wren "What are your thoughts on uh if uh a… girl dates a girl…?"
 
     kat "is silent for a few long seconds and shoves W away"
     kat "…"
@@ -177,7 +185,7 @@ label garden_day1:
     "She's crushed it."
 
     #Sound effect, boss music?
-    show gs_dog at mv(offscreenright, right, 0.25), max_y #ines jumpscare
+    show ines_fg at mv(offscreenright, right, 0.25), max_y #ines jumpscare
     strange "I- {b}excuse me!? {/b}{sc}{b}What are you doing??{/b}{/sc}"
     wren "Nothing."
     strange "Seriously? You didn't even pick it... get out! Open hours are closed!"
@@ -265,18 +273,19 @@ label garden_day1:
     ines "Just sit here and pose."
 
     wren "I've just never done something like this before." 
-    I- You're a natural." 
+    ines "You're a natural." 
     "sketch sketch sketch scribble noise"
     #add sound effect
     wren "{i}I'm sweaty and my hearts running a mile a minute and I'm sure I have armpit stains and she's just staring at me.{/i}" 
-    wren "Should I move my hands or smile more?
-    I - "No, just stay still. Whatever I paint will turn out beautiful."
+    wren "Should I move my hands or smile more?"
+    ines "No, just stay still. Whatever I paint will turn out beautiful."
     wren "You've said that…" 
-    I - "Have I?" 
+    ines "Have I?" 
 
     
     label highschool_flashback:
-    """A non-transitioned Wren dressed much more shabbily than we know her. She's in a faceless crowd following a random upperclassman as they get a tour for a club fair. 
+    """
+    A non-transitioned Wren dressed much more shabbily than we know her. She's in a faceless crowd following a random upperclassman as they get a tour for a club fair. 
     upperclassman - and here is the art club room
     *"""
     strange "Hey Ines, come say hi to the fresh meat."
@@ -284,7 +293,8 @@ label garden_day1:
     ines "hi everyone! I'm Ines, the vice president of the art club here!"
     ines "“Heya, I'm Ines, the vice president of the art club. You all came at the perfect time! I've just put the final touches on my painting! *spins around* Isn't it pretty?"
     strange - "The colors are gorgeous!"
-    wren "(wasn't paying attention, but speaks in shock) Is that… a dead bird?"
+    #wren surprised
+    wren "Is that… a dead bird?"
     ines "Yes! What, do you think the shading is off?" 
     wren "Well… the subject matter is…"
     wren "{i}Wierd. If I went home with paint streaked clothes, or a painting like that… well, mother would certainly be hysterical.{/i}" 
@@ -330,23 +340,31 @@ label garden_day1:
         #if ines' opinion of wren increased during the garden scene
         if ines_obj.get_score() > ines_initial_score:
             #player chose "who, me?"
-            wren "I've never looked like this." 
-            ines "yes you do. When I look at you. I can see what you keep hidden underneath that layer of grime"
-            wren "excuse me? I Literally showered this morning?" 
-            ines "not like that!"
-            ines "I mean to say, I see you."
+            renpy.jump("ines_day1_good")
 
-        
         else:
             #player chose "stop making fun of me"
-            wren "you really weren't lying"
-            ines "I love showing people a new way of seeing the world. "
-            ines "it's stupid to not see the beauty in yourself." 
-            wren "don't call me stupid." 
-            ines "god, I just can't say the right thing." 
-            ines "I mean to say, I see you."
-
+            renpy.jump("ines_day1_bad")
             
+
+    label ines_day1_good:
+    wren "I've never looked like this." 
+    ines "yes you do. When I look at you. I can see what you keep hidden underneath that layer of grime"
+    wren "excuse me? I Literally showered this morning?" 
+    ines "not like that!"
+    ines "I mean to say, I see you."
+    jump ines_day1_post_choice
+
+
+    label ines_day1_bad:
+    wren "you really weren't lying"
+    ines "I love showing people a new way of seeing the world. "
+    ines "it's stupid to not see the beauty in yourself." 
+    wren "don't call me stupid." 
+    ines "god, I just can't say the right thing." 
+    ines "I mean to say, I see you."
+
+    label ines_day1_post_choice:
     #Phone alert
     phone "{i}Bzzzzzzz.{/i}"
     wren "And that's time. I'm out of here."
@@ -689,6 +707,9 @@ label katriel_meetup:
 
     call kat_end
     return
+
+# DAY TWO SCENES
+
 
 label end_demo:
     scene bg_thevoid

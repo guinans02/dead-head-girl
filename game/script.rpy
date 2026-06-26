@@ -120,8 +120,6 @@ define audio.research_music = "audio/music/johnny_ripper - gare du nord.mp3"
 
 #declare love interest objects
 default wren_obj = store.MC(wren)
-#no way this works
-#wren_obj.ch.callback = wren_obj.voice
 default ines_obj = store.MC(ines)
 default kat_obj = store.MC(kat)
 
