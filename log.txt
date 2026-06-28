@@ -1,46 +1,67 @@
-2026-06-26 16:30:08 UTC
-Linux-6.8.0-124-generic-x86_64-with-glibc2.39
+2026-06-01 20:47:53 UTC
+Linux-6.8.0-117-generic-x86_64-with-glibc2.39
 Ren'Py 8.5.3.26051504
 
-Early init took 34 ms
-Loading error handling took 12 ms
-Loading script took 127 ms
-Loading save slot metadata took 15 ms
+Early init took 49 ms
+Loading error handling took 75 ms
+Loading script took 300 ms
+Loading save slot metadata took 16 ms
 Loading persistent took 0 ms
-Running init code took 40 ms
-Loading analysis data took 2 ms
+Set script version to: None (alternate path)
+Running init code took 194 ms
+Loading analysis data took 4 ms
 Analyze and compile ATL took 2 ms
-Reloading save slot metadata took 3 ms
-Backing up script files to '/home/sophie/.renpy/backups/dead_head_girl':
-Dump and make backups took 1 ms
+Reloading save slot metadata took 1 ms
+Dump and make backups took 0 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 25 ms
+Initial gc took 45 ms
 DPI scale factor: 1.000000
 Creating interface object took 0 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 6 ms
-Save screen analysis took 8 ms
+Load screen analysis took 23 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
 Save pyanalysis took 0 ms
-Save bytecode took 17 ms
-Running _start took 1 ms
-Interface start took 250 ms
+Save bytecode took 0 ms
+usage: renpy.py [--savedir DIRECTORY] [--trace LEVEL] [--version] [--compile] [--compile-python] [--keep-orphan-rpyc]
+                [--errors-in-editor] [--safe-mode] [--warp WARP] [--json-dump FILE] [--json-dump-private] [--json-dump-common] [-h]
+                [--profile-display] [--debug-image-cache]
+                [basedir] [command]
 
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1500, 1000)
-swap interval: 1 frames
-Fullscreen mode.
-Vendor: 'Intel'
-Renderer: 'Mesa Intel(R) Iris(R) Xe Graphics (TGL GT2)'
-Version: '4.6 (Compatibility Profile) Mesa 25.2.8-0ubuntu0.24.04.2'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1500, 'current_h': 1000, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1280, 720) physical=(1500, 1000) drawable=(1500, 1000)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1280, 720) physical=(1500, 1000) drawable=(1500, 1000)
-Maximum texture size: 4096x4096
-Cleaning stores took 0 ms
-Load screen analysis took 12 ms
-Analyze screens took 0 ms
-Running _start took 2 ms
+The Ren'Py visual novel engine.
+
+positional arguments:
+  basedir              The base directory containing of the project to run. This defaults to the directory containing the Ren'Py
+                       executable.
+  command              The command to execute. Available commands are: add_from, android_build, compile, dialogue, director, distribute,
+                       extract_strings, generate_gui, get_projects_directory, gui_images, ios_create, ios_populate, lint, merge_strings,
+                       quit, rmpersistent, run, set_project, set_projects_directory, test, translate, update, update_old_game, web_build.
+                       Defaults to 'run'.
+
+options:
+  --savedir DIRECTORY  The directory where saves and persistent data are placed.
+  --trace LEVEL        The level of trace Ren'Py will log to trace.txt. (1=per-call, 2=per-line)
+  --version            Displays the version of Ren'Py in use.
+  --compile            Forces all .rpy scripts to be recompiled before proceeding.
+  --compile-python     Forces all Python to be recompiled, rather than read from game/cache/bytecode-*.rpyb.
+  --keep-orphan-rpyc   Prevents the compile command from deleting orphan rpyc files.
+  --errors-in-editor   Causes errors to open in a text editor.
+  --safe-mode          Forces Ren'Py to start in safe mode, allowing the player to configure graphics.
+  --warp WARP          This takes as an argument a filename:linenumber pair, and tries to warp to the statement before that line number.
+                       It is only valid in conjuction with the run command.
+  -h, --help           Displays this help message, then exits.
+
+JSON dump arguments:
+  Ren'Py can dump information about the game to a JSON file. These options let you select the file, and choose what is dumped.
+
+  --json-dump FILE     The name of the JSON file.
+  --json-dump-private  Include private names. (Names beginning with _.)
+  --json-dump-common   Include names defined in the common directory.
+
+run command arguments:
+  Runs the current project normally.
+
+  --profile-display    If present, Ren'Py will report the amount of time it takes to draw the screen.
+  --debug-image-cache  If present, Ren'Py will log information regarding the contents of the image cache.

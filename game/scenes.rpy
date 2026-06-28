@@ -15,7 +15,7 @@ label day1:
 # DAY ONE SCENES
 label work_day1:
     scene office_bg
-    show wren_fg at max_y, center
+    show wren_fg at max_y, center, fade
 
     "The office is busy and no one says hi to her."
 
@@ -43,7 +43,7 @@ label work_day1:
 
     #wren walks to the lab
     show wren_fg at mv(center, offscreenright, spd=1.0), max_y
-
+    scene lab
     show wren_fg at mv(offscreenleft, left, spd=1.0), max_y
 
     "Wren sees someone familiar through a laboratory window."
@@ -411,7 +411,7 @@ label home_day1:
     hide wren_fg
 
     #Wren talks to mom
-    scene house
+    scene living_room
     "*wren steps outside into-*"
 
     show mom_fg at left, max_y
@@ -429,13 +429,14 @@ label home_day1:
     wren "Yes mother. I'll do that mother."
 
     "Wren leaves the house."
-    hide mom_fg
+    scene houses
+    show wren_fg at max_y, mv(offscreenleft, center, 0.5)
 
     phone "{sc}bzzz{\sc}"
     phone "Reminder: volunteer at greenhouse"
 
     wren "{i}Why did they HAVE to assign me to the garden? Was there really nothing else?{/i}"
-    show wren_fg at max_y, mv(right, offscreenright, 0.5)
+    show wren_fg at max_y, mv(center, offscreenright, 0.5)
 
     return
 
@@ -456,7 +457,7 @@ label val_scenes_0:
     show wren_fg at max_y, center
     hide wren_fg
 
-    scene house
+    scene living_room
     "*wren steps outside into-*"
 
     show mom_fg at left, max_y

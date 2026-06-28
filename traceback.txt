@@ -1,38 +1,65 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
+Compiling ATL code at game/script.rpy:135
   File "game/scenes.rpy", line 4, in script call
     call day1
-  File "game/scenes.rpy", line 10, in script call
-    call garden_day1
-  File "game/scenes.rpy", line 337, in script
-    python:
-  File "game/scenes.rpy", line 341, in <module>
-    renpy.jump(ines_day1_good)
-               ^^^^^^^^^^^^^^ 
-NameError: name 'ines_day1_good' is not defined
+  File "game/scenes.rpy", line 9, in script call
+    call home_day1
+  File "game/scenes.rpy", line 433, in script
+    show wren at max_y, mv(offscreenleft, 0.5)
+Exception: Expression 'pos1' is not an ATL transform, and so cannot be included in an ATL interpolation.
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
   File "game/scenes.rpy", line 4, in script call
     call day1
-  File "game/scenes.rpy", line 10, in script call
-    call garden_day1
-  File "game/scenes.rpy", line 337, in script
-    python:
-  File "renpy/ast.py", line 1193, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1276, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/scenes.rpy", line 341, in <module>
-    renpy.jump(ines_day1_good)
-               ^^^^^^^^^^^^^^ 
-NameError: name 'ines_day1_good' is not defined
+  File "game/scenes.rpy", line 9, in script call
+    call home_day1
+  File "game/scenes.rpy", line 433, in script
+    show wren at max_y, mv(offscreenleft, 0.5)
+  File "renpy/ast.py", line 1364, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ast.py", line 730, in show_imspec
+    renpy.config.show(
+    ~~~~~~~~~~~~~~~~~^
+        name, at_list=at_list, layer=layer, what=expression, zorder=zorder, tag=tag, behind=behind, atl=atl
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "renpy/exports/displayexports.py", line 513, in show
+    sls.add(
+    ~~~~~~~^
+        layer,
+        ^^^^^^
+    ...<8 lines>...
+        transient=transient,
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "renpy/display/scenelists.py", line 464, in add
+    thing.visit_all(lambda d: None)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 451, in visit_all
+    for d in self.visit():
+             ~~~~~~~~~~^^ 
+  File "renpy/atl.py", line 739, in visit
+    block = self.compile()
+            ~~~~~~~~~~~~^^
+  File "renpy/atl.py", line 650, in compile
+    block = self.atl.compile(self.context)
+            ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "renpy/atl.py", line 847, in compile
+    statements = [i.compile(ctx) for i in self.statements]
+                  ~~~~~~~~~^^^^^                          
+  File "renpy/atl.py", line 1213, in compile
+    raise Exception(
+        "Expression %r is not an ATL transform, and so cannot be included in an ATL interpolation." % expr
+    )
+Exception: Expression 'pos1' is not an ATL transform, and so cannot be included in an ATL interpolation.
 
 Linux-6.8.0-124-generic-x86_64-with-glibc2.39 x86_64
 Ren'Py 8.5.3.26051504
 Dead Head Girl 0.1
-Fri Jun 26 09:22:50 2026
+Fri Jun 26 10:43:39 2026
