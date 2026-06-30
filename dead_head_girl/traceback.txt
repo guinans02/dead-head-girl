@@ -3,36 +3,24 @@
 While running game code:
   File "game/scenes.rpy", line 4, in script call
     call day1
-  File "game/scenes.rpy", line 11, in script call
-    call work_day1
-  File "game/scenes.rpy", line 20, in script
-    "The office is busy and no one says hi to her."
-  File "renpy/display/render.pyx", line 494, in renpy.display.render.render_screen
-  File "renpy/display/render.pyx", line 267, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 267, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 267, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 267, in renpy.display.render.render
-  File "renpy/display/accelerator.pyx", line 1020, in renpy.display.accelerator.RenderTransform.render
-  File "renpy/display/accelerator.pyx", line 439, in renpy.display.accelerator.RenderTransform.render_child
-  File "renpy/display/render.pyx", line 267, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 267, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 222, in renpy.display.render.render
-AttributeError: 'NoneType' object has no attribute 'style'
+  File "game/scenes.rpy", line 9, in script call
+    call home_day1
+  File "game/scenes.rpy", line 408, in script
+    wren "It's okay."
+  File "game/script.rpy", line 13, in voice
+    print(renpy.path)
+          ^^^^^^^^^^ 
+AttributeError: module 'renpy.exports' has no attribute 'path'
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
   File "game/scenes.rpy", line 4, in script call
     call day1
-  File "game/scenes.rpy", line 11, in script call
-    call work_day1
-  File "game/scenes.rpy", line 20, in script
-    "The office is busy and no one says hi to her."
+  File "game/scenes.rpy", line 9, in script call
+    call home_day1
+  File "game/scenes.rpy", line 408, in script
+    wren "It's okay."
   File "renpy/ast.py", line 2935, in execute
     Say.execute(self)
     ~~~~~~~~~~~^^^^^^
@@ -48,72 +36,18 @@ Traceback (most recent call last):
   File "renpy/character.py", line 1220, in do_display
     display_say(who, what, self.do_show, **display_args)
     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/character.py", line 902, in display_say
-    rv = renpy.ui.interact(mouse="say", type=type, roll_forward=roll_forward)
-         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ui.py", line 306, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2163, in interact
-    repeat, rv = self.interact_core(
-                 ~~~~~~~~~~~~~~~~~~^
-        preloads=preloads,
-        ^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        **kwargs,
-        ^^^^^^^^^
-    )
-    ^
-  File "renpy/display/core.py", line 2842, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 1279, in draw_screen
-    surftree = renpy.display.render.render_screen(
-               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        root_widget,
-        ^^^^^^^^^^^^
-        renpy.config.screen_width,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^
-        renpy.config.screen_height,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "renpy/display/render.pyx", line 494, in renpy.display.render.render_screen
-  File "renpy/display/render.pyx", line 267, in renpy.display.render.render
-  File "renpy/display/layout.py", line 896, in render
-    surf = render(child, width, height, cst, cat)
-           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 267, in renpy.display.render.render
-  File "renpy/display/layout.py", line 896, in render
-    surf = render(child, width, height, cst, cat)
-           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 267, in renpy.display.render.render
-  File "renpy/display/layout.py", line 896, in render
-    surf = render(child, width, height, cst, cat)
-           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 267, in renpy.display.render.render
-  File "renpy/display/transform.py", line 1093, in render
-    return RenderTransform(self).render(width, height, st, at)
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/accelerator.pyx", line 1020, in renpy.display.accelerator.RenderTransform.render
-  File "renpy/display/accelerator.pyx", line 439, in renpy.display.accelerator.RenderTransform.render_child
-  File "renpy/display/render.pyx", line 267, in renpy.display.render.render
-  File "renpy/display/transition.py", line 183, in render
-    renpy.display.render.render(self.transitions[-1], width, height, 0, 0)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 267, in renpy.display.render.render
-  File "renpy/display/transition.py", line 375, in render
-    top = render(self.new_widget, width, height, st, at)
-          ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 222, in renpy.display.render.render
-AttributeError: 'NoneType' object has no attribute 'style'
+  File "renpy/character.py", line 704, in display_say
+    callback("begin")
+    ~~~~~~~~^^^^^^^^^
+  File "renpy/character.py", line 90, in __call__
+    c(*args, **kwargs)
+    ~^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 13, in voice
+    print(renpy.path)
+          ^^^^^^^^^^ 
+AttributeError: module 'renpy.exports' has no attribute 'path'
 
 Linux-6.8.0-124-generic-x86_64-with-glibc2.39 x86_64
 Ren'Py 8.5.3.26051504
 Dead Head Girl 0.1
-Fri Jun 26 21:58:40 2026
+Sun Jun 28 17:33:59 2026

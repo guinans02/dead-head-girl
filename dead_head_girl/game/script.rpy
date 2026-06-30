@@ -1,5 +1,5 @@
 ﻿#run this python code on startup
-#test
+#test2
 init python:
     import os, random, functools
     #class for recording the individual data for each character
@@ -7,10 +7,11 @@ init python:
     #paraphrased from Bored Chris on youtube
     def voice(event, character="default", **kwargs):
         i = 0
-        voice_path="game/audio/voices/" + character + "/"
+        voice_path="dead_head_girl/game/audio/voices/" + character + "/"
         #make a list of the files in the voicepath directory that we're going to use
         #inconsistent because apparently python and renpy CWDs aren't consistent??
-        voices = ["audio/voices/" + character + "/" + fname for fname in os.listdir(voice_path)]
+        voices = [config.gamedir + "/audio/voices/" + character + "/" + fname for fname in os.listdir(voice_path)]
+        print(voices)
 
         num_voices =  len(voices)
         
