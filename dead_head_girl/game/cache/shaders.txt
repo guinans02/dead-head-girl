@@ -1,13 +1,13 @@
-renpy.ftl
-renpy.texture
-renpy.dissolve renpy.dissolve
-custom.chromatic_pro renpy.texture renpy.texture
-renpy.solid
 renpy.texture textshader.zoom renpy.texture textshader.zoom
+renpy.ftl
+renpy.geometry renpy.texture
+renpy.texture
+renpy.alpha renpy.geometry renpy.texture
+renpy.dissolve renpy.geometry
 renpy.alpha renpy.texture
 renpy.geometry renpy.texture textshader.zoom
-renpy.geometry renpy.texture
-custom.chromatic_pro renpy.geometry renpy.texture
-renpy.alpha renpy.geometry renpy.texture
 renpy.geometry renpy.solid
-renpy.dissolve renpy.geometry
+custom.chromatic_pro renpy.geometry renpy.texture
+custom.chromatic_pro renpy.texture renpy.texture
+renpy.solid
+renpy.dissolve renpy.dissolve

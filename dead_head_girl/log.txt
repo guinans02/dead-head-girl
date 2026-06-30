@@ -1,32 +1,33 @@
-2026-06-29 00:36:30 UTC
+2026-06-30 21:51:05 UTC
 Linux-6.8.0-124-generic-x86_64-with-glibc2.39
 Ren'Py 8.5.3.26051504
 
-Early init took 45 ms
-Loading error handling took 18 ms
-Loading script took 126 ms
-Loading save slot metadata took 20 ms
+Early init took 31 ms
+Loading error handling took 13 ms
+Loading script took 88 ms
+Loading save slot metadata took 17 ms
 Loading persistent took 0 ms
-Running init code took 51 ms
-Loading analysis data took 11 ms
-Analyze and compile ATL took 3 ms
-Reloading save slot metadata took 4 ms
+Set script version to: None (alternate path)
+Running init code took 35 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 3 ms
 Backing up script files to '/home/sophie/.renpy/backups/dead_head_girl':
 Dump and make backups took 1 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 36 ms
+Initial gc took 28 ms
 DPI scale factor: 1.000000
 Creating interface object took 0 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
 Load screen analysis took 0 ms
-Analyze screens took 9 ms
-Save screen analysis took 12 ms
-Save pyanalysis took 4 ms
-Save bytecode took 25 ms
+Analyze screens took 6 ms
+Save screen analysis took 7 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
 Running _start took 1 ms
-Interface start took 379 ms
+Interface start took 230 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1500, 1000)
@@ -45,47 +46,10 @@ Maximum texture size: 4096x4096
 ['/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_1.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_1.opus']
 ['/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_1.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_1.opus']
 ['/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_1.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_1.opus']
-Traceback (most recent call last):
-  File "lib/py3-linux-x86_64/../../renpy.py", line 304, in <module>
-    main()
-  File "lib/py3-linux-x86_64/../../renpy.py", line 300, in main
-    renpy.bootstrap.bootstrap(renpy_base)
-  File "renpy/bootstrap.py", line 401, in bootstrap
-    renpy.main.main()
-  File "renpy/main.py", line 596, in main
-    run(restart)
-  File "renpy/main.py", line 137, in run
-    renpy.execution.run_context(True)
-  File "renpy/execution.py", line 1050, in run_context
-    context.run()
-  File "game/scenes.rpy", line 4, in script call
-    call day1
-  File "game/scenes.rpy", line 9, in script call
-    call home_day1
-  File "game/scenes.rpy", line 408, in script
-    wren "It's okay."
-  File "renpy/ast.py", line 2935, in execute
-    Say.execute(self)
-  File "renpy/ast.py", line 994, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "renpy/exports/sayexports.py", line 129, in say
-    who(what, *args, **kwargs)
-  File "renpy/character.py", line 1565, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "renpy/character.py", line 1220, in do_display
-    display_say(who, what, self.do_show, **display_args)
-  File "renpy/character.py", line 902, in display_say
-    rv = renpy.ui.interact(mouse="say", type=type, roll_forward=roll_forward)
-  File "renpy/ui.py", line 306, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 2163, in interact
-    repeat, rv = self.interact_core(
-        preloads=preloads,
-    ...<4 lines>...
-        **kwargs,
-    )
-  File "renpy/display/core.py", line 3019, in interact_core
-    ev = self.event_wait()
-  File "renpy/display/core.py", line 1644, in event_wait
-    ev = pygame.event.wait()
-KeyboardInterrupt
+['/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_1.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_1.opus']
+['/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_1.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_1.opus']
+['/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_1.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_1.opus']
+['/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_1.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_1.opus']
+['/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_1.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_1.opus']
+['/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_1.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_1.opus']
+['/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_1.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_3.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_down_2.opus', '/home/sophie/bin/renpy-8.5.3-sdk/dead_head_girl/game/audio/voices/wren/wren_up_1.opus']
