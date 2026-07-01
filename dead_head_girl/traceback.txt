@@ -1,54 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-NameError: name 'comp' is not defined. Did you mean: 'com'?
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "game/scenes.rpy", line 4, in script call
-    call debug
-  File "game/scenes.rpy", line 10, in script call
-    call wren_returns_home_day1
-  File "game/scenes.rpy", line 752, in script
-    comp "{b}SISSYBOY GETS URETHRA POUNDED AND STRETCHED BY MISTRESSES ELECTRIFIED IRON ROD{/b}"
-Exception: Sayer 'comp' is not defined.
+  File "game/scenes.rpy", line 20, in script
+    python:
+  File "game/scenes.rpy", line 21, in <module>
+    if renpy.persistent.show_content_warning == False:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^          
+AttributeError: module 'renpy.persistent' has no attribute 'show_content_warning'
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "renpy/ast.py", line 625, in eval_who
-    return renpy.python.py_eval(who)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^
-  File "renpy/python.py", line 1308, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1301, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<none>", line 1, in <module>
-NameError: name 'comp' is not defined. Did you mean: 'com'?
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "game/scenes.rpy", line 4, in script call
-    call debug
-  File "game/scenes.rpy", line 10, in script call
-    call wren_returns_home_day1
-  File "game/scenes.rpy", line 752, in script
-    comp "{b}SISSYBOY GETS URETHRA POUNDED AND STRETCHED BY MISTRESSES ELECTRIFIED IRON ROD{/b}"
-  File "renpy/ast.py", line 2935, in execute
-    Say.execute(self)
-    ~~~~~~~~~~~^^^^^^
-  File "renpy/ast.py", line 956, in execute
-    who = eval_who(self.who, self.who_fast)
-          ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ast.py", line 627, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'comp' is not defined.
+  File "renpy/common/00start.rpy", line 332, in script call
+    call expression "before_main_menu"
+  File "game/scenes.rpy", line 20, in script
+    python:
+  File "renpy/ast.py", line 1193, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1276, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/scenes.rpy", line 21, in <module>
+    if renpy.persistent.show_content_warning == False:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^          
+AttributeError: module 'renpy.persistent' has no attribute 'show_content_warning'
 
 Linux-6.8.0-124-generic-x86_64-with-glibc2.39 x86_64
 Ren'Py 8.5.3.26051504
 Dead Head Girl 0.1
-Wed Jul  1 12:17:21 2026
+Wed Jul  1 13:55:22 2026

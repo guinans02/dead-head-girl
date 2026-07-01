@@ -7,7 +7,6 @@ label start:
     return
 
 label debug:
-    call wren_returns_home_day1
     return
 
 label day1:
@@ -16,6 +15,43 @@ label day1:
     call work_day1
     call wren_returns_home_day1
     return
+
+label before_main_menu:
+    python:
+        if persistent.show_content_warning == False:
+            pass
+        else:
+            renpy.call("content_warning")
+    
+    return
+
+label content_warning:
+    define narrator = nvl_narrator
+    nvl_narrator "{size=+20}{b}!! CONTENT WARNING !!"
+    nvl_narrator """
+        This game contains themes and depictions of:\n\n
+        - Harrasment;\n
+        - Bigotry (Homophobia and Transphobia);\n
+        - Sexual Assault and Rape;\n
+        - Murder and Assault;\n
+        - Suicide;\n
+        - Self Harm;\n
+        - Terminal Disease (in the form of the fictional Hanahaki Disease.)\n\n
+    As well as other NSFW (and potentially offensive) topics.\n
+    This game is unsuitable for minors. Please proceed with caution.\n\n
+    Take care of yourself.
+    """
+    nvl clear
+    menu:
+        "Proceed?"
+
+        "Yes.":
+            scene
+            nvl clear
+            return
+        "No.":
+            $renpy.quit()
+    $renpy.quit()
 
 # DAY ONE SCENES
 label work_day1:
@@ -744,8 +780,9 @@ label wren_returns_home_day1:
     wren "searches sounding on xxxflixx.net "
     com "{b}SISSYBOY GETS URETHRA POUNDED AND STRETCHED BY MISTRESSES ELECTRIFIED IRON ROD{/b}"
     wren "sigh. "
-    play sound zipper
+    play ambience zipper noloop
     #(Unzip sound, music change?)
+    "Wren unzips her pants."
     wren "ghn"
     wren "ack"
     wren "I need to open a window! "

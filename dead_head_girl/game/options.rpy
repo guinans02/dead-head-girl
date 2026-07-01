@@ -123,6 +123,10 @@ default preferences.text_cps = 35
 
 default preferences.afm_time = 15
 
+## Enables the safety warning at startup.
+
+default persistent.show_content_warning = True
+
 
 ## Save directory ##############################################################
 ##

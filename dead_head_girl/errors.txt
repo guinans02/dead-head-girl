@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scenes.rpy", line 365: expected ':' not found.
-    label ines_day1_post_choice
-                               ^
+File "game/scenes.rpy", line 22: 'return' outside function
+    "When she sits down at her desk, she overhears a conversation."
+                    ^^^^^^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Fri Jun 26 09:11:38 2026
+Wed Jul  1 13:52:57 2026

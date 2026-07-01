@@ -1,32 +1,31 @@
-2026-07-01 19:50:40 UTC
+2026-07-01 21:00:13 UTC
 Linux-6.8.0-124-generic-x86_64-with-glibc2.39
 Ren'Py 8.5.3.26051504
 
-Early init took 31 ms
+Early init took 30 ms
 Loading error handling took 13 ms
-Loading script took 130 ms
+Loading script took 75 ms
 Loading save slot metadata took 15 ms
 Loading persistent took 0 ms
-Running init code took 38 ms
-Loading analysis data took 2 ms
+Running init code took 35 ms
+Loading analysis data took 7 ms
 Analyze and compile ATL took 2 ms
 Reloading save slot metadata took 2 ms
-Backing up script files to '/home/sophie/.renpy/backups/dead_head_girl':
-Dump and make backups took 1 ms
+Dump and make backups took 0 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 26 ms
+Initial gc took 25 ms
 DPI scale factor: 1.000000
 Creating interface object took 0 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 7 ms
-Save screen analysis took 8 ms
+Load screen analysis took 12 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
 Save pyanalysis took 0 ms
-Save bytecode took 17 ms
+Save bytecode took 0 ms
 Running _start took 1 ms
-Interface start took 252 ms
+Interface start took 240 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1500, 1000)

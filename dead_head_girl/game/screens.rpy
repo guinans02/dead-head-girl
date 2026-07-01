@@ -832,9 +832,15 @@ screen preferences():
                     textbutton _("Unseen Text") action Preference("skip", "toggle")
                     textbutton _("After Choices") action Preference("after choices", "toggle")
                     textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
-
+                
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
                 ## added here, to add additional creator-defined preferences.
+                vbox:
+                    style_prefix "radio"
+                    label _("Content Warning")
+                    textbutton _("Enable") action SetVariable("persistent.show_content_warning", True)
+                    textbutton _("Disable") action SetVariable("persistent.show_content_warning", False)
+
 
 #begin language_picker
 

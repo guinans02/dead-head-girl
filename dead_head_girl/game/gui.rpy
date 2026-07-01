@@ -14,7 +14,6 @@ init python:
 ## Enable checks for invalid or unstable properties in screens or transforms
 define config.check_conflicting_properties = True
 
-
 ################################################################################
 ## GUI Configuration Variables
 ################################################################################
@@ -374,7 +373,8 @@ define gui.nvl_borders = Borders(0, 10, 0, 20)
 
 ## The height of an NVL-mode entry. Set this to None to have the entries
 ## dynamically adjust height.
-define gui.nvl_height = 115
+#define gui.nvl_height = 115
+define gui.nvl_height = None
 
 ## The spacing between NVL-mode entries when gui.nvl_height is None, and between
 ## NVL-mode entries and an NVL-mode menu.
