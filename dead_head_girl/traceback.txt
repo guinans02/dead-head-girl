@@ -1,57 +1,54 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
+NameError: name 'comp' is not defined. Did you mean: 'com'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
   File "game/scenes.rpy", line 4, in script call
-    call day1
-  File "game/scenes.rpy", line 9, in script call
-    call home_day1
-  File "game/scenes.rpy", line 408, in script
-    wren "It's okay."
-  File "game/script.rpy", line 16, in voice
-    voices = ["audio/voices/" + character + "/" + fname for fname in os.listdir(voice_path)]
-  File "game/script.rpy", line 16, in <lambda>
-    voices = ["audio/voices/" + character + "/" + fname for fname in os.listdir(voice_path)]
-                                                                     ~~~~~~~~~~^^^^^^^^^^^^ 
-FileNotFoundError: [Errno 2] No such file or directory: 'game/audio/voices/wren/'
+    call debug
+  File "game/scenes.rpy", line 10, in script call
+    call wren_returns_home_day1
+  File "game/scenes.rpy", line 752, in script
+    comp "{b}SISSYBOY GETS URETHRA POUNDED AND STRETCHED BY MISTRESSES ELECTRIFIED IRON ROD{/b}"
+Exception: Sayer 'comp' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
+  File "renpy/ast.py", line 625, in eval_who
+    return renpy.python.py_eval(who)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "renpy/python.py", line 1308, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1301, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<none>", line 1, in <module>
+NameError: name 'comp' is not defined. Did you mean: 'com'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
   File "game/scenes.rpy", line 4, in script call
-    call day1
-  File "game/scenes.rpy", line 9, in script call
-    call home_day1
-  File "game/scenes.rpy", line 408, in script
-    wren "It's okay."
+    call debug
+  File "game/scenes.rpy", line 10, in script call
+    call wren_returns_home_day1
+  File "game/scenes.rpy", line 752, in script
+    comp "{b}SISSYBOY GETS URETHRA POUNDED AND STRETCHED BY MISTRESSES ELECTRIFIED IRON ROD{/b}"
   File "renpy/ast.py", line 2935, in execute
     Say.execute(self)
     ~~~~~~~~~~~^^^^^^
-  File "renpy/ast.py", line 994, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/sayexports.py", line 129, in say
-    who(what, *args, **kwargs)
-    ~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/character.py", line 1565, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/character.py", line 1220, in do_display
-    display_say(who, what, self.do_show, **display_args)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/character.py", line 704, in display_say
-    callback("begin")
-    ~~~~~~~~^^^^^^^^^
-  File "renpy/character.py", line 90, in __call__
-    c(*args, **kwargs)
-    ~^^^^^^^^^^^^^^^^^
-  File "game/script.rpy", line 16, in voice
-    voices = ["audio/voices/" + character + "/" + fname for fname in os.listdir(voice_path)]
-  File "game/script.rpy", line 16, in <lambda>
-    voices = ["audio/voices/" + character + "/" + fname for fname in os.listdir(voice_path)]
-                                                                     ~~~~~~~~~~^^^^^^^^^^^^ 
-FileNotFoundError: [Errno 2] No such file or directory: 'game/audio/voices/wren/'
+  File "renpy/ast.py", line 956, in execute
+    who = eval_who(self.who, self.who_fast)
+          ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ast.py", line 627, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'comp' is not defined.
 
 Linux-6.8.0-124-generic-x86_64-with-glibc2.39 x86_64
 Ren'Py 8.5.3.26051504
 Dead Head Girl 0.1
-Wed Jul  1 09:37:48 2026
+Wed Jul  1 12:17:21 2026

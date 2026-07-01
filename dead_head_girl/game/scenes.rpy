@@ -1,15 +1,21 @@
 # The game starts here.
 label start:
     stop music
+    call debug
     call day1
     call end_demo
+    return
+
+label debug:
+    call wren_returns_home_day1
     return
 
 label day1:
     call home_day1
     call garden_day1
     call work_day1
-    call wren_research
+    #call wren_research
+    call wren_returns_home_day1
     return
 
 # DAY ONE SCENES
@@ -583,7 +589,7 @@ label wren_selfcare:
 label qte_fail:
     stop music
     scene wren_bedroom
-    show wren at max_y, center
+    show wren_fg at max_y, center
 
     wren """
         ...
@@ -707,6 +713,70 @@ label katriel_meetup:
 
     call kat_end
     return
+
+label wren_returns_home_day1:
+    scene living_room
+    show mom_fg at right, max_y
+    show wren_fg at mv(offscreenleft, left, 0.5), max_y
+
+    wren "Hello mother. "
+    mom "You're back late. Remember it's unsafe out there for a girl your age! "
+    wren "Yes mother. "
+    mom "You can be so forgetful. It makes me worry for you. "
+    wren "Maybe I should get it checked out by a doctor, do you think? "
+    mom "Darling, you just need to try harder. You can't stay a child forever. "
+    wren "Thank you. "
+    mom "…  "
+    wren "I'm going up to my room now, is that okay? "
+    mom "Get some rest, Wren. "
+
+    show wren_fg at mv(left, offscreenright, 1.0)
+    scene wren_bedroom
+    show wren_fg at mv(offscreenleft, center, 1.0), max_y
+
+    "Wren is in her room. "
+    wren "Ugh, it feels like something is crawling up my nose. "
+    #Screen effect, coughing up petal, nasty sound fx
+    wren "Ugh… "
+    wren "Did I loose a tooth from coughing that hard? "
+    wren "It's too soft for that. "
+    wren "It looks like a flower petal… "
+    wren "It's always me who has to deal with shit like this. "
+
+    call wren_research
+
+    stop music
+    wren "you know what? "
+    wren "no. "
+    wren "Googles xxxflixx.net"
+    wren "searches sounding on xxxflixx.net "
+    com "{b}SISSYBOY GETS URETHRA POUNDED AND STRETCHED BY MISTRESSES ELECTRIFIED IRON ROD{/b}"
+    wren "sigh. "
+    #(Unzip sound, music change?)
+    wren "ghn"
+    wren "ack"
+    wren "I need to open a window! "
+    wren "help..  "
+    "Wren coughs up a big bloody clump of flesh. "
+    wren "hnnnnn"
+    wren "thats so gross "
+    "Wren touches it. When she does, it unfolds into a lumpen mass of petals, a rough and ragged flower. "
+    wren "I don't know wether to flush you down the toilet, or just throw you out the window."
+    #(Lmao would it be funny to have a player choice here where it just changes the sound effect, u either have a toilet flush or a window sound) "
+    wren "But I can't afford this. "
+    wren "how am I.. Could I… ? "
+    wren "you know what? "
+    wren "I'm done with today."
+    #"Screen goes to black"
+    image black = "#000"
+    scene black
+    "Wren wakes up. Morning bird chirps and eerie humming music. She has blood stains on her mouth and petals in the bed. She slept terribly. "
+
+    #replace with bedroom bg?
+    image white = "#fff"
+    scene white
+    show wren_fg at center, max_y
+    wren "how desperate do I have to get? "
 
 # DAY TWO SCENES
 

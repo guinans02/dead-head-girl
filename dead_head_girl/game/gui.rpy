@@ -98,7 +98,8 @@ define gui.game_menu_background = "gui/main_menu.jpg"
 define gui.main_menu_background = "gui/main_menu.jpg"
 
 ## The color of the main menu.
-define gui.main_menu_text_color = "#ffaa22"
+#define gui.main_menu_text_color = "#ffaa22"
+define gui.main_menu_text_color = "#9fa3af"
 
 
 ## Dialogue ####################################################################
