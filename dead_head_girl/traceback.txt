@@ -7,9 +7,9 @@ While running game code:
     call home_day1
   File "game/scenes.rpy", line 408, in script
     wren "It's okay."
-  File "game/script.rpy", line 13, in voice
+  File "game/script.rpy", line 16, in voice
     voices = ["audio/voices/" + character + "/" + fname for fname in os.listdir(voice_path)]
-  File "game/script.rpy", line 13, in <lambda>
+  File "game/script.rpy", line 16, in <lambda>
     voices = ["audio/voices/" + character + "/" + fname for fname in os.listdir(voice_path)]
                                                                      ~~~~~~~~~~^^^^^^^^^^^^ 
 FileNotFoundError: [Errno 2] No such file or directory: 'game/audio/voices/wren/'
@@ -44,9 +44,9 @@ Traceback (most recent call last):
   File "renpy/character.py", line 90, in __call__
     c(*args, **kwargs)
     ~^^^^^^^^^^^^^^^^^
-  File "game/script.rpy", line 13, in voice
+  File "game/script.rpy", line 16, in voice
     voices = ["audio/voices/" + character + "/" + fname for fname in os.listdir(voice_path)]
-  File "game/script.rpy", line 13, in <lambda>
+  File "game/script.rpy", line 16, in <lambda>
     voices = ["audio/voices/" + character + "/" + fname for fname in os.listdir(voice_path)]
                                                                      ~~~~~~~~~~^^^^^^^^^^^^ 
 FileNotFoundError: [Errno 2] No such file or directory: 'game/audio/voices/wren/'
@@ -54,4 +54,4 @@ FileNotFoundError: [Errno 2] No such file or directory: 'game/audio/voices/wren/
 Linux-6.8.0-124-generic-x86_64-with-glibc2.39 x86_64
 Ren'Py 8.5.3.26051504
 Dead Head Girl 0.1
-Wed Jul  1 09:24:40 2026
+Wed Jul  1 09:37:48 2026

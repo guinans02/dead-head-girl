@@ -4,10 +4,13 @@ init python:
     import os, random, functools
     #class for recording the individual data for each character
 
+    # Change CWD to the project's game directory
+    os.chdir(renpy.config.gamedir)
+
     #paraphrased from Bored Chris on youtube
     def voice(event, character="default", **kwargs):
         i = 0
-        voice_path="game/audio/voices/" + character + "/"
+        voice_path="audio/voices/" + character + "/"
         #make a list of the files in the voicepath directory that we're going to use
         #inconsistent because apparently python and renpy CWDs aren't consistent??
         voices = ["audio/voices/" + character + "/" + fname for fname in os.listdir(voice_path)]
