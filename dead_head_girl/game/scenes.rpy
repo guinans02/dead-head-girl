@@ -1,7 +1,7 @@
 # The game starts here.
 label start:
     stop music
-    call debug
+    #call debug
     call day1
     call end_demo
     return
@@ -14,7 +14,6 @@ label day1:
     call home_day1
     call garden_day1
     call work_day1
-    #call wren_research
     call wren_returns_home_day1
     return
 
@@ -417,7 +416,7 @@ label home_day1:
     hide wren_fg
 
     #Wren talks to mom
-    scene house
+    scene living_room
     "*wren steps outside into-*"
 
     show mom_fg at left, max_y
@@ -462,7 +461,7 @@ label val_scenes_0:
     show wren_fg at max_y, center
     hide wren_fg
 
-    scene house
+    scene living_room
     "*wren steps outside into-*"
 
     show mom_fg at left, max_y
@@ -575,14 +574,6 @@ label wren_research:
     com "Submitting the form costs $30, with an expediency fee of $40, combined with a 25\% administrative surcharge due to high demand."
     stop music fadeout 2.0
     wren "{i}God, mother is going to kill me.{/i}"
-
-    return
-
-label wren_selfcare:
-    #wren tries to masturbate or something
-    wren "{i}Yawwwwwwn"
-    wren "Fuck this, I'm going to bed."
-    "Wren wakes up in"
 
     return
 
@@ -746,12 +737,14 @@ label wren_returns_home_day1:
     call wren_research
 
     stop music
+    play music wren_selfcare
     wren "you know what? "
     wren "no. "
     wren "Googles xxxflixx.net"
     wren "searches sounding on xxxflixx.net "
     com "{b}SISSYBOY GETS URETHRA POUNDED AND STRETCHED BY MISTRESSES ELECTRIFIED IRON ROD{/b}"
     wren "sigh. "
+    play sound zipper
     #(Unzip sound, music change?)
     wren "ghn"
     wren "ack"
@@ -766,6 +759,8 @@ label wren_returns_home_day1:
     wren "But I can't afford this. "
     wren "how am I.. Could I… ? "
     wren "you know what? "
+    stop music
+
     wren "I'm done with today."
     #"Screen goes to black"
     image black = "#000"
