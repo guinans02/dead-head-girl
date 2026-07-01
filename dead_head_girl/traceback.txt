@@ -1,0 +1,57 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/scenes.rpy", line 4, in script call
+    call day1
+  File "game/scenes.rpy", line 9, in script call
+    call home_day1
+  File "game/scenes.rpy", line 408, in script
+    wren "It's okay."
+  File "game/script.rpy", line 13, in voice
+    voices = ["audio/voices/" + character + "/" + fname for fname in os.listdir(voice_path)]
+  File "game/script.rpy", line 13, in <lambda>
+    voices = ["audio/voices/" + character + "/" + fname for fname in os.listdir(voice_path)]
+                                                                     ~~~~~~~~~~^^^^^^^^^^^^ 
+FileNotFoundError: [Errno 2] No such file or directory: 'game/audio/voices/wren/'
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "game/scenes.rpy", line 4, in script call
+    call day1
+  File "game/scenes.rpy", line 9, in script call
+    call home_day1
+  File "game/scenes.rpy", line 408, in script
+    wren "It's okay."
+  File "renpy/ast.py", line 2935, in execute
+    Say.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "renpy/ast.py", line 994, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/sayexports.py", line 129, in say
+    who(what, *args, **kwargs)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1565, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1220, in do_display
+    display_say(who, what, self.do_show, **display_args)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 704, in display_say
+    callback("begin")
+    ~~~~~~~~^^^^^^^^^
+  File "renpy/character.py", line 90, in __call__
+    c(*args, **kwargs)
+    ~^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 13, in voice
+    voices = ["audio/voices/" + character + "/" + fname for fname in os.listdir(voice_path)]
+  File "game/script.rpy", line 13, in <lambda>
+    voices = ["audio/voices/" + character + "/" + fname for fname in os.listdir(voice_path)]
+                                                                     ~~~~~~~~~~^^^^^^^^^^^^ 
+FileNotFoundError: [Errno 2] No such file or directory: 'game/audio/voices/wren/'
+
+Linux-6.8.0-124-generic-x86_64-with-glibc2.39 x86_64
+Ren'Py 8.5.3.26051504
+Dead Head Girl 0.1
+Wed Jul  1 09:24:40 2026
