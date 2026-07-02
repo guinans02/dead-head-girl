@@ -593,18 +593,30 @@ screen about():
 
             hbox:
                 spacing 15
-                text _("Writing") style "about_small"
+                text _("{color=#fd9855}Writing") style "about_small"
                 text _("Valentine Urquiza")
             
             hbox:
                 spacing 15
-                text _("Coding") style "about_small"
+                text _("{color=#ffffff}Coding") style "about_small"
                 text _("Sophie Guinan")
             
             hbox:
                 spacing 15
-                text _("Sprite Artist") style "about_small"
+                text _("{color=#d161a2}Sprite Artist") style "about_small"
                 text _("G")
+                text _("{a=https://phantomraccoonn.carrd.co/}{color=#99f}(Portfolio){/a}")
+    
+            hbox:
+                spacing 15
+                text _("Concept") style "about_small"
+                text _("V")
+                
+            hbox:
+                spacing 15
+                text _("Additional Help") style "about_small"
+                text _("Barley")
+            
 
             # hbox:
             #     spacing 15
@@ -648,7 +660,7 @@ screen about():
             #     text _("mikey (ATP Projects)")
 
 
-            text _("\nMade with {a=https://www.renpy.org/}{color=#99f}Ren'Py{/color]{/a} [renpy.version_only]")
+            text _("\nMade with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only]")
             null height 15
             text _("[renpy.license!t]") size 20
 
