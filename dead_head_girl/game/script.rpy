@@ -129,6 +129,35 @@ default wren_obj = store.MC(wren)
 default ines_obj = store.MC(ines)
 default kat_obj = store.MC(kat)
 
+## declare character image tags and attributes
+
+## ines
+image ines blush two            = "images/ines_fgs/ines_blush_2.png"
+image ines blush three          = "images/ines_fgs/ines_blush_3.png"
+image ines blush one            = "images/ines_fgs/ines_blush.png"
+image ines fanatic one          = "images/ines_fgs/ines_fanatic.png"
+image ines laugh two            = "images/ines_fgs/ines_laugh_2.png"
+image ines laugh one            = "images/ines_fgs/ines_laugh.png"
+image ines pose_two woah        = "images/ines_fgs/ines_pose2_:0.png"
+image ines pose_two fan         = "images/ines_fgs/ines_pose2_fanatic.png"
+image ines pose_two frustrated  = "images/ines_fgs/ines_pose2_frustrated.png"
+image ines pose_two grimace     = "images/ines_fgs/ines_pose2_grimace.png"
+image ines pose_two laugh       = "images/ines_fgs/ines_pose2_laugh.png"
+image ines pose_two neutralsad  = "images/ines_fgs/ines_pose2_neutralsad.png"
+image ines pose_two pain two    = "images/ines_fgs/ines_pose2_pain2.png"
+image ines pose_two pain one    = "images/ines_fgs/ines_pose2_pain.png"
+image ines pose_two pensive two = "images/ines_fgs/ines_pose2_pensive2.png"
+image ines pose_two pensive one = "images/ines_fgs/ines_pose2_pensive.png"
+image ines pose_two             = "images/ines_fgs/ines_pose2.png"
+image ines pose_two sad         = "images/ines_fgs/ines_pose2_sad.png"
+image ines pose_two shock       = "images/ines_fgs/ines_pose2_shock.png"
+image ines pose_two smile       = "images/ines_fgs/ines_pose2_smile.png"
+image ines pose_two worried     = "images/ines_fgs/ines_pose2_worried.png"
+image ines mlem                 = "images/ines_fgs/ines_:P.png"
+image ines smile two            = "images/ines_fgs/ines_smile_2.png"
+image ines smile one            = "images/ines_fgs/ines_smile.png"
+image ines worried              = "images/ines_fgs/ines_worried.png"
+
 #transform for all foreground images to make them the same height
 transform max_y:
     ysize(600)

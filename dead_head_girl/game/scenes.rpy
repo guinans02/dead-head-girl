@@ -1,4 +1,11 @@
-# The game starts here.
+## Content Warning
+label before_main_menu:
+    python:
+        if persistent.show_content_warning == True:
+            renpy.call("content_warning")
+    return
+
+## The game starts here.
 label start:
     stop music
     #call debug
@@ -7,6 +14,7 @@ label start:
     return
 
 label debug:
+    call garden_day1
     return
 
 label day1:
@@ -16,17 +24,7 @@ label day1:
     call wren_returns_home_day1
     return
 
-label before_main_menu:
-    python:
-        if persistent.show_content_warning == False:
-            pass
-        else:
-            renpy.call("content_warning")
-    
-    return
-
 label content_warning:
-    define narrator = nvl_narrator
     nvl_narrator "{size=+20}{b}!! CONTENT WARNING !!"
     nvl_narrator """
         This game contains themes and depictions of:\n\n
@@ -226,21 +224,29 @@ label garden_day1:
     "She's crushed it."
 
     #Sound effect, boss music?
-    show ines_fg at mv(offscreenright, right, 0.25), max_y #ines jumpscare
+    #show ines_fg at mv(offscreenright, right, 0.25), max_y #ines jumpscare
+    show ines pose_two frustrated at mv(offscreenright, right, 0.25), max_y #ines jumpscare
     strange "I- {b}excuse me!? {/b}{sc}{b}What are you doing??{/b}{/sc}"
     wren "Nothing."
     strange "Seriously? You didn't even pick it... get out! Open hours are closed!"
     wren "I was supposed to volunteer here..."
-    #ines is introduced ?
+    
+    show ines pose_two shock
     ines "Oh. OH!"
     ines "Sorry! I'm Ines, sorry for yelling."
+
+    show ines smile one
     wren "I'm Wren. Thanks."
     ines "Welcome to the Local Gardens! So, how'd you get started with us here?"
     wren "It's the closest to my house that accepts volunteers."
     ines "Oh. Okay. Do you have any experience gardening?"
     wren "No."
+
+    show ines worried
     ines "Haha ummmm that's okay, I'll teach you! Do you have a favorite plant?"
     wren "No." #Girlboss behavior right there
+
+    show ines fanatic one
     ines "That's..." 
     # Ines nervous smile
     ines "...so..."
@@ -270,6 +276,7 @@ label garden_day1:
     label who_me:
     wren "Who, me?"
     "*Ines blushes."
+    show ines pose_two shock
     ines "Yes, you!"
     wren """
         ...
@@ -278,6 +285,8 @@ label garden_day1:
 
         wh-
         """
+    
+    show ines pose_two smile
     ines "Umh! Okay! Wow! Well, let's take care of the gardenias, they need some pruning before they flower."
     "Wren follows Ines to a gardenia bush, covered in buds and a few partial blooms. "
     ines "I like to pinch off the smaller buds, so I can get a few really big blooms."
@@ -294,18 +303,23 @@ label garden_day1:
 
     label no_fun:
     wren "I get it already. Stop making fun of me."
+    show ines pose_two frustrated
     ines "I'm not making fun of you!"
     wren "How do I know that?"
     ines "First of all, I don't even know you."
     wren "{i}Wow.{/i}"
+    show ines pose_two fan
     ines "Second, look at your face, your hair!"
     ines "...your eyebrows. You'd look so lovely in Matisse's style."
     wren "Why matisse..."
+    show ines pose_two woah
     ines "Ugh, and she knows the Fauvists! Actually-"
+    show ines pose_two smile
     ines "Could I draw you?"
 
     label post_ines_one:
     #Transition back to normal garden 
+    show ines smile two
     wren "what? Why?"  
     ines "I'm taking a portraiture class and I'm behind."
     ines "Well, actually I'm not, but my portfolio makes me want to vomit and I need new pieces." 
@@ -353,17 +367,19 @@ label garden_day1:
     wren "Maybe, I don't know"
     ines "You're so weird."
     ines "Sorry."
+    show ines worried
     ines "Do you really hate my garden that bad?"
     wren "No- I mean yes."
+    show ines pose_two shock
     ines "What?!"
     wren "It's not {i}your{\i} garden. It's pretty much any garden."
+    show ines pose_two sad
     ines "Why?"
     wren "I stepped in an underground wasps nest at the botanical garden once. It doesn't really matter."
-    ines """
-        If you say so.
-
-        Can you keep that expression, just like that?
-        """
+    show ines pose_two neutralsad
+    ines "If you say so."
+    show ines smile one
+    ines "Can you keep that expression, just like that?"
     wren "Okay."
     #Drawing done
     "Wren looks at the finished drawing."
@@ -373,6 +389,7 @@ label garden_day1:
         It looks like me if I was in love...{\i}
         """
     "{i}However, the proportions are a little off, and the color makes Wren look like she's not a living body.{/i}"
+    show ines laugh two
     ines "So!!! What do you think?!"
     wren "It's..."
 
@@ -390,43 +407,57 @@ label garden_day1:
 
     label ines_day1_good:
     wren "I've never looked like this." 
+    show ines fanatic one
     ines "yes you do. When I look at you. I can see what you keep hidden underneath that layer of grime"
     wren "excuse me? I Literally showered this morning?" 
+    show ines laugh one
     ines "not like that!"
+    show ines blush two
     ines "I mean to say, I see you."
     jump ines_day1_post_choice
 
-
     label ines_day1_bad:
     wren "you really weren't lying"
+    show ines fanatic one
     ines "I love showing people a new way of seeing the world. "
     ines "it's stupid to not see the beauty in yourself." 
+    show ines pose_two frustrated
     wren "don't call me stupid." 
-    ines "god, I just can't say the right thing." 
+    ines "god, I just can't say the right thing."
+    show ines pose_two neutralsad
     ines "I mean to say, I see you."
 
     label ines_day1_post_choice:
     #Phone alert
-    phone "{i}Bzzzzzzz.{/i}"
+    phone "{i}{sc}Bzzzzzzz."
     wren "And that's time. I'm out of here."
+    show ines pose_two shock
     ines "What?!"
+    show ines pose_two worried
     ines "You're going to come back, right?"
     wren "I have to. I committed to the hours."
     wren "{i}And I need to do something that isn't staying at home.{/i}"
+    show ines pose_two laugh
     ines "I knew you didn't hate me! It'll be so much fun to work with you!!"
     wren "Work?"
+    show ines pose_two smile
     ines "I want a really big piece for my portfolio, need someone to pose for me an oil painting?"
     wren "Um?"
+    show ines pose_two worried
     ines "Oh..."
     wren "I gotta go now."
+    show ines pose_two pain one
     ines "Fine! I'll do your part of the garden work! Just let me draw you! I promise, it'll be really easy!"
     wren "Whatever."
+    show ines pose_two shock
     ines "That's a yes?!"
     wren "Sure."
+    show ines pose_two laugh
     ines "You're so super amazing awesome Wren!"
 
     stop music
     stop ambience
+    show ines blush three
     "Ines impulsively hugs wren who stiffens, turns red, and feels a twisting in her chest."
     #cut to the visual of a flower stem sprouting in a body
 

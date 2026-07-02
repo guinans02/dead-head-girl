@@ -1,32 +1,49 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenes.rpy", line 20, in script
-    python:
-  File "game/scenes.rpy", line 21, in <module>
-    if renpy.persistent.show_content_warning == False:
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^          
-AttributeError: module 'renpy.persistent' has no attribute 'show_content_warning'
+  File "game/scenes.rpy", line 11, in script call
+    call debug
+  File "game/scenes.rpy", line 17, in script call
+    call garden_day1
+  File "game/scenes.rpy", line 234, in script
+    show ines pose_two shocked at right, max_y
+Exception: Image 'ines pose_two' does not accept attributes 'shocked'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "renpy/common/00start.rpy", line 332, in script call
-    call expression "before_main_menu"
-  File "game/scenes.rpy", line 20, in script
-    python:
-  File "renpy/ast.py", line 1193, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1276, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/scenes.rpy", line 21, in <module>
-    if renpy.persistent.show_content_warning == False:
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^          
-AttributeError: module 'renpy.persistent' has no attribute 'show_content_warning'
+  File "game/scenes.rpy", line 11, in script call
+    call debug
+  File "game/scenes.rpy", line 17, in script call
+    call garden_day1
+  File "game/scenes.rpy", line 234, in script
+    show ines pose_two shocked at right, max_y
+  File "renpy/ast.py", line 1364, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ast.py", line 730, in show_imspec
+    renpy.config.show(
+    ~~~~~~~~~~~~~~~~~^
+        name, at_list=at_list, layer=layer, what=expression, zorder=zorder, tag=tag, behind=behind, atl=atl
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "renpy/exports/displayexports.py", line 486, in show
+    if not base.find_target() and renpy.config.missing_show:
+           ~~~~~~~~~~~~~~~~^^                               
+  File "renpy/display/image.py", line 444, in find_target
+    self.target = target._duplicate(a)
+                  ~~~~~~~~~~~~~~~~~^^^
+  File "renpy/display/displayable.py", line 278, in _duplicate
+    args.extraneous()
+    ~~~~~~~~~~~~~~~^^
+  File "renpy/display/displayable.py", line 118, in extraneous
+    raise Exception(
+    ...<4 lines>...
+    )
+Exception: Image 'ines pose_two' does not accept attributes 'shocked'.
 
 Linux-6.8.0-124-generic-x86_64-with-glibc2.39 x86_64
 Ren'Py 8.5.3.26051504
 Dead Head Girl 0.1
-Wed Jul  1 13:55:22 2026
+Thu Jul  2 10:19:48 2026

@@ -1,31 +1,32 @@
-2026-07-01 21:00:13 UTC
+2026-07-02 18:09:16 UTC
 Linux-6.8.0-124-generic-x86_64-with-glibc2.39
 Ren'Py 8.5.3.26051504
 
-Early init took 30 ms
+Early init took 32 ms
 Loading error handling took 13 ms
-Loading script took 75 ms
+Loading script took 138 ms
 Loading save slot metadata took 15 ms
 Loading persistent took 0 ms
-Running init code took 35 ms
-Loading analysis data took 7 ms
+Running init code took 39 ms
+Loading analysis data took 2 ms
 Analyze and compile ATL took 2 ms
 Reloading save slot metadata took 2 ms
-Dump and make backups took 0 ms
+Backing up script files to '/home/sophie/.renpy/backups/dead_head_girl':
+Dump and make backups took 1 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 25 ms
+Initial gc took 26 ms
 DPI scale factor: 1.000000
 Creating interface object took 0 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
-Load screen analysis took 12 ms
-Analyze screens took 1 ms
-Save screen analysis took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 11 ms
+Save screen analysis took 9 ms
 Save pyanalysis took 0 ms
-Save bytecode took 0 ms
+Save bytecode took 17 ms
 Running _start took 1 ms
-Interface start took 240 ms
+Interface start took 249 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1500, 1000)
@@ -39,3 +40,14 @@ Screen sizes: virtual=(1280, 720) physical=(1500, 1000) drawable=(1500, 1000)
 Maximum texture size: 4096x4096
 Screen sizes: virtual=(1280, 720) physical=(1500, 1000) drawable=(1500, 1000)
 Maximum texture size: 4096x4096
+Requested resize to 1280x720, fullscreen=0, maximized=0
+Screen sizes: virtual=(1280, 720) physical=(1125, 726) drawable=(1125, 726)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1280, 683) drawable=(1280, 683)
+Maximum texture size: 4096x4096
+Resize event: <Event(65533-VIDEORESIZE h=683, mod=0, size=(1280, 683), w=1280)>
+Screen sizes: virtual=(1280, 720) physical=(1280, 683) drawable=(1280, 683)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1500, 931) drawable=(1500, 931)
+Maximum texture size: 4096x4096
+Resize event: <Event(65533-VIDEORESIZE h=931, mod=0, size=(1500, 931), w=1500)>

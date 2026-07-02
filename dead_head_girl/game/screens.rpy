@@ -600,6 +600,11 @@ screen about():
                 spacing 15
                 text _("Coding") style "about_small"
                 text _("Sophie Guinan")
+            
+            hbox:
+                spacing 15
+                text _("Sprite Artist") style "about_small"
+                text _("G")
 
             # hbox:
             #     spacing 15
@@ -643,9 +648,12 @@ screen about():
             #     text _("mikey (ATP Projects)")
 
 
-            text _("\nMade with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only]")
+            text _("\nMade with {a=https://www.renpy.org/}{color=#99f}Ren'Py{/color]{/a} [renpy.version_only]")
             null height 15
             text _("[renpy.license!t]") size 20
+
+            #add link to media licenses here
+            text _("\nThe persons and events in this game are fictitious. Any similarity to actual persons or events is unintentional.") size 15
 
 
 style about_label is gui_label

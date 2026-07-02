@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scenes.rpy", line 22: 'return' outside function
-    "When she sits down at her desk, she overhears a conversation."
-                    ^^^^^^
+File "game/scenes.rpy", line 382: end of line expected.
+    ines "Can you keep that expression, just like that?
+                                                                  ^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Wed Jul  1 13:52:57 2026
+Thu Jul  2 10:45:42 2026
