@@ -8,7 +8,7 @@ label before_main_menu:
 ## The game starts here.
 label start:
     stop music
-    #call debug
+    call debug
     call day1
     call end_demo
     return
@@ -89,80 +89,114 @@ label work_day1:
 
     show kat_fg at right, max_y
     wren "…Kat."
-    wren "That's got to be Kat. But what is she doing here? The last time I talked to her she seemed so serious on disavowing everything related to the medical world." 
+    wren "No way that's Kat. She was so serious about never going into medicine." 
+    wren "\"I disavow the lab forever!\" and she really believed herself when she said that."
     wren "But that's unmistakably Kat."
     kat "Wren…!?"
     #wren happy
-    wren "Why are you here? You said you were going quit-"
+    wren "Why are you here?"
+    wren "{i}It's been years and you look so different."
 
-    "{i}Footsteps go by.{/i}"
-
-    kat "{b}Shhh!{/b}"
-
-    "Katriel quickly pulls Wren into a nearby storage closet."
-
-    wren """
-    The only sounds I can hear are our breathing.
-
-    I've known Katriel since elementary school, back when mother still cared and everything was simpler.
-
-    Kat is still everything mom wanted me to be/: long soft hair, pale flushed skin, always in a pretty skirt with lacy ruffles… 
-
-    And I adored her. She was my best friend, and I would have rather died than to not be her friend. She cared more about me than mother ever did. She's the only one who cares about me.
-
-    We were inseparable for years, until… 
-    """
-
-    #Flashback to school
-    kat "What's on your mind, Wren? You've been so quiet recently."
+    scene school_library
+    show wren_fg at max_y, left
+    show kat_fg at max_y, right
+    # (Cut to flashback to school library ) 
+    wren "Come over to my place!"
+    kat "No, your mom's weird. "
+    wren "Okay, then I'll come over to yours. "
+    kat "I told my mom you're a girl now and she doesn't want you in the house. She doesn't want me to get ideas. "
+    # (For context, Wren told Kat she was trans long before she was out at school. She came out freshman year to most people, but figured out she was trans in middle school. She only told Kat and her mother.) "
+    wren "Well that fuckin sucks. "
+    kat "Yeah, it fuckin does. "
+    wren "let's just stay here then ? "
+    kat "fine. Just stop stealing my makeup. If you want it you can just ask. "
+    wren "you're so much prettier than me. "
+    kat "LIE. "
+    wren "Well, my mother at least seems to think so. "
+    kat "Ugh, but lace is so itchy. And it doesn't matter when it gets in the way of being a chef. "
+    wren "(internally) I can't keep up with all her career changes. Last week it was an aeronautics engineer. "
+    wren "I'm so jealous."
+    kat "Well, if you want to be pretty so bad, lets just do it. "
+    wren "what?" 
+    # scenery change supply closet 
+    # A moment of silence between the two of them. 
+    wren "you shouldn't do this kinda thing."
+    kat "why not. If you want it, you should get it."
+    wren "I guess."
+    kat "You're lucky I'm here to teach you. My mom is so mean about this sort of thing."
+    wren "…"
+    kat "It's not like I even really wanted those shorts anyways."
+    kat "she says I do it just to piss her off."
+    kat "thats such bullshit, dont you agree?"
+    wren "…"
+    kat "Whats with you. You normally love this kinda thing. "
     wren "I don't really know how to say it."
-    kat "What, did someone hurt you? Or did you hurt someone? That's okay. I'll do anything for you."
-    wren "Anything…?"
-
-    #footsteps go by again 
-
-    kat "Shh."
-    "she leans in closer to W and covers W's face. They're very close together. after a pause"
-    kat "I think we're in the clear now. So, what's going on with you?"
+    kat "What, did someone hurt you? Or did you hurt someone? That's okay, it doesn't matter to me. "
+    kat "Ill go to hell if I need to. "
+    wren "( internally) you're so dramatic. "
+    wren "what if"
+    # foot step sound effect "
+    kat "Shh. "
+    # K gets close to w "
+    kat "ok, good. It's clear. . So, what's going on with you?"
     wren "Um… so…"
     wren "Are you… do you think…"
-    wren "What are your thoughts on uh if uh a… girl dates a girl…?"
-
-    kat "is silent for a few long seconds and shoves W away"
+    wren "what would you say if two girls dated?"
+    wren "I kind of have been thinking about it. "
+    wren "We make a good pair, right? "
+    # music stops "
     kat "…"
-    kat "I'm not a lesbian." 
-    wren "I- I'm not saying you are one, but I'm okay with it if you-"
+    kat "I'm not a lesbian. "
+    wren "I- I'm not saying you are one, but hear me out-"
     kat "What the fuck are you talking about? "
     wren "Wow you're mad I'm sorry I didn't realize-"
-    kat "Let's not do this. I have to go. I'll talk to you later. "
-
-    "She stopped responding to me after that. "
+    kat "Let's not do this right now. I have to go. I'll talk to you later. "
+    wren "Kat. "
+    # music starts 
+    # Kat leaves, wren is alone in closet 
+    # a beat
+    # flash back over bg change to lab 
 
     #snap back to reality
-    "{i}Katriel clears her throat.{/i}"
 
     kat "It's been a while. "
-    wren "{i}Is this how it's going to be?{/i}"
-    wren "Yes, it has. What have you been up to? "
-    kat "I've mostly been supporting the research and development division at work. We're currently working on a new prototype with a different chemical formulation"
+    wren "{i}That's all you have to say. Is this how it's going to be with you? "
+    wren "Yes, it has. "
+    kat "so I'm a lab tech now, mostly been supporting the research and development division."
     wren "Mhm… "
-    kat "I'm specifically looking into bioconjugation, which would make our process much more efficient. "
-    kat "Oh, for context, I recently went to a talk given by Dr. Bella Donna, the recent Violet Prize winner. She had an interesting perspective on the advances in identifying the glycosylation of nuclear proteins through treatment with an analogue containing an azide moiety. It's all rather exciting and—"
+    kat "They're trusting me with a lot of responsibility.I recently went to a talk given by Dr. Grice, I'm so lucky to work under such a prestigious director. Running the bio- assays is- "
     kat "I hope I'm not boring you. "
-    wren "It's interesting, go on. (mutters) I just thought you were done with this stuff."
-    kat "I've never said anything of the sort (smiles). I don't even know why you would bring that up."
+    wren "It's interesting, go on. "
+    kat "no, I don't think so. "
+    wren "{size=5}I just thought you were done with this stuff."
+    kat "what? Ive never said anything like that "
+    wren "isn't this directly in the medical corporate culture you hated? "
+    kat "I don't even know why you would bring that up."
+    kat "I'm not gonna apologize for my success. "
     wren "Yes… you're clearly doing well for yourself now."
-    kat "And how are you doing? Running papers I see… I'm working on publishing a paper in Nature, so we're alike in a sense."
-    kat "How about joining me on my walk home together after work? We can catch up."
-    wren "(mumbles) Whatever you want."
+    K "yeah, well, I grinded my ass off to get this position so I'm going to enjoy it. "
+    wren "thats great. "
+    kat "agh! "
+    wren "have you changed even a little bit?"
+    kat "Wren. "
+    kat "you'll join me on my walk home together after work? "
+    wren "{size=5}Whatever you want."
     kat "What?"
     wren "I said yes."
-    kat "Great! Let's get out of this stuffy room now. And don't mention whatever nonsense about me quitting. I don't do office rumors and I hate lying bitches. ^v^"
+    kat "okay. nice. Good. "
+    kat "itll be like old times. "
+    kat "by the way, don't mention anything to anyone here. I don't do office rumors and I hate lying bitches. ^v^"
+    # (Wren back at her desk.) "
+    wren "{i} mother, no, it's fine. Yes I'm showing up with my friend who I haven't talked to in years and that I spent an entire month sobbing about. No, I don't want anything. No, I don't know where she gets her clothes from. "
+    wren "{i}mother, are you fucking stupid? "
+    cow "ahh, end of another daily grind. "
+    wren "Bye."
+    # bg change to outside, at night. Kat is already there. "
+    "They are both silent. "
+    # cicada noise in bg "
+    #Cicadas: BZZZZZZ ( too silly??) "
+    wren "I knew you were too cowardly to speak first, Kat. "
 
-    """~ fake pleasantry ~
-
-    They're walking now. K is holding W's bag for her. The streets are dimly lit by streetlights and silent other than the occasional buzz of cicadas. 
-    """
     #we need cicada ambience stat
 
     menu kat_one:
@@ -722,7 +756,7 @@ label wren_chooses:
             jump fave_choice_out
 
         "Myself.":
-            $choice = "Wren"
+            $choice = "wren "
             jump wren_chooses_wren
 
     label fave_choice_out:
@@ -743,7 +777,7 @@ label wren_chooses:
         Fine fine fine.
         """
     
-    if choice != "Wren":
+    if choice != "wren ":
         #cut to wren phone
         #$ choice = "Hey, " + choice + " can we meet tonight? I have something to tell you."
         phone "Hey, [choice] can we meet tonight? I have something to tell you."

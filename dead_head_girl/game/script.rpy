@@ -131,6 +131,22 @@ default kat_obj = store.MC(kat)
 
 ## declare character image tags and attributes
 
+## wren
+image wren pose1 angry          = "wren_pose1_angry.png"
+image wren pose1 bashful        = "wren_pose1_bashful.png"
+image wren pose1 cry            = "wren_pose1_cry.png"
+image wren pose1 embarrased one = "wren_pose1_embarrased.png"
+image wren pose1 embarrased two = "wren_pose1_embarrased_two.png"
+image wren pose1 eyesclosed     = "wren_pose1_eyesclosed.png"
+image wren pose1 neutralblush   = "wren_pose1_neutralblush.png"
+image wren pose1 neutralsad     = "wren_pose1_neutralsad.png"
+image wren pose1 pain           = "wren_pose1_pain.png"
+image wren pose1 pensive        = "wren_pose1_pensive.png"
+image wren pose1 smile          = "wren_pose1_smile.png"
+image wren pose1 woah           = "wren_pose1_woah.png"
+image wren pose1 worried one    = "wren_pose1_worried.png"
+image wren pose1 worried two    = "wren_pose1_worried_two.png"
+
 ## ines
 image ines blush two            = "images/ines_fgs/ines_blush_2.png"
 image ines blush three          = "images/ines_fgs/ines_blush_3.png"
