@@ -12,7 +12,7 @@ init python:
         voice_path="audio/voices/" + character + "/"
         #make a list of the files in the voicepath directory that we're going to use
         #inconsistent because apparently python and renpy CWDs aren't consistent??
-        voices = ["audio/voices/" + character + "/" + fname for fname in os.listdir(voice_path)]
+        voices = [voice_path + fname for fname in os.listdir(voice_path)]
 
         num_voices =  len(voices)
         
@@ -47,7 +47,7 @@ init python:
 # Declare characters used by this game.
 define strange = Character(
     name="Stranger",
-    callback=functools.partial(store.voice, character="default")
+    callback=functools.partial(store.voice, character="message")
     )
 define wren = Character(
     name="Wren", 

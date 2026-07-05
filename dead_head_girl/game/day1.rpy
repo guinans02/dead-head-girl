@@ -329,10 +329,16 @@ label garden_day1:
 
     
     label highschool_flashback:
-    """
-    A non-transitioned Wren dressed much more shabbily than we know her. She's in a faceless crowd following a random upperclassman as they get a tour for a club fair. 
-    upperclassman - and here is the art club room
-    *"""
+    # """
+    # A non-transitioned Wren dressed much more shabbily than we know her. She's in a faceless crowd following a random upperclassman as they get a tour for a club fair. 
+    # upperclassman - and here is the art club room
+    # *"""
+    show wren pain
+    wren "Why do I remember her...?"
+    scene artclass
+    show wren_baby at left, max_y
+    show ines_baby at right, max_y
+
     strange "Hey Ines, come say hi to the fresh meat."
     ines "aw, don't be mean Macy."
     ines "hi everyone! I'm Ines, the vice president of the art club here!"
@@ -354,7 +360,16 @@ label garden_day1:
     wren "{i}I'm never coming here again.{/i}"
 
     #snap back to reality
+    scene garden
+    show wren pose1 cry at left, max_y
+    show ines pose_two smile at right, max_y
+
+    wren "{i}..."
+
+    show wren pose1 eyesclosed
     wren "Maybe, I don't know"
+
+    show wren pose1 neutralblush
     ines "You're so weird."
     ines "Sorry."
     show ines worried
@@ -688,22 +703,6 @@ label wren_chooses:
     elif choice == "Kat":
         phone "I'll be there."
     
-    return
-    
-label katriel_meetup:
-    kat "I'm here."
-    wren "{i}sputters, chokes{/i}"
-    kat "What did you want to tell me, Wren?"
-    wren "I-"
-    kat "Don't tell me it's terminal. I'm not ready to mourn you."
-    "*Katriel chuckles*"
-    wren "It's not that, it's-"
-    "Wren swallows down a lump of petals."
-    wren "I love you."
-    wren "That's what I wanted to say."
-    "Wren turns bright red and walks away."
-
-    call kat_end
     return
 
 label wren_returns_home_day1:
