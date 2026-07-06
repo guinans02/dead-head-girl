@@ -8,13 +8,13 @@ label before_main_menu:
 ## The game starts here.
 label start:
     stop music
-    #call debug
+    call debug
     call day1
     call end_demo
     return
 
 label debug:
-    call garden_day1
+    call work_day1
     return
 
 label content_warning:

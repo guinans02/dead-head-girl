@@ -44,6 +44,12 @@ init python:
         def get_name(self):
             return self.ch.name
 
+#Declare colors
+define wren_color  = "#ffffff" #white
+define kat_color   = "#d161a2" #light magenta
+define ines_color  = "#fd9855" #light orange
+define comp_color  = "#097969" #cadmium green
+
 # Declare characters used by this game.
 define strange = Character(
     name="Stranger",
@@ -51,12 +57,12 @@ define strange = Character(
     )
 define wren = Character(
     name="Wren", 
-    color="#ffffff", #white
+    color=wren_color, #white
     callback=functools.partial(store.voice, character="wren")
     )
 define ines = Character(
     name="Ines", 
-    color="#fd9855", #light orange
+    color=ines_color, #light orange
     font="SofiaSans-VariableFont_wght.ttf",
     what_font="SofiaSans-VariableFont_wght.ttf",
     callback=functools.partial(store.voice, character="ines")
@@ -64,8 +70,7 @@ define ines = Character(
     )
 define kat = Character(
     name="Katriel", 
-    color="#d161a2", #light magenta
-    kind=strange,
+    color=kat_color, #light magenta
     callback=functools.partial(store.voice, character="kat")
     )
 define mom = Character(
@@ -77,14 +82,14 @@ define mom = Character(
     )
 define phone = Character(
     name="Phone", 
-    color="#097969", #cadmium green
+    color=comp_color, #cadmium green
     font="fonts/SpaceMono-Regular.ttf", 
     what_font="fonts/SpaceMono-Regular.ttf"
     )
 
 define user1 = Character(
     name="user1", 
-    color="#097969", #cadmium green
+    color=comp_color, #cadmium green
     font="fonts/SpaceMono-Regular.ttf", 
     what_font="fonts/SpaceMono-Regular.ttf",
     text_cps=renpy.random.randint(50, 60)
@@ -92,7 +97,7 @@ define user1 = Character(
 
 define user2 = Character(
     name="user2", 
-    color="#097969", #cadmium green
+    color=comp_color, #cadmium green
     font="fonts/SpaceMono-Regular.ttf", 
     what_font="fonts/SpaceMono-Regular.ttf",
     text_cps=renpy.random.randint(30, 40)
@@ -100,7 +105,7 @@ define user2 = Character(
 
 define com = Character(
     name="Computer", 
-    color="#097969", #cadmium green
+    color=comp_color, #cadmium green
     font="fonts/SpaceMono-Regular.ttf", 
     what_font="fonts/SpaceMono-Regular.ttf",
     callback=functools.partial(store.voice, character="computer")
@@ -108,6 +113,16 @@ define com = Character(
     #text_cps=0 #computer is always instant
     )
 
+define phone_wren = Character(
+    kind=nvl,
+    color="#ffffff", #white
+    callback=functools.partial(store.voice, character="computer") #change?
+    )
+define phone_kat = Character(
+    kind=nvl,
+    color=kat_color, #light magenta
+    callback=functools.partial(store.voice, character="computer")
+    )
 
 define cow1 = Character(name="Coworker 1", kind=strange)
 define cow2 = Character(name="Coworker 2", kind=strange)
@@ -132,47 +147,65 @@ default kat_obj = store.MC(kat)
 ## declare character image tags and attributes
 
 ## wren
-image wren pose1 angry          = "images/wren_fgs/wren_pose1_angry.png"
-image wren pose1 bashful        = "images/wren_fgs/wren_pose1_bashful.png"
-image wren pose1 cry            = "images/wren_fgs/wren_pose1_cry.png"
-image wren pose1 embarrased one = "images/wren_fgs/wren_pose1_embarrased.png"
-image wren pose1 embarrased two = "images/wren_fgs/wren_pose1_embarrased_two.png"
-image wren pose1 eyesclosed     = "images/wren_fgs/wren_pose1_eyesclosed.png"
-image wren pose1 neutralblush   = "images/wren_fgs/wren_pose1_neutralblush.png"
-image wren pose1 neutralsad     = "images/wren_fgs/wren_pose1_neutralsad.png"
-image wren pose1 pain           = "images/wren_fgs/wren_pose1_pain.png"
-image wren pose1 pensive        = "images/wren_fgs/wren_pose1_pensive.png"
-image wren pose1 smile          = "images/wren_fgs/wren_pose1_smile.png"
-image wren pose1 woah           = "images/wren_fgs/wren_pose1_woah.png"
-image wren pose1 worried one    = "images/wren_fgs/wren_pose1_worried.png"
-image wren pose1 worried two    = "images/wren_fgs/wren_pose1_worried_two.png"
+image wren pose1 angry              = "images/wren_fgs/wren_pose1_angry.png"
+image wren pose1 bashful            = "images/wren_fgs/wren_pose1_bashful.png"
+image wren pose1 cry                = "images/wren_fgs/wren_pose1_cry.png"
+image wren pose1 embarrased one     = "images/wren_fgs/wren_pose1_embarrased.png"
+image wren pose1 embarrased two     = "images/wren_fgs/wren_pose1_embarrased_two.png"
+image wren pose1 eyesclosed         = "images/wren_fgs/wren_pose1_eyesclosed.png"
+image wren pose1 neutralblush       = "images/wren_fgs/wren_pose1_neutralblush.png"
+image wren pose1 neutralsad         = "images/wren_fgs/wren_pose1_neutralsad.png"
+image wren pose1 pain               = "images/wren_fgs/wren_pose1_pain.png"
+image wren pose1 pensive            = "images/wren_fgs/wren_pose1_pensive.png"
+image wren pose1 smile              = "images/wren_fgs/wren_pose1_smile.png"
+image wren pose1 woah               = "images/wren_fgs/wren_pose1_woah.png"
+image wren pose1 worried one        = "images/wren_fgs/wren_pose1_worried.png"
+image wren pose1 worried two        = "images/wren_fgs/wren_pose1_worried_two.png"
 
 ## ines
-image ines blush two            = "images/ines_fgs/ines_blush_2.png"
-image ines blush three          = "images/ines_fgs/ines_blush_3.png"
-image ines blush one            = "images/ines_fgs/ines_blush.png"
-image ines fanatic one          = "images/ines_fgs/ines_fanatic.png"
-image ines laugh two            = "images/ines_fgs/ines_laugh_2.png"
-image ines laugh one            = "images/ines_fgs/ines_laugh.png"
-image ines pose_two woah        = "images/ines_fgs/ines_pose2_:0.png"
-image ines pose_two fan         = "images/ines_fgs/ines_pose2_fanatic.png"
-image ines pose_two frustrated  = "images/ines_fgs/ines_pose2_frustrated.png"
-image ines pose_two grimace     = "images/ines_fgs/ines_pose2_grimace.png"
-image ines pose_two laugh       = "images/ines_fgs/ines_pose2_laugh.png"
-image ines pose_two neutralsad  = "images/ines_fgs/ines_pose2_neutralsad.png"
-image ines pose_two pain two    = "images/ines_fgs/ines_pose2_pain2.png"
-image ines pose_two pain one    = "images/ines_fgs/ines_pose2_pain.png"
-image ines pose_two pensive two = "images/ines_fgs/ines_pose2_pensive2.png"
-image ines pose_two pensive one = "images/ines_fgs/ines_pose2_pensive.png"
-image ines pose_two             = "images/ines_fgs/ines_pose2.png"
-image ines pose_two sad         = "images/ines_fgs/ines_pose2_sad.png"
-image ines pose_two shock       = "images/ines_fgs/ines_pose2_shock.png"
-image ines pose_two smile       = "images/ines_fgs/ines_pose2_smile.png"
-image ines pose_two worried     = "images/ines_fgs/ines_pose2_worried.png"
-image ines mlem                 = "images/ines_fgs/ines_:P.png"
-image ines smile two            = "images/ines_fgs/ines_smile_2.png"
-image ines smile one            = "images/ines_fgs/ines_smile.png"
-image ines worried              = "images/ines_fgs/ines_worried.png"
+image ines blush two                = "images/ines_fgs/ines_blush_2.png"
+image ines blush three              = "images/ines_fgs/ines_blush_3.png"
+image ines blush one                = "images/ines_fgs/ines_blush.png"
+image ines fanatic one              = "images/ines_fgs/ines_fanatic.png"
+image ines laugh two                = "images/ines_fgs/ines_laugh_2.png"
+image ines laugh one                = "images/ines_fgs/ines_laugh.png"
+image ines pose_two woah            = "images/ines_fgs/ines_pose2_:0.png"
+image ines pose_two fan             = "images/ines_fgs/ines_pose2_fanatic.png"
+image ines pose_two frustrated      = "images/ines_fgs/ines_pose2_frustrated.png"
+image ines pose_two grimace         = "images/ines_fgs/ines_pose2_grimace.png"
+image ines pose_two laugh           = "images/ines_fgs/ines_pose2_laugh.png"
+image ines pose_two neutralsad      = "images/ines_fgs/ines_pose2_neutralsad.png"
+image ines pose_two pain two        = "images/ines_fgs/ines_pose2_pain2.png"
+image ines pose_two pain one        = "images/ines_fgs/ines_pose2_pain.png"
+image ines pose_two pensive two     = "images/ines_fgs/ines_pose2_pensive2.png"
+image ines pose_two pensive one     = "images/ines_fgs/ines_pose2_pensive.png"
+image ines pose_two                 = "images/ines_fgs/ines_pose2.png"
+image ines pose_two sad             = "images/ines_fgs/ines_pose2_sad.png"
+image ines pose_two shock           = "images/ines_fgs/ines_pose2_shock.png"
+image ines pose_two smile           = "images/ines_fgs/ines_pose2_smile.png"
+image ines pose_two worried         = "images/ines_fgs/ines_pose2_worried.png"
+image ines mlem                     = "images/ines_fgs/ines_:P.png"
+image ines smile two                = "images/ines_fgs/ines_smile_2.png"
+image ines smile one                = "images/ines_fgs/ines_smile.png"
+image ines worried                  = "images/ines_fgs/ines_worried.png"
+
+## kat
+image kat pose1 eyesclosed          = 'images/kat_fgs/kat pose1 eyesclosed.png'
+image kat pose1 neutralsad          = 'images/kat_fgs/kat pose1 neutralsad.png'
+image kat pose1 regret              = 'images/kat_fgs/kat pose1 regret.png'
+image kat pose1 relieved            = 'images/kat_fgs/kat pose1 relieved.png'
+image kat pose1 sad                 = 'images/kat_fgs/kat pose1 sad.png'
+image kat pose2 eyesclosed blush    = 'images/kat_fgs/kat pose2 eyeclosed blush.png'
+image kat pose2 happy               = 'images/kat_fgs/kat pose2 happy.png'
+image kat pose2 neutral             = 'images/kat_fgs/kat pose2 neutral.png'
+image kat pose2 neutralsad          = 'images/kat_fgs/kat pose2 neutralsad.png'
+image kat pose2 shock               = 'images/kat_fgs/kat pose2 shock.png'
+image kat pose2 smile blush         = 'images/kat_fgs/kat pose2 smile blush.png'
+image kat pose2 worried two         = 'images/kat_fgs/kat pose2 worried 2.png'
+image kat pose2 worried three       = 'images/kat_fgs/kat pose2 worried 3.png'
+image kat pose2 worried one         = 'images/kat_fgs/kat pose2 worried.png'
+image kat pose2 worried sad         = 'images/kat_fgs/kat pose2 worriedsad.png'
+
 
 #transform for all foreground images to make them the same height
 transform max_y:

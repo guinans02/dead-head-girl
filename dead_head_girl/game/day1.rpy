@@ -39,11 +39,11 @@ label work_day1:
     #wren walks to the lab
     show wren pose1 neutralsad at mv(center, offscreenright, spd=1.0), max_y
 
-    show wren pose1 neutralsad at mv(offscreenleft, left, spd=1.0), max_y
 
     "Wren sees someone familiar through a laboratory window."
-
-    show kat_fg at right, max_y
+    scene lab
+    show wren pose1 neutralsad at mv(offscreenleft, left, spd=1.0), max_y
+    show kat pose2 neutral at right, max_y
     wren "…Kat."
     wren "No way that's Kat. She was so serious about never going into medicine." 
     wren "\"I disavow the lab forever!\" and she really believed herself when she said that."
@@ -52,10 +52,11 @@ label work_day1:
     #wren happy
     wren "Why are you here?"
     wren "{i}It's been years and you look so different."
+    wren "I really, really missed you."
 
     scene school_library
     show wren pose1 neutralsad at max_y, left
-    show kat_fg at max_y, right
+    show kat pose2 neutral at max_y, right
     # (Cut to flashback to school library ) 
     wren "Come over to my place!"
     kat "No, your mom's weird. "
@@ -75,6 +76,9 @@ label work_day1:
     kat "Well, if you want to be pretty so bad, lets just do it. "
     wren "what?" 
     # scenery change supply closet 
+    scene broomcloset
+    show wren at left
+    show kat at right
     # A moment of silence between the two of them. 
     wren "you shouldn't do this kinda thing."
     kat "why not. If you want it, you should get it."
@@ -340,16 +344,18 @@ label garden_day1:
     show ines_baby at right, max_y
 
     strange "Hey Ines, come say hi to the fresh meat."
-    ines "aw, don't be mean Macy."
-    ines "hi everyone! I'm Ines, the vice president of the art club here!"
+    ines "Aw, don't be mean Macy."
+    ines "Hi everyone! I'm Ines, the vice president of the art club here!"
     ines "“Heya, I'm Ines, the vice president of the art club. You all came at the perfect time! I've just put the final touches on my painting! *spins around* Isn't it pretty?"
-    strange - "The colors are gorgeous!"
+    strange "The colors are gorgeous!"
     #wren surprised
+    show ines_art at center
     wren "Is that… a dead bird?"
     ines "Yes! What, do you think the shading is off?" 
     wren "Well… the subject matter is…"
     wren "{i}Wierd. If I went home with paint streaked clothes, or a painting like that… well, mother would certainly be hysterical.{/i}" 
     ines "What? The subject doesn't matter. Whatever I paint will turn out beautiful."
+    hide ines_art
     "{i}Ines smiles.{/i}"
     strange "Okay, okay, time to go to the next club. See you around, Ines."
     ines "Bye! Hope to see you all in here again." 
@@ -374,15 +380,19 @@ label garden_day1:
     ines "Sorry."
     show ines worried
     ines "Do you really hate my garden that bad?"
+    show wren pose1 worried one
     wren "No- I mean yes."
     show ines pose_two shock
     ines "What?!"
+    show wren pose1 bashful
     wren "It's not {i}your{\i} garden. It's pretty much any garden."
     show ines pose_two sad
     ines "Why?"
+    show wren pose1 embarrased one
     wren "I stepped in an underground wasps nest at the botanical garden once. It doesn't really matter."
     show ines pose_two neutralsad
     ines "If you say so."
+    show wren pose1 neutralsad
     show ines smile one
     ines "Can you keep that expression, just like that?"
     wren "Okay."
