@@ -219,7 +219,7 @@ transform mv(pos0, pos1, spd=1.0):
     linear spd pos1
 
 # shooting minigame QTE logic
-label shoot:
+label qte:
     init python:
         def hide_target():
             global target_visible

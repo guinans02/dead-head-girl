@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/scenes.rpy", line 382: end of line expected.
-    ines "Can you keep that expression, just like that?
-                                                                  ^
+File "game/day2.rpy", line 43: end of line expected.
+    show wren pose1 bashful, max_y
+                           ^
+
+File "game/day2.rpy", line 45: end of line expected.
+    show ines pose_two laugh, max_y
+                            ^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Thu Jul  2 10:45:42 2026
+Mon Jul  6 21:28:27 2026

@@ -13,7 +13,7 @@ label garden_day2:
     play ambience garden_amb
     play music garden_bg_music
 
-    show wren pose2 pain2 at max_y, mv(offscreenleft, left, 0.5)
+    show wren pose1 pain at max_y, mv(offscreenleft, left, 0.5)
     #  Wren walking into ines's garden. 
 
     wren "Where is she?? "
@@ -21,7 +21,7 @@ label garden_day2:
 
     show wren at mv(left, center, 0.5)
     wren "Hello? "
-    show wren pose2 pain1
+    show wren pose1 pensive
     wren "Shit. "
     show wren at mv(center, right, 0.5)
     wren "… "
@@ -33,52 +33,53 @@ label garden_day2:
     wren "Cheese…? "
     # camera snap effect
     # camera flash
-    show wren pose1 angry
+    show wren pose1 angry at max_y
     wren "Ack! Don't do that! "
     # cg of a Polaroid of Wren. It hasnt developed yet, so it's black.
 
     #back to Wren Ines in garden
-    show ines pose1 smile one
+    show ines pose1 smile one at max_y, right
     ines "You look so pretty. Ephemeral, almost, with the blurry effect. "
-    show wren pose1 
+    show wren pose1 bashful at max_y
     wren "Do you mean ethereal? "
+    show ines pose_two laugh at max_y
     ines "No, ephemeral."
-    wren "do you know what that word means? "
+    wren "Do you know what that word means? "
     ines "You're being rude. "
     wren "so, now we're even. "
     # cg wren's poloraid. Its blurred and grainy
     wren "I mean, it's a photo. "
-    ines "hmmph"
+    ines "Hmmph."
     wren "you're sweet for showing it to me. "
     ines "I don't really like photography all that much. Camera photos look too real. "
-    ines "drawings, though, capture the feeling of a living thing. I get to remember you how I see you for however long I keep the drawing."
+    ines "Drawings, though, capture the feeling of a living thing. I get to remember you how I see you for however long I keep the drawing."
     ines "But polaroids are still pretty cool. I like how grainy they are. It helps to hide the imperfections. "
-    wren "you intend to make it look that blurry? "
-    ines "well, no. But I like the effect. "
+    wren "You intend to make it look that blurry? "
+    ines "Well, no. But I like the effect. "
     "A beat of silence." 
-    wren "what exactly am I doing in the garden today? "
+    wren "What exactly am I doing in the garden today? "
     ines "Oh, have you forgotten your promise already? "
-    wren "i. "
+    wren "I. "
     wren "I was scared you were messing with me. "
     ines "I'm not some high school mean girl! "
     ines "Wren, you have this sort of worldly air to you. Like you know something. I want to find out what it is. "
     ines "I must paint you. "
 
     #wren blushes
-    wren "if you really want to that bad… "
+    wren "If you really want to that bad… "
     ines "I brought some props from home. I'm so excited! "
 
     # rummage sound effect
-    ines "let's see, lets see
-    ines "I have a piece of muslin fabric for draping
-    ines "I like doing texture work, so I also have some lace.. 
-    ines "ooh! Or what about something here, from the garden! 
-    ines "paying homage to the flowers you crushed, a mourning piece! 
-    wren "{i}what. 
-    ines "um or actually 
-    ines "I brought something I made for you. 
-    ines "it took me a while, but I think you'd look just perfect in it. 
-    ines "what do you think?? 
+    ines "Let's see, lets see"
+    ines "I have a piece of muslin fabric for draping"
+    ines "I like doing texture work, so I also have some lace.. "
+    ines "ooh! Or what about something here, from the garden! "
+    ines "paying homage to the flowers you crushed, a mourning piece! "
+    wren "{i}what. "
+    ines "um or actually "
+    ines "I brought something I made for you. "
+    ines "it took me a while, but I think you'd look just perfect in it. "
+    ines "what do you think?? "
 
     #choices
     menu:
@@ -109,7 +110,7 @@ label garden_day2:
     # pencil scratch noises. "
     ines "Hm hm hmmm."
     # pencil scratch noises "
-    wren "Can ines ""
+    wren "Can ines "
     ines "Stay still please!! I'm capturing your lips. "
     wren "(internally) But something is poking me…  "
     wren "(internally) I can feel something dripping down my face. "
@@ -147,7 +148,7 @@ label garden_day2:
     ines "Another promise… broken…."
     wren "Umh"
     wren "(thinking) All of these are bad but…"
-    wren "Let's do the piece here, mourning the flower ines ""
+    wren "Let's do the piece here, mourning the flower ines "
     ines "Oh, I'm so happy!"
     wren "{size=10}I'm glad. "
     ines "Here, sit here while I prime my canvas and think about the pose."
@@ -329,19 +330,19 @@ label wren_visits_kat:
 
 
     #(W's very sleepy. Kat's still flipping through a textbook)
-    wren "(internal?) Y’know Kat, it feels like you’ve changed so much, but at the same time you feel the same. But the old you and the current you… they’re both beyond what I could be. Everything you do. I just wonder if you know what you could be. What you want to do.
-    wren "why did you go back to toxicology? 
-    kat "it's just the best path forward for me. 
-    wren "it didn't seem like that when we last spoke.
-    kat "gosh, just lay off me already, will you? people change.
-    wren "i know you though. 
-    wren "is this really what you want for yourself? 
-    kat "are you fucking serious? 
-    kat "of course not. i hate talking to those bitches with their heads up their asses and i hate the stagnance in that fuckass company with their bullshit about reinventing the wheel. 
-    kat "but i've tried my hardest for too long to be left languishing with the rest of the unwashed masses. even if it means devoting myself to something i find completely meaningless or presenting myself as the perfect person or ignoring that gnawing gap inside or that I can never have what I really want-
-    #smtg like how she's abt to blurt out she realises internally that she highkey a lesbian but more subtle]
-    kat "it doesn't matter. 
-    kat "i have to succeed. i'll be the best in my field. the first person everyone rushes to talk to when i walk into a room. 
+    wren "(internal?) Y'know Kat, it feels like you've changed so much, but at the same time you feel the same. But the old you and the current you… they're both beyond what I could be. Everything you do. I just wonder if you know what you could be. What you want to do."
+    wren "why did you go back to toxicology? "
+    kat "it's just the best path forward for me. "
+    wren "it didn't seem like that when we last spoke."
+    kat "gosh, just lay off me already, will you? people change."
+    wren "i know you though. "
+    wren "is this really what you want for yourself? "
+    kat "are you fucking serious? "
+    kat "of course not. i hate talking to those bitches with their heads up their asses and i hate the stagnance in that fuckass company with their bullshit about reinventing the wheel. "
+    kat "but i've tried my hardest for too long to be left languishing with the rest of the unwashed masses. even if it means devoting myself to something i find completely meaningless or presenting myself as the perfect person or ignoring that gnawing gap inside or that I can never have what I really want-"
+    #smtg like how she's abt to blurt out she realises internally that she highkey a lesbian but more subtle]"
+    kat "it doesn't matter. "
+    kat "i have to succeed. i'll be the best in my field. the first person everyone rushes to talk to when i walk into a room. "
     menu:
 
         "you're the most successful person I know":
@@ -354,6 +355,7 @@ label wren_visits_kat:
     kat "thanks. "
     kat "still. i always have room to grow. i always have more to improve at. "
     #idk smtg abt a spider respinning its web constantly lol until it's left the space to thrive or someone kills it "
+    jump post_kat_day2
 
     label just_human:
     wren "Oh."
@@ -361,7 +363,294 @@ label wren_visits_kat:
     kat "don't put me down on your level. "
     kat "you have no goals, no aspirations, no presence. hearing that from you—god, that's such a low bar. few years no see, one word from me and you're back following me around like a sad little dog with nowhere to go and no one to play with."
     wren "you're talking? you're no one special. you try to sound intelligent but you're really just a pretentious soulless corporate suck up. there's millions of girls like you out there. "
-    kat "at least i have self control. i wouldn't have let some random feelings for a girl–i mean, a momentary lapse of judgement–ruin everything i've built. "
+    kat "at least i have self control. I wouldn't have let some random feelings-"
+    kat "-i mean, a momentary lapse of judgement-"
+    kat "-ruin everything i've built. "
+
+
+    label post_kat_day2:
+    ## added july 10th
+    wren "It's sad. Why can't you admit that? "
+    kat "I'm sad? What, projecting much? "
+    wren "Kat! "
+    kat "Don't say my name like that. "
+    wren "Fine then, bitch. "
+    kat "You're a bitch. "
+    kat "Worse, actually , you're a stray dog. "
+    wren "Do you try to flirt with stray dogs often? "
+    # smack sound"
+    kat "Does that feel like flirting to you? "
+    # Wren sprite gets closer to Kat sprite. "
+    # red screen tint/ chromatic abberation from wren"
+    wren "You want me to be a stray dog? "
+    kat "ackth uh"
+    wren "I didn't hear you. "
+    wren "What was that? "
+    wren "Don't make me squeeze harder. "
+    kat "whimper"
+    wren "Hey, no, I'm sorry. "
+    kat "gasp"
+    kat "koff koff"
+    kat "Wren, don't cry. "
+    kat "Stop crying, Wren. "
+    kat "We both know I pissed you off on purpose okay? You know me better than to blame yourself. "
+    kat "Dad hasn't been home so it's just been…  me and Taylor. "
+    wren "Your schizo aunt is still around? "
+    kat "God willing and the creek don't rise. "
+    kat "So. "
+    kat "I really, really need you back in my life right now Wren. "
+    wren "You could literally just fucking ask next time? "
+
+    kat "Where's the fun in that? "
+    kat "Okay, now get out, I need to hide the marks you just gave me. "
+    wren "Didn't you need me in your life? "
+    kat "Yes, I do actually. But I need to change clothes. "
+    wren "Ha. "
+    kat "There, I kissed your booboos all better. "
+    kat "Now shoo. "
+    # Wren walks out. "
+    # in front of wren's house. "
+    wren "I'm the only one who really knows her. "
+    wren "I knew it meant something. "
+    wren "I knew it! I knew it! I knew it!! "
+    wren "I think I need a nap . "
+    # bg change to Wren house living room "
+    mom "Wren. "
+    wren "Yes, mother?"
+    mom "Your room is just filthy. I hate repeating myself; you're not a child anymore. "
+    wren "What are you—Of course, mother. My apologies. "
+    mom "The flowers, Wren?"
+    wren "{i}The ones with all the blood on them? "
+    mom "I hope you aren't seeing anyone. Please do remember that you are living here on my dime. "
+    wren "Right. "
+    wren "May I go to my room now? Please? "
+    mom "Ah… "
+    # (depending on who you have more affection with) "
+    # more Kat points mom "That girl next door, what's her name… Katherine? "
+    # more Ines points mom "That girl with the tree club that you joined, the one with the sweater? "
+    # equal points  mom "You've been spending a lot of time outdoors, with those people you've met- the girls with the clothes? "
+    mom "No matter. "
+    mom "Don't let some girl—I mean, anyone, distract you from what you should be doing. "
+    mom "These youthful affairs never last long, Wren. "
+    # Mother leaves"
+    wren "What the fuck is she talking about? "
+    # screen to black"
+    wren "Hnn"
+    wren "Can't believe it's nearly the end of the summer. "
+    wren "I still don't have nearly enough money to figure out my fucking cough. "
+    wren "This sucks. I don't know a thing about medicine. Or these disgusting bloody flowers. "
+    # phone notification sound"
+    wren "It couldn't hurt to ask Kat or Ines? "
+    # this is fucking lazy but I can't think of another way to transition it."
+
+    # Wren move to garden "
+    # ines is there"
+    ines "Hey Wren! "
+    wren "Hi, Ines. "
+    wren "So what are we going to do today? "
+    ines "The same as always??? "
+    wren "Oh. I guess I didn't know you could paint in the rain. "
+    ines "IT'S GONNA RAIN?? "
+    ines "Aw, boo. "
+    ines "Well, there goes another masterpiece. "
+    wren "Story of your life. "
+    ines "Let's go to a cafe and get something warm! "
+    # change to cafe bg "
+    ines "and you just have to try the miso coffee they have here, it's mouthwatering. "
+    ines "Oooh! I just remembered I have my pencils on me! Hand me that napkin, please? "
+    wren "Hey, can I ask you something. "
+    ines "Certainly <3 "
+    wren "Is it possible to identify a flower just from the petal? "
+    ines "Depends on the freshness. And the flower. Why? "
+    wren "Well. Do you know what this one is? "
+    ines "Oh hm. "
+
+    # depends on the route ur on: "
+    # high Ines ines "Oh, that looks like a lilac! They're my favorite flower!! Did you know they're edible? You can't eat too much though, or they'll make you throw up. "
+    # high katriel ines "I bet that's an Amaryllis? They're commonly confused for lilies cause they look really similar. But they are superrrrr poisonous. "
+    # equal ines "Hmm, it's a little hard to tell. If I had to guess, maybe some kind of Iberis? A candytuft flower."
+
+    python:
+        if ines_obj.get_score() > kat_obj.get_score():
+            #ines' affection score is higher than kat's
+            renpy.jump("lilac")
+        
+        elif ines_obj.get_score() < kat_obj.get_score():
+            #kat's affection score is higher than ines'
+            renpy.jump("amaryllis")
+        
+        else:
+            #both scores are equal
+            renpy.jump("iberis")
+
+    label iberis:
+    ines "Hmm, it's a little hard to tell. If I had to guess, maybe some kind of Iberis? A candytuft flower."
+    jump post_flower_day2
+
+    label lilac:
+    ines "Oh, that looks like a lilac! They're my favorite flower!! Did you know they're edible? You can't eat too much though, or they'll make you throw up. "
+    jump post_flower_day2
+
+    label amaryllis:
+    ines "I bet that's an Amaryllis? They're commonly confused for lilies cause they look really similar. But they are superrrrr poisonous. "
+    jump post_flower_day2
+    
+    label post_flower_day2:
+    ines "Where'd you get these? "
+    wren "I found them??"
+    wren "In my room after I woke up one day??! "
+    ines "That's fun! "
+    ines "Totally reminds me of this urban legend I saw in a video. "
+    ines "It was called like, the Lover's Bloom. "
+    ines "You fall SO DEEPLY in love with someone that a flower blooms inside of you."
+    ines "And then, when the time is right and it hits midnight, you spit up the bouquet and give it to them. "
+    ines "Ahh! It's so romantic, can you imagine a better way to show your dedication to another!"
+    ines " Such a shame that it's not real. "
+    ines "I wish I could experience it, it sounds so lovely and fun. "
+    wren "What the fuck?"
+    ines "Huh? "
+    wren "That's really fucked up. Why would you ever want that to happen to you?? "
+    ines "What's wrong with imagining? "
+    wren "Because it's a dumb-fuck way to waste your time. Imagining suffocating in itchy petals? "
+    wren "“ oh em gee I luuuuv pretty toxins seeping into my bloodstream all day teehee” "
+    wren "“ La la yaaaay I'm a complete and total idiot now I throw my life at your feet save me LOVE!!! “"
+    wren "That's not how it works. "
+    wren "And if they don't love you back? What then, huh? "
+    ines "I didn't really read that far. "
+    wren "Of course you didn't. "
+    ines "What's with you today? you're being so –"
+    wren "Shut up. "
+    ines "I'm literally just trying to make conversation! What's unreasonable about that? "
+    wren "Oh, I don't know. "
+    wren "Maybe I'm tired of being lectured about what is or isn't pretty by a privileged, spoiled brat? "
+    wren "You dedicate your life to to this shit and it's still complete, overwrought, garbage! "
+    ines "No it's not! Take that back! "
+    wren "Then why does no one show up to your art shows, huh? "
+    ines "I.. *sniff* told you that in confidence. "
+    wren "Grow up."
+    ines "I don't—"
+    ines "That was really mean."
+    wren "What, want me to apologize for the big, scawy, reality of who you are? "
+    ines "Fine then. No one respects me. Not the other artists, not the teachers at school, and not even my family. "
+    ines "I thought you would understand. Clearly not."
+    # Ines runs away"
+    # Wren goes out side. "
+    wren "I wished I smoked so I could have a cigarette right now. "
+    # phone notification sound. "
+    wren "FUCK. WORK. "
+    # Wren in her office"
+    wren "{i}Sick of this shit. "
+    wren "{i}It's not my fault. She started it."
+    wren "{i}Fuck fuck fuck. Fu-"
+    cow1 "Heyyy Mack can you please verify and order this for the new client. Here's the card! "
+    wren "I don't handle transactions? "
+    cow1 "Then who does? "
+    wren "I don't know."
+    cow1 "Well, Gina told me it was you, so. Here. "
+    wren "I'm busy, wait. "
+    cow1 "K thx bye ! "
+    # coworker leaves"
+    wren "… "
+    wren "What ever. "
+    # type sounds "
+    comp "PURCHASE. COMPLETE. "
+
+    wren "sigh. "
+    # backgroun blurs. "
+    wren "{I}I'm sorry for bieng a dick earlier. "
+    wren "{I}No. "
+    wren "{I}I didn't mean what I said, it's just that you. "
+    # background unblurs coworker Sprite comes in. "
+    cow1 "You think I wouldn't notice? "
+    wren "What? "
+    cow1 "Did you seriously order that on the company card?"
+    wren "I'm sorry?"
+    cow1 "Cigarettes, you daft bint! I'm supposed to explain why 5 cigarette packs showed up to the lab INSTEAD OF THE 5 CENTRIFUGES??"
+    # katriel sprite comes in"
+    cow1 "Hey uh… Kathy, you file the paperwork for this. I'm not dealing with this right now. I got a meeting. "
+    kat "I'm not-"
+    cow1 "Well it's either you or Danny so. "
+    kat "Hand it here. "
+    # katriel sprite and coworker sprite leave"
+    # music shift. "
+    # background blur"
+    # Wren chromatic "
+    # kat sprite "
+    kat "What the fuck was that about? My manager screamed herself hoarse. Could you be a bigger fuck-up if you tried? "
+    # outside of work bg "
+    wren "I'm. oh. "
+    kat "Wren. "
+    wren "Hey Kat. "
+    kat "Lets just go. "
+    # they move to outside wren's house "
+    kat "Looks like we're here. "
+    kat "Time for me to leave. "
+    kat "Wren? "
+    wren "Bye Kat. "
+    kat "You high? "
+    wren "What? "
+    kat "Fucking answer my question! "
+    wren "No, I'm not high "
+    kat "Then. What. Could. Possibly. Be the Reason. For that disaster. "
+    wren "Sorry, for being so distracted? "
+    kat "Dude. "
+    wren "My.. mom's sick. "
+    kat "Oh. "
+    wren "Yeah. "
+    kat "I'm really sorry. "
+    wren "Thanks. "
+    kat "Is it cancer? "
+    wren "No, the doctors don't know what it is. "
+    wren "She's really tired, her throat is sore, and she's fatigued. "
+    kat "Fuck, that could be anything."
+    wren "And, she's coughing up these petals. "
+    kat "Like… ? "
+    wren "Like flower petals, yeah. "
+    kat "Holy shit. Out her mouth? "
+    wren "Covered in blood. It's been really scary for her. "
+    kat "I can imagine. "
+    # for the next line have it go off screen, and speaking rlly fast"
+    kat "Have the doctors tested her immunoglobulin levels? Maybe it's some kinda Munchausen's? Or a weird blend of pica and a GI bleed that she's too embarrassed to talk about? I wonder if it could be something really obscure, maybe they'll even name a disease after her… "
+    wren "Um, I don't really know. "
+    kat "Of course not. Hm. Has she tried some immune boosting tea? "
+    kat "What pain management meds is she on? "
+    wren ""
+    kat "Can I hug you? "
+    wren "yes. "
+    wren "thanks. "
+    kat "Of course. "
+    kat "You should have told me, I could have helped you cover! "
+    kat "I wouldn't have blown up either. "
+    wren "It's okay, you didn't know. "
+    kat "Hey, I'm really behind on inputting my data. "
+    kat "You could come over tonight? "
+    kat "I'll even make up a packet of over the counter medicines to give to your mom. "
+    kat "Okay? "
+    wren "I'll…  think about it. "
+    wren "Thanks. "
+    kat "Take care of yourself. "
+    # Katriel goes off screen. "
+    # Wren up to her room. No convo w mom. The room is dark. "
+    wren "I feel too gross to jerk off. "
+    wren "I'm too tired to fall asleep. "
+    wren "I haven't slept good in weeks… "
+    wren "I guess I could go "
+    wren "koff"
+    wren "I guess I could go hang"
+    wren "blegh "
+    # Wren bloody sprite"
+    wren "What the fuck… "
+    wren "I can't I can't I CAN'T with this. "
+    wren "I… "
+    # phone bg"
+    phone "2 NEW NOTIFICATIONS"
+    wren "Would it be worth it to try? "
+    # back to Wrens room. She looks exhausted. "
+    wren "Ah. "
+
+    # implement QTE 
+    # if fail, go to fail end. If succeed, go to last decision
+    call qte
 
 
     return

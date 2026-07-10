@@ -1,26 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenes.rpy", line 12, in script call
-    call day1
-  File "game/day1.rpy", line 4, in script call
-    call garden_day1
-  File "game/day1.rpy", line 340, in script
-    show ines_baby at right, maxy_y
-  File "game/day1.rpy", line 340, in <module>
-    show ines_baby at right, maxy_y
-                             ^^^^^^
-NameError: name 'maxy_y' is not defined. Did you mean: 'max_y'?
+  File "game/scenes.rpy", line 13, in script call
+    call day2
+  File "game/day2.rpy", line 4, in script call
+    call post_garden_day2
+  File "game/day2.rpy", line 205, in script
+    show ines at mv(right, offscreentright, 0.5)
+  File "game/day2.rpy", line 205, in <module>
+    show ines at mv(right, offscreentright, 0.5)
+                           ^^^^^^^^^^^^^^^      
+NameError: name 'offscreentright' is not defined. Did you mean: 'offscreenright'?
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/scenes.rpy", line 12, in script call
-    call day1
-  File "game/day1.rpy", line 4, in script call
-    call garden_day1
-  File "game/day1.rpy", line 340, in script
-    show ines_baby at right, maxy_y
+  File "game/scenes.rpy", line 13, in script call
+    call day2
+  File "game/day2.rpy", line 4, in script call
+    call post_garden_day2
+  File "game/day2.rpy", line 205, in script
+    show ines at mv(right, offscreentright, 0.5)
   File "renpy/ast.py", line 1364, in execute
     show_imspec(self.imspec, atl=getattr(self, "atl", None))
     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -33,12 +33,12 @@ Traceback (most recent call last):
   File "renpy/python.py", line 1301, in py_eval_bytecode
     return eval(bytecode, globals, locals)
            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/day1.rpy", line 340, in <module>
-    show ines_baby at right, maxy_y
-                             ^^^^^^
-NameError: name 'maxy_y' is not defined. Did you mean: 'max_y'?
+  File "game/day2.rpy", line 205, in <module>
+    show ines at mv(right, offscreentright, 0.5)
+                           ^^^^^^^^^^^^^^^      
+NameError: name 'offscreentright' is not defined. Did you mean: 'offscreenright'?
 
 Linux-6.8.0-134-generic-x86_64-with-glibc2.39 x86_64
 Ren'Py 8.5.3.26051504
 Dead Head Girl 0.1
-Sat Jul  4 22:23:51 2026
+Mon Jul  6 21:31:33 2026

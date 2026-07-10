@@ -9,12 +9,13 @@ label before_main_menu:
 label start:
     stop music
     call debug
-    call day1
+    #call day1
+    #call day2
     call end_demo
     return
 
 label debug:
-    call work_day1
+    call wren_visits_kat
     return
 
 label content_warning:
@@ -43,8 +44,6 @@ label content_warning:
         "No.":
             $renpy.quit()
     $renpy.quit()
-
-# DAY TWO SCENES
 
 label end_demo:
     scene bg_thevoid
