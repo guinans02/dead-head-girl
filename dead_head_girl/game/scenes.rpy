@@ -15,7 +15,7 @@ label start:
     return
 
 label debug:
-    call wren_visits_kat
+    call post_kat_day2
     return
 
 label content_warning:

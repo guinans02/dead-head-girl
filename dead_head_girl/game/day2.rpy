@@ -91,7 +91,7 @@ label garden_day2:
         "Do I have to?":
             jump do_i_have_to
     
-    label crown_of_leaves:
+label crown_of_leaves:
     ines "Yes, I thought it would symbolize renewal."
     ines "I knew you had a good eye for the arts."
     wren "{i}I guess I get how the leaves are renewal. "
@@ -139,7 +139,7 @@ label garden_day2:
 
     jump post_garden_day2
 
-    label do_i_have_to:
+label do_i_have_to:
     wren "Honestly-"
     wren "I don't really like any of these?"
     #ines very sad"
@@ -227,7 +227,7 @@ label kat_texts_wren:
     phone_wren "wren : Please, Katriel. you're my best friend. "
     phone_wren "wren : I'll leave you alone if you want?"
     phone "You have [1] new message(s)."
-    phone_kat "katriel:  Swedish researchers have discovered that salmon dosed with benzoylecgonine, a cocaine byproduct, swim almost twice as far as the control group."
+    phone_kat  "Swedish researchers have discovered that salmon dosed with benzoylecgonine, a cocaine byproduct, swim almost twice as far as the control group."
 
     phone_wren "Seriously, Kat? That's your first message to me in three years?"
     phone_wren "wren : And this is relevant because…? "
@@ -351,13 +351,13 @@ label wren_visits_kat:
         "You're just human too.":
             jump just_human
 
-    label most_successful_person:
+label most_successful_person:
     kat "thanks. "
     kat "still. i always have room to grow. i always have more to improve at. "
     #idk smtg abt a spider respinning its web constantly lol until it's left the space to thrive or someone kills it "
     jump post_kat_day2
 
-    label just_human:
+label just_human:
     wren "Oh."
     wren "You're just human too. "
     kat "don't put me down on your level. "
@@ -368,7 +368,7 @@ label wren_visits_kat:
     kat "-ruin everything i've built. "
 
 
-    label post_kat_day2:
+label post_kat_day2:
     ## added july 10th
     wren "It's sad. Why can't you admit that? "
     kat "I'm sad? What, projecting much? "
@@ -483,19 +483,19 @@ label wren_visits_kat:
             #both scores are equal
             renpy.jump("iberis")
 
-    label iberis:
+label iberis:
     ines "Hmm, it's a little hard to tell. If I had to guess, maybe some kind of Iberis? A candytuft flower."
     jump post_flower_day2
 
-    label lilac:
+label lilac:
     ines "Oh, that looks like a lilac! They're my favorite flower!! Did you know they're edible? You can't eat too much though, or they'll make you throw up. "
     jump post_flower_day2
 
-    label amaryllis:
+label amaryllis:
     ines "I bet that's an Amaryllis? They're commonly confused for lilies cause they look really similar. But they are superrrrr poisonous. "
     jump post_flower_day2
     
-    label post_flower_day2:
+label post_flower_day2:
     ines "Where'd you get these? "
     wren "I found them??"
     wren "In my room after I woke up one day??! "
@@ -652,5 +652,409 @@ label wren_visits_kat:
     # if fail, go to fail end. If succeed, go to last decision
     call qte
 
+label last_decision:
+    # LAST DECISION
+    wren "FUCK! "
+    wren "I don't want to. "
+    wren "I just need to stop being a whiny bitch "
+    wren "I'd literally rather die than go out to tonight. "
+    #  wheezing SFX, screen shake/ red and/ or Wren goes chromatic. Wren wheezing, screen going black. 
+    wren "Ugh. Ugh! "
+    wren "Go  "
+    wren "now! "
+    wren "okay, NOW! "
+    wren "AHHH"
+    # choices 
 
+    # Fine, I pick : 
+    # (Put choice here) 
+    # Ines
+    # Katriel
+    default pick_ines = False
+    default pick_kat = False
+    menu:
+        "Fine, I pick"
+
+        "Ines":
+            $pick_ines = True
+            pass
+
+        "Katriel":
+            $pick_kat = True
+            pass
+        
+    wren "Why do I feel so nauseous?"
+    # phone typing noise. 
+    wren "I have to. It's because I have to. "
+    wren "Mother doesn't keep any alcohol in the house. "
+    wren "Well, she'd kill me if I even tasted her wine. "
+    wren "I'm wasting time. "
+    wren "God. "
+    #wrens phone
+    nvl clear
+    phone_wren "wren: hey"
+    # if affection is 0 with who you picked, go to fail end. 
+    # now go to either KATRIEL or INES 
+
+    python:
+        if pick_ines:
+            #the player decided to confess to ines
+            if ines_obj.get_score() == 0:
+                #if ines doesn't like you back, bad end
+                renpy.jump("fail_end")
+            else:
+                #otherwise, ines 'good' end
+                renpy.jump("ines_end")
+
+        elif pick_kat:
+            #the player decided to confess to kat
+            if kat_obj.get_score() == 0:
+                #if kat doesn't like you back, bad end
+                renpy.jump("fail_end")
+            else:
+                #otherwise, kat 'good' end
+                renpy.jump("kat_end")
+        else:
+            #something broke with the player choosing who to confess to :(
+            "ERROR"
+            renpy.quit()
+
+label fail_end:
+    wren "Actually. "
+    wren "I'm going to lay down. "
+    # Screen goes red and shaky
+    wren "{i}No one checks in on me. Everyday the same."
+    # Wren chromatic wren "People are all terrible anyways. 
+    # Scary music 
+    # Wren wheezing 
+    wren "I hope whoever cleans my body has a grand 'ol time. "
+    wren "Bye Ines. "
+    wren "Bye Katriel. "
+    wren "Bye Mother. "
+    wren "Bye, Wre-"
+    wren "Okay, Wren. It's okay. "
+    # Screen goes black 
+    # Fly buzzing sounds. 
+    # if we have time, draw wrens corpse in bed, Flowers and petals and blood and leaves around her. 
+    # Maybe even where who ever had the highest affection w Wren jolts up from her desk and goes, ah, why did my chest hurt? (Feel free to cut if too stupid/ time crunch) 
+    
+    # END
     return
+
+    # (Possible post credits where Ines and kat have a convo, about wren like 10 yrs later??? Cut for time) 
+
+label kat_end:
+    # KATRIEL
+    phone_wren "wren: are you free right now?"
+    phone_kat "maybe. "
+    phone_wren "I'm coming over. "
+    phone_kat "okay. "
+    # Wren outside katriels house. 
+    # katriel comes out. 
+    kat "So."
+    wren "Can we go up to your room?"
+    kat "What did you want to tell me, Wren."
+    wren "It's not my mom that's sick."
+    kat "Duh."
+    wren "I'm sick. And I keep getting sicker."
+    kat "Oh my God, Wren."
+    wren "And I don't know what it is, and I can't sleep and it hurts all the time."
+    kat "Hey, I understand."
+    wren "I didn't mean to get stuff at work wrong."
+    wren "I didn't want to get you in trouble."
+    wren "*snif"
+    kat "Hey, it's not terminal, right?"
+    kat "I'm not ready to mourn you."
+    #wren sprite moves closer to kat sprite"
+    wren "{i}I love you."
+    kat "Wren, it'll be okay. We can figure something out!"
+    wren "{sc=1}I love you."
+    kat "Oh!"
+    wren "Sorry."
+    # if affection with kat is higher or equal to Ines, go to Kat Bad. 
+    # if affection to Kat is lower than Ines, go to Kat worse. 
+
+    # Goto Katbad or katworse. 
+
+    #does this work?
+    $if kat_obj.get_score() < ines_obj.get_score(): renpy.jump("kat_worse")
+
+label kat_bad:
+    #KatBAD-
+    kat ".... "
+    wren "… "
+    kat "Why. "
+    kat "You selfish little monster! "
+    kat "Why do you have to do this now. "
+    kat "You've ruined EVERYTHING. "
+    # Kat starts crying, if we have a sprite for that. 
+    kat "I can't believe you're still fucking with me. "
+    kat "After everything I've done for you! "
+    kat "I'm not gonna be your little fetish. "
+    kat "All I've EVER wanted to do is help you. "
+    kat "Go run back to your mommy, Wren. "
+    kat "Stop breaking girl's hearts. "
+    kat "Are you even really sick? "
+    wren "I'm serious Katriel."
+    wren "So stop being a complete dick right now? "
+    kat "Sigh. "
+    # music change 
+    kat "Okay. It's just. It's just a lot okay? "
+    kat "I wish you weren't sick!"
+    wren "Woah, you can stop gripping my shirt so tight. "
+    kat "I bet you taste like blood right now. "
+    kat "I wanna see what it's like. "
+    wren "Back off Katriel. "
+    kat "What. Didn't you JUST confess to me. "
+    kat "Why are you doing this to me this now? "
+    wren "How about let's.. go inside? "
+    kat "FUCK YOU WREN! "
+    wren "No? "
+    kat "."
+    kat ". . "
+    kat "What am I doing? "
+    kat " Ugh God"
+    kat "I'm sorry Wren. I'm so sorry. "
+    kat "I didn't get enough to eat today and my dad was really- "
+    kat "It doesn't matter. It's not your fault. "
+    kat "You look pale"
+    kat "I'm so sorry for my outburst. "
+    kat "Wren. Lets go?"
+    wren "Your hand is warm… "
+    wren "It's nice. "
+    wren "It's the same as all those years ago. "
+    kat "It feels different to me."
+    # fade to black 
+    # [] if have time write Kat and Wren sex scene? 
+    # fade to into a hospital clinic. 
+    # Wren and Kat are next to each other, talking to a researcher. Wren is pale and sickly. 
+    kat "Well, we already got her a blood culture and they didn't find any sign of sepsis. "
+    wren "{i}I didn't know that. "
+    kat "And so far all she's done is answer questions and take tests! "
+    kat "I even brought you the petals and you won't take a look. "
+    researcher "That counts as a biohazard, Miss. We have to throw those away. "
+    wren "I - "
+    researcher "And has small cell carcinoma been ruled out? "
+    kat "Yes, we just got the results a week ago. "
+    researcher "Hmm, actually, about those hives and itchiness. "
+    kat "Yes? "
+    researcher "We could do a biopsy, and I'll send it to the Novel Research Lab as well. See what they have to say. "
+    kat "That would be lovely. "
+    researcher "It won't be a long procedure. Let's schedule it. "
+    kat "O-"
+    #wren speaks fast
+    wren "{sc=5.0}No. No biopsy. "
+    kat "She can do it. "
+    wren "No!"
+    researcher "Well. Umh."
+    wren "Not that. Just- isn't there anything else? "
+    researcher "Well, I suppose we could do a liquid biopsy. "
+    kat "Wren. "
+    wren "Yes. Let's do that. "
+    # go to outside Kat's house. Wren and katriel are there. 
+    wren "Are you still mad at me? "
+    kat "Do you even have to ask? "
+    wren "You shouldn't be mad about me not wanting strangers to look at me. "
+    kat "I'm mad because you refuse to do the right thing! "
+    kat "Just cooperate with the very nice, very busy, nice researchers who just want to help you. "
+    wren "Who want to put a knife to me. While I'm asleep. "
+    kat "It's just one sample! "
+    wren "It's my fucking disease. "
+    kat "Oh. OHHHHHH. "
+    kat "Is it now, Wren? "
+    kat "Despite it being your fucking disease, I end up scheduling all the appointments. I pick up your prescriptions. I remind you for everything, everything! "
+    wren "Aw shucks. Thanks for completely invading my entire life even though I didn't ask. "
+    kat "As if you wouldn't be rotting in your bed right now without me. "
+    wren "Oh, yes, of course, my bad. You think you can run my life because you're so much better than me. "
+    kat "I don't think that. "
+    wren "You've literally told me that, Katriel. "
+    kat "Fuck off already. "
+    wren "Go fuck yourself. "
+    kat "FUCK YOU! "
+    # katriel sprite runs off screen. Breathing heavily sound. 
+    wren "So there. "
+    wren "Ah. "
+    wren "I should go apologize. "
+    wren "Fuck you Kat. "
+    wren "I should really go and apologize… "
+    # katriel room kay is already there Wren sprite comes in. 
+    kat "Snif! Sob! "
+    wren "Hey. "
+    kat "Mmfh. "
+    wren "I got pretty heated. "
+    wren "I'm actually um. "
+    wren "really grateful for everything you do for me. "
+    wren "You're amazing Kat. "
+    kat "You mean it? "
+    wren "Yeah. "
+    kat "I just want to help you. You're so special to me, I love you so much. "
+    wren "I know. Hey, I know. "
+    kat "Do you love me as much as I love you? "
+    wren "You're the best person in my life right now. "
+    kat "That's not a yes. "
+    wren "I love you. "
+    kat "Then why won't you let me help you get better? "
+    wren "It's not about that. "
+    kat "Then what is it about? "
+    wren "…  "
+    kat "You don't want to feel better. "
+    wren "I'd kill to have my lungs work again. "
+    kat "So. You don't want to be with me."
+    wren "Where are you pulling this from? "
+    kat "I can't think of any other reason why you fight against a cure at every turn. "
+    wren "I just hate the doctors poking and prodding and stealing bits of me away. "
+    wren "I'm so tired of filling out papers about when the last time I shit was. "
+    wren "I just keep getting worse. "
+    kat "This could have been the one to help. "
+    wren "It's not your fault. "
+    kat "You know, if I had known, I wouldn't have played doctor for you. "
+    wren "Please don't stop."
+    kat "But you just said? "
+    wren "It's not okay for strangers to do it. "
+    wren "You're…  more gentle than them. "
+    wren "…"
+    wren "Do you want to take the sample?"
+    kat "Really? "
+    wren "I'm sure."
+    kat "They won't accept me bringing in a lump of your flesh. "
+    wren "I just need you to do it. "
+    kat "Why? "
+    wren "Before they touch me. You have to be the one. "
+    kat "Okay. I'll do that for you. "
+    kat "Lie on the bed for me, okay? "
+    kat "I don't have any of my fancy tools with me, but I sterilized the box cutter. "
+    wren "Are you sure? "
+    kat "If you are. "
+    wren "Okay. Do it. "
+    # screen goes red, then black, if we have time for the cg where kat cut wrens wrist with a box cutter is blooming, please place that here, if not, put some really lush and blooming but still gloomy foliage. 
+    kat "You're beautiful. "
+    kat "Wren, you're beautiful. "
+    # END! roll credits! 
+    return
+
+label kat_worse:
+    #katriel worse- 
+    kat "You don't have to give me that, Wren. "
+    kat "Not if you don't want to. "
+    kat "I'll take care of you. I don't need... "
+    wren "Okay, okay. "
+    kat "You can trust me with that kinda stuff, all right? "
+    kat "I was just. Really sensitive today. "
+    kat "My dad keeps hassling me to find a fiance. And he just called, and said a bunch of stuff, and…"
+    wren "You're really accomplished, and smart. It would be stupid to waste you on a man. "
+    wren "You're gonna change the world. "
+    kat "Can hug you? "
+    #kat and Wren sprite get closer 
+    #wren quiet
+    wren "I don't know why dating me would be so bad… "
+    # K smiles 
+    kat "Let me clean you up, my Wren. "
+    wren "I'm sorry for everything I said. "
+    kat "I forgive you. "
+    wren "You're pretty and I like you and"
+    # sound effect of a slap? 
+    wren "mmfhhg?? Nblh??? "
+    kat "I thought I saw something in your mouth. "
+    kat "Here we are. "
+    # K takes her hand out. Something long and slimy is attached to her hand, and Wrens throat. 
+    # if we don't have time, just show the nasty cg from earlier lol
+    kat "Gross. I don't even know that is. "
+    # fade to black. 
+    # wren is in her bedroom. It's dark. 
+    kat "Yes, I'm ever so grateful Ms. Warner."
+    mom "I'm the one who is grateful. She's really perked up since she's been with you. "
+    mom "She could learn a thing or two from you. "
+    kat "Haha, yes, she could. "
+    mom "But she really appreciates you, Katriel. you really are a lovely girl. "
+    kat "Thank you Ms. Warner. "
+    wren "… . "
+    # Footsteps sounds 
+    # W Face tightens. 
+    # Door open sound. 
+    kat "Wren! How are you feeling! "
+    kat "Oh, gosh, you knocked over your cup. Not good, not good. "
+    kat "Here, we need to change your bandages. "
+    wren "Ouch. "
+    kat "No. No ouch. "
+    kat "These could have been avoided. "
+    kat "You deserve them Wren."
+    wren "They still hurt. And I'm feverish. "
+    kat "It would hurt less if you stayed still. "
+    wren "Can I sleep alone tonight? Please? "
+    kat "Why would you ask me that? "
+    kat "I mean, of course, but why? "
+    wren "I don't know. "
+    kat "That's not a real reason."
+    kat "What's the real reason? "
+    wren "It's hot with you in here. "
+    kat "I'll turn on the fan! No issue."
+    wren "… "
+    kat "So we're good right? "
+    kat "Wren, are we good?"
+    kat "I don't even get a thank you? "
+    kat "God. We can just put you in a hospital if that's what you want. "
+    kat "Where they'll call you Marcus and stab you with needles . "
+    kat "And there will be no one to hold your hand. "
+    kat "sniff! Sob! "
+    wren "No no no, hey. "
+    wren "Sleep with me tonight. "
+    kat "You're just saying that to make me feel better. "
+    wren "I really want you to sleep with me tonight. "
+    kat "You mean it? "
+    wren "Pinky promise. "
+    kat "You sappy bitch. "
+    kat "Sigh. You know you can tell me anything, right? "
+    wren "Of course. "
+    kat "You would tell me if anything was wrong, right? "
+    wren "Of course. "
+    kat "… "
+    wren "Leave it alone. "
+    kat "Is it what happened at the restaurant earlier? "
+    wren "No…  I mean.. Yes? Maybe? A little? "
+    kat "I'm really really sorry. "
+    kat "I shouldn't have messed around like that. "
+    kat "You're just so cute when you're all worked up like that, and I'm sure the waitress didn't mind. "
+    wren "I felt like you wanted her more than me. "
+    kat "That's not true. "
+    kat "I really love you a lot Wren. "
+    wren "Yeah, me too. "
+    kat "You know how hard it is for me to be vulnerable and affectionate with words. "
+    kat "My actions show my love. Every day. "
+    kat "I would do anything for you. "
+    wren "I promise it's okay. Let's just go to bed. "
+    kat "It's clearly not okay! You're not okay! "
+    wren "What do you want from me?"
+    kat "Some fucking honesty! "
+    wren "That's rich, coming from you. "
+    kat "What the fuck is that supposed to mean. "
+    wren "I'm going to sleep. "
+    kat "No, Wren. "
+    wren "Goodnight. "
+    kat "This isn't fair!"
+    wren "How is this not fair. "
+    kat "I help you so much. Your room is clean because of me. You have a job because of me. You mistreat me and screw up and I'm patient because I know you are sick. "
+    kat "And the one time, the one time I dare to even try and joke around, you call me an abuser? "
+    kat "Is that it? Is that how it is now? "
+    wren "That's not what I meant… "
+    kat "Then what did you mean"
+    kat "Because I want to leave right now. "
+    wren "No, c'mon Kat. "
+    kat "Oh so now it's Kat. Not “ abusive piece of shit. “ "
+    wren "Please? I'm sorry. "
+    wren "I'll never do it again. "
+    kat "… "
+    wren "Kiss me? "
+    kat "No. "
+    kat "Good night. "
+    wren "Night."
+    kat "Are you sure you're okay? "
+    wren "I love you. "
+    kat "I love you too. "
+    # We zoom out and see Kat and Wren spooning, Kat bieng little spoon, Wren big. Kat makes a happy sound and nuzzles closer to Wren. 
+    # 
+    # Wren doesn't react. We see the back of her head, which is filled with roots and flowers. 
+    "This hasn't been Wren for weeks. Kat doesn't seem to mind."
+
+    #END
+    return  
+

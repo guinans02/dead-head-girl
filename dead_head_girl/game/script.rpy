@@ -127,6 +127,8 @@ define phone_kat = Character(
 define cow1 = Character(name="Coworker 1", kind=strange)
 define cow2 = Character(name="Coworker 2", kind=strange)
 
+define reasearcher = Character(name="Researcher", kind=strange)
+
 #declare ambience audio channel
 define ambience = renpy.music.register_channel("ambience")
 

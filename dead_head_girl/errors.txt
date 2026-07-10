@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/day2.rpy", line 43: end of line expected.
-    show wren pose1 bashful, max_y
-                           ^
-
-File "game/day2.rpy", line 45: end of line expected.
-    show ines pose_two laugh, max_y
-                            ^
+File "game/day2.rpy", line 713: invalid syntax
+    jump fail_end
+                 ^^^^^^^^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Mon Jul  6 21:28:27 2026
+Fri Jul 10 11:02:00 2026
