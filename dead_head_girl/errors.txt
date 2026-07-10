@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/day2.rpy", line 713: invalid syntax
-    jump fail_end
-                 ^^^^^^^^
+File "game/scenes.rpy", line 365: expected ':' not found.
+    label ines_day1_post_choice
+                               ^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Fri Jul 10 11:02:00 2026
+Fri Jun 26 09:11:38 2026
