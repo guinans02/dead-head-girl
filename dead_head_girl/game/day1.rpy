@@ -119,6 +119,9 @@ label work_day1:
 
     #snap back to reality
 
+    scene lab
+    show wren pose1 neturalsad at left, max_y
+    show kat pose1 neutral at right, max_y
     kat "It's been a while. "
     wren "{i}That's all you have to say. Is this how it's going to be with you? "
     wren "Yes, it has. "
@@ -128,7 +131,7 @@ label work_day1:
     kat "I hope I'm not boring you. "
     wren "It's interesting, go on. "
     kat "no, I don't think so. "
-    wren "{size=5}I just thought you were done with this stuff."
+    wren "{size=15}I just thought you were done with this stuff."
     kat "what? Ive never said anything like that "
     wren "isn't this directly in the medical corporate culture you hated? "
     kat "I don't even know why you would bring that up."
