@@ -1,0 +1,87 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+After initialization, but before game start.
+  File "game/web.rpy", line 610, in web_build_command
+    build_web(p=p, gui=False, launch=args.launch, destination=args.destination)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/web.rpy", line 408, in build_web
+    p.update_dump(True, gui=gui)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "game/project.rpy", line 438, in update_dump
+    self.launch(["quit"], wait=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "game/project.rpy", line 359, in launch
+    interface.error(_("Launching the project failed."), _("Please ensure that your project launches normally before running this command."))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/interface.rpy", line 377, in error
+    common(_("ERROR"), store.ERROR_COLOR, message=message, submessage=submessage, back=action, **kwargs)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/interface.rpy", line 343, in common
+    return screen_func("common", title=title, title_color=title_color, message=message, submessage=submessage, back=back, continue_=continue_, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'bottom'
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "renpy/bootstrap.py", line 401, in bootstrap
+    renpy.main.main()
+    ~~~~~~~~~~~~~~~^^
+  File "renpy/main.py", line 596, in main
+    run(restart)
+    ~~~^^^^^^^^^
+  File "renpy/main.py", line 92, in run
+    if not renpy.arguments.post_init():
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^ 
+  File "renpy/arguments.py", line 355, in post_init
+    return commands[command]()
+           ~~~~~~~~~~~~~~~~~^^
+  File "game/web.rpy", line 610, in web_build_command
+    build_web(p=p, gui=False, launch=args.launch, destination=args.destination)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/web.rpy", line 408, in build_web
+    p.update_dump(True, gui=gui)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "game/project.rpy", line 438, in update_dump
+    self.launch(["quit"], wait=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "game/project.rpy", line 359, in launch
+    interface.error(_("Launching the project failed."), _("Please ensure that your project launches normally before running this command."))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/interface.rpy", line 377, in error
+    common(_("ERROR"), store.ERROR_COLOR, message=message, submessage=submessage, back=action, **kwargs)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/interface.rpy", line 343, in common
+    return screen_func("common", title=title, title_color=title_color, message=message, submessage=submessage, back=back, continue_=continue_, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/statementexports.py", line 341, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ui.py", line 306, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 2163, in interact
+    repeat, rv = self.interact_core(
+                 ~~~~~~~~~~~~~~~~~~^
+        preloads=preloads,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "renpy/display/core.py", line 2517, in interact_core
+    scene = self.compute_scene(scene_lists)
+            ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 1675, in compute_scene
+    d = scene_lists.make_layer(layer, self.layer_properties[layer])
+        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/scenelists.py", line 682, in make_layer
+    rv.append_scene_list(self.layers[layer])
+                         ~~~~~~~~~~~^^^^^^^ 
+KeyError: 'bottom'
+
+Linux-6.8.0-134-generic-x86_64-with-glibc2.39 x86_64
+Ren'Py 8.5.3.26051504
+Ren'Py Launcher 8.5.3.26051504
+Sun Jul 12 11:23:47 2026

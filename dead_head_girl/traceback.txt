@@ -1,54 +1,23 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-NameError: name 'cow' is not defined. Did you mean: 'com'?
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "game/scenes.rpy", line 11, in script call
-    call debug
-  File "game/scenes.rpy", line 18, in script call
-    call work_day1
-  File "game/day1.rpy", line 220, in script
-    cow "ahh, end of another daily grind. "
-Exception: Sayer 'cow' is not defined.
+After initialization, but before game start.
+FileNotFoundError: [Errno 2] No such file or directory: './game/saves/navigation.json.new'
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "renpy/ast.py", line 625, in eval_who
-    return renpy.python.py_eval(who)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^
-  File "renpy/python.py", line 1308, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1301, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<none>", line 1, in <module>
-NameError: name 'cow' is not defined. Did you mean: 'com'?
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "game/scenes.rpy", line 11, in script call
-    call debug
-  File "game/scenes.rpy", line 18, in script call
-    call work_day1
-  File "game/day1.rpy", line 220, in script
-    cow "ahh, end of another daily grind. "
-  File "renpy/ast.py", line 2935, in execute
-    Say.execute(self)
-    ~~~~~~~~~~~^^^^^^
-  File "renpy/ast.py", line 956, in execute
-    who = eval_who(self.who, self.who_fast)
-          ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ast.py", line 627, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'cow' is not defined.
+  File "renpy/bootstrap.py", line 401, in bootstrap
+    renpy.main.main()
+    ~~~~~~~~~~~~~~~^^
+  File "renpy/main.py", line 537, in main
+    renpy.dump.dump(False)
+    ~~~~~~~~~~~~~~~^^^^^^^
+  File "renpy/dump.py", line 251, in dump
+    with open(new, "w") as f:
+         ~~~~^^^^^^^^^^      
+FileNotFoundError: [Errno 2] No such file or directory: './game/saves/navigation.json.new'
 
 Linux-6.8.0-134-generic-x86_64-with-glibc2.39 x86_64
 Ren'Py 8.5.3.26051504
 Dead Head Girl 0.1
-Sat Jul 11 13:09:10 2026
+Sun Jul 12 11:23:47 2026
