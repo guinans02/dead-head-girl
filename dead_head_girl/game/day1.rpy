@@ -10,6 +10,7 @@ label day1:
 # DAY ONE SCENES
 label work_day1:
     scene office_bg
+    stop music
     show wren pose1 neutralsad at max_y, center
 
     "The office is busy and no one says hi to her."
@@ -18,9 +19,12 @@ label work_day1:
     cow1 "Hey, do you know why Liza's been out for the past few days?"
     cow2 "Don't tell anyone else I said this, but it's because her daughter eloped with some {i}woman!{/i}"
     cow1 "And I thought she was normal... How could she do that to her mother?"
+    show wren pose1 eyesclosed
     wren "{i}Sigh.{\i}"
     wren "{i}It's a paycheck. I'm getting money for this.{\i}"
+    show wren pose1 pain
     wren "{i}They can't fix the office door?{\i}"
+    show wren pose1 neutralsad
 
     "The hours pass by in a blur."
     #blurry image
@@ -39,17 +43,18 @@ label work_day1:
     #wren walks to the lab
     show wren pose1 neutralsad at mv(center, offscreenright, spd=1.0), max_y
 
-
-    "Wren sees someone familiar through a laboratory window."
     scene lab
+    "Wren sees someone familiar through a laboratory window."
     show wren pose1 neutralsad at mv(offscreenleft, left, spd=1.0), max_y
     show kat pose2 neutral at right, max_y
     wren "…Kat."
     wren "No way that's Kat. She was so serious about never going into medicine." 
     wren "\"I disavow the lab forever!\" and she really believed herself when she said that."
     wren "But that's unmistakably Kat."
+    show kat pose2 shock
     kat "Wren…!?"
     #wren happy
+    show wren pose1 smile
     wren "Why are you here?"
     wren "{i}It's been years and you look so different."
     wren "I really, really missed you."
@@ -59,59 +64,98 @@ label work_day1:
     show kat pose2 neutral at max_y, right
     # (Cut to flashback to school library ) 
     wren "Come over to my place!"
+    show kat pose1 eyesclosed
     kat "No, your mom's weird. "
     wren "Okay, then I'll come over to yours. "
+    show kat pose1 regret
     kat "I told my mom you're a girl now and she doesn't want you in the house. She doesn't want me to get ideas. "
     # (For context, Wren told Kat she was trans long before she was out at school. She came out freshman year to most people, but figured out she was trans in middle school. She only told Kat and her mother.) "
+    show wren pose1 pensive
     wren "Well that fuckin sucks. "
     kat "Yeah, it fuckin does. "
+    show wren pose1 worried one
     wren "let's just stay here then ? "
+    show kat pose2 happy
     kat "fine. Just stop stealing my makeup. If you want it you can just ask. "
+    show wren pose1 smile
     wren "you're so much prettier than me. "
+    show kat pose2 eyesclosed blush
     kat "LIE. "
+    show wren pose1 neutralblush
     wren "Well, my mother at least seems to think so. "
     kat "Ugh, but lace is so itchy. And it doesn't matter when it gets in the way of being a chef. "
-    wren "(internally) I can't keep up with all her career changes. Last week it was an aeronautics engineer. "
+    show wren pose1 eyesclosed
+    wren "{i}I can't keep up with all her career changes. Last week it was an aeronautics engineer. "
+    show wren pose1 bashful
     wren "I'm so jealous."
     kat "Well, if you want to be pretty so bad, lets just do it. "
+    show wren pose1 woah
     wren "what?" 
     # scenery change supply closet 
     scene broomcloset
-    show wren at left
-    show kat at right
+    show wren pose1 embarrased two at left, max_y
+    show kat pose2 smile blush at right, max_y
     # A moment of silence between the two of them. 
     wren "you shouldn't do this kinda thing."
+    show kat pose1 relieved
     kat "why not. If you want it, you should get it."
     wren "I guess."
+    show wren pose1 embarrased one
+    show kat pose2 happy
     kat "You're lucky I'm here to teach you. My mom is so mean about this sort of thing."
     wren "…"
+    show kat pose2 neutralsad
     kat "It's not like I even really wanted those shorts anyways."
     kat "she says I do it just to piss her off."
+    show kat pose2 worried three
     kat "thats such bullshit, dont you agree?"
+    show wren pose1 bashful
     wren "…"
+    show kat pose2 worried one
     kat "Whats with you. You normally love this kinda thing. "
+    show wren pose1 eyesclosed
     wren "I don't really know how to say it."
+    show kat pose2 worried sad
     kat "What, did someone hurt you? Or did you hurt someone? That's okay, it doesn't matter to me. "
+    show kat pose2 neutralsad
     kat "Ill go to hell if I need to. "
-    wren "( internally) you're so dramatic. "
-    wren "what if"
+    wren "{i}You're so dramatic. "
+    wren "what if-"
     # foot step sound effect "
+    show kat pose2 worried two at mv(right, center, 0.5), max_y
     kat "Shh. "
     # K gets close to w "
+    show wren pose1 embarrased one
+    kat "..."
     kat "ok, good. It's clear. . So, what's going on with you?"
+    show kat pose2 happy at mv(center, right, 1.0), max_y
     wren "Um… so…"
     wren "Are you… do you think…"
     wren "what would you say if two girls dated?"
+    show kat pose2 worried two
     wren "I kind of have been thinking about it. "
+    show wren pose1 smile
     wren "We make a good pair, right? "
+    show kat pose2 shock
+    stop music
     # music stops "
     kat "…"
+    show kat pose1 regret
     kat "I'm not a lesbian. "
+    show wren pose1 woah
     wren "I- I'm not saying you are one, but hear me out-"
+    show kat pose1 eyesclosed
     kat "What the fuck are you talking about? "
+    show wren pose1 pain
+    show kat pose1 neutralsad
     wren "Wow you're mad I'm sorry I didn't realize-"
     kat "Let's not do this right now. I have to go. I'll talk to you later. "
+    show wren pose1 cry
     wren "Kat. "
+    show kat at mv(right, offscreenright, 1.0)
+    show wren at mv(left, center, 0.5)
+    wren "Kat wait-"
+    #play music
     # music starts 
     # Kat leaves, wren is alone in closet 
     # a beat
@@ -120,45 +164,75 @@ label work_day1:
     #snap back to reality
 
     scene lab
-    show wren pose1 neturalsad at left, max_y
-    show kat pose1 neutral at right, max_y
+    show wren pose1 neutralsad at left, max_y
+    show kat pose2 shock at right, max_y
     kat "It's been a while. "
     wren "{i}That's all you have to say. Is this how it's going to be with you? "
     wren "Yes, it has. "
-    kat "so I'm a lab tech now, mostly been supporting the research and development division."
+    show kat pose2 neutralsad
+    kat "So I'm a lab tech now, mostly been supporting the research and development division."
     wren "Mhm… "
+    show kat pose2 happy
     kat "They're trusting me with a lot of responsibility.I recently went to a talk given by Dr. Grice, I'm so lucky to work under such a prestigious director. Running the bio- assays is- "
     kat "I hope I'm not boring you. "
+    show wren pose1 pensive
     wren "It's interesting, go on. "
+    show kat pose2 neutral
     kat "no, I don't think so. "
+    show wren pose1 bashful
     wren "{size=15}I just thought you were done with this stuff."
+
     kat "what? Ive never said anything like that "
     wren "isn't this directly in the medical corporate culture you hated? "
     kat "I don't even know why you would bring that up."
+    show kat pose2 shock
     kat "I'm not gonna apologize for my success. "
+    show wren pose1 neutralsad
     wren "Yes… you're clearly doing well for yourself now."
-    K "yeah, well, I grinded my ass off to get this position so I'm going to enjoy it. "
+    show kat pose1 relieved
+    kat "yeah, well, I grinded my ass off to get this position so I'm going to enjoy it. "
     wren "thats great. "
     kat "agh! "
+    show wren pose1 angry
     wren "have you changed even a little bit?"
+    show kat pose1 eyesclosed
     kat "Wren. "
+    show kat pose2 happy
     kat "you'll join me on my walk home together after work? "
-    wren "{size=5}Whatever you want."
+    show wren pose1 embarrased one
+    wren "{size=15}Whatever you want."
+    show kat pose2 happy
     kat "What?"
+    show wren pose1 bashful
     wren "I said yes."
+    show kat pose2 smile blush
     kat "okay. nice. Good. "
     kat "itll be like old times. "
-    kat "by the way, don't mention anything to anyone here. I don't do office rumors and I hate lying bitches. ^v^"
+    show kat pose1 relieved
+    kat "by the way, don't mention anything to anyone here. I don't do office rumors and I hate lying bitches."
     # (Wren back at her desk.) "
+    scene office_bg
+    show wren pose1 embarrased one at center, max_y
     wren "{i} mother, no, it's fine. Yes I'm showing up with my friend who I haven't talked to in years and that I spent an entire month sobbing about. No, I don't want anything. No, I don't know where she gets her clothes from. "
+    show wren pose1 eyesclosed
     wren "{i}mother, are you fucking stupid? "
-    cow "ahh, end of another daily grind. "
+    show wren pose1 neutralsad
+    cow2 "ahh, end of another daily grind. "
+    show wren at mv(center, offscreenright, 1.0)
     wren "Bye."
+    scene houses
+    show wren pose1 neutralsad at mv(offscreenleft, left, 0.5), max_y
+    show kat pose2 neutralsad at right, max_y
     # bg change to outside, at night. Kat is already there. "
-    "They are both silent. "
+    #"They are both silent. "
+    play ambience cicadas fadein 2.0
+    wren "..."
+    kat "..."
     # cicada noise in bg "
     #Cicadas: BZZZZZZ ( too silly??) "
-    wren "I knew you were too cowardly to speak first, Kat. "
+    ""
+    show wren pose1 bashful
+    wren "{i}I knew you were too cowardly to speak first, Kat. "
 
     #we need cicada ambience stat
 
@@ -166,26 +240,40 @@ label work_day1:
         "Why did you ignore all of my messages after graduation?":
             #+1 kat affection
             $kat_obj.update_score(1)
-
+            show kat pose2 shock
             kat "Whatever do you mean? "
+            show wren pose1 eyesclosed
             wren "You know what I'm talking about. After that conversation, you just stopped talking to me entirely."
+            show kat pose1 sad
             kat "I don't recall that."
+            show wren pose1 angry
             wren "Does the word L-E-S-B-I-A-N mean anything to you? "
+            show kat pose1 regret
             kat "Shut the fuck up, you don't know anything about me. "
             wren "Make me. "
-            "{i} Katriel looks like she's about to say something and clenches her fists.{/i}"
+            show kat pose2 eyesclosed blush
+            kat "..."
+            "{i} Katriel clenches her fists.{/i}"
             
         
         "How's your parents' business? Still booming?":
+            show kat pose2 neutral
             kat "They're doing better than ever. My father's taking a trip to Shanghai to promote the business right now. "
+            show wren pose1 neutralsad
             wren "How lovely. "
+            show kat pose2 happy
             kat "How are yours doing? Is your dad still gone and your mom still <crazy>? "
+            show wren pose1 angry
             wren "… Fuck you."
+            show kat pose2 smile blush
             kat "Ha. I bet you would like that, wouldn't you?"
-            "{i}Wren can't think of a proper reply.{/i}"
+            show wren pose1 neutralblush
+            #"{i}Wren can't think of a proper reply.{/i}"
+            wren "..."
+            show wren pose1 neutralsad
 
     "{i}They reach their houses, which are within a block from each other.{/i}"
-
+    show kat pose2 smile blush
     "{i}Kat smiles.{/i}"
     kat "Bye, Wren. It was wonderful catching up with you!"
     

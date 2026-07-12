@@ -133,13 +133,14 @@ define reasearcher = Character(name="Researcher", kind=strange)
 define ambience = renpy.music.register_channel("ambience")
 
 #define music file locations
-define audio.house_music    = "audio/music/Insurrection Bimbo - traverse mes mains, mes bras, mon ventre.mp3"
-define audio.garden_amb     = "audio/music/garden_bg_music.opus"
-define audio.garden_music   = "audio/music/Rrrrrose Azerty - Feverish Soundtrack.ogg"
-define audio.research_music = "audio/music/johnny_ripper - gare du nord.mp3"
-define audio.wren_selfcare  = "audio/music/CXR ATK - Tenfold.mp3"
+define audio.house_music        = "audio/music/Insurrection Bimbo - traverse mes mains, mes bras, mon ventre.mp3"
+define audio.garden_amb         = "audio/music/garden_bg_music.opus"
+define audio.garden_music       = "audio/music/Rrrrrose Azerty - Feverish Soundtrack.ogg"
+define audio.research_music     = "audio/music/johnny_ripper - gare du nord.mp3"
+define audio.wren_selfcare      = "audio/music/CXR ATK - Tenfold.mp3"
+define audio.cicadas            = "audio/music/cicadas.wav"
 
-define audio.zipper         = "audio/zipper.opus"
+define audio.zipper             = "audio/zipper.opus"
 
 #declare love interest objects
 default wren_obj = store.MC(wren)

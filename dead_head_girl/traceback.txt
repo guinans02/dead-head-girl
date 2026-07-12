@@ -1,38 +1,54 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenes.rpy", line 4, in script call
-    call day1
-  File "game/scenes.rpy", line 10, in script call
-    call garden_day1
-  File "game/scenes.rpy", line 337, in script
-    python:
-  File "game/scenes.rpy", line 341, in <module>
-    renpy.jump(ines_day1_good)
-               ^^^^^^^^^^^^^^ 
-NameError: name 'ines_day1_good' is not defined
+NameError: name 'cow' is not defined. Did you mean: 'com'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "game/scenes.rpy", line 11, in script call
+    call debug
+  File "game/scenes.rpy", line 18, in script call
+    call work_day1
+  File "game/day1.rpy", line 220, in script
+    cow "ahh, end of another daily grind. "
+Exception: Sayer 'cow' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/scenes.rpy", line 4, in script call
-    call day1
-  File "game/scenes.rpy", line 10, in script call
-    call garden_day1
-  File "game/scenes.rpy", line 337, in script
-    python:
-  File "renpy/ast.py", line 1193, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1276, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/scenes.rpy", line 341, in <module>
-    renpy.jump(ines_day1_good)
-               ^^^^^^^^^^^^^^ 
-NameError: name 'ines_day1_good' is not defined
+  File "renpy/ast.py", line 625, in eval_who
+    return renpy.python.py_eval(who)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "renpy/python.py", line 1308, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1301, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<none>", line 1, in <module>
+NameError: name 'cow' is not defined. Did you mean: 'com'?
 
-Linux-6.8.0-124-generic-x86_64-with-glibc2.39 x86_64
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "game/scenes.rpy", line 11, in script call
+    call debug
+  File "game/scenes.rpy", line 18, in script call
+    call work_day1
+  File "game/day1.rpy", line 220, in script
+    cow "ahh, end of another daily grind. "
+  File "renpy/ast.py", line 2935, in execute
+    Say.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "renpy/ast.py", line 956, in execute
+    who = eval_who(self.who, self.who_fast)
+          ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ast.py", line 627, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'cow' is not defined.
+
+Linux-6.8.0-134-generic-x86_64-with-glibc2.39 x86_64
 Ren'Py 8.5.3.26051504
 Dead Head Girl 0.1
-Fri Jun 26 09:22:50 2026
+Sat Jul 11 13:09:10 2026

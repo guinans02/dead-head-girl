@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scenes.rpy", line 365: expected ':' not found.
-    label ines_day1_post_choice
-                               ^
+File "game/day1.rpy", line 239: expected menuitem
+    show wren pose1 angry
+    ^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Fri Jun 26 09:11:38 2026
+Sat Jul 11 13:14:13 2026

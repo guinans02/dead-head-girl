@@ -44,42 +44,74 @@ label garden_day2:
     wren "Do you mean ethereal? "
     show ines pose_two laugh at max_y
     ines "No, ephemeral."
+    show wren pose1 angry
     wren "Do you know what that word means? "
+    show ines blush one
     ines "You're being rude. "
+    show wren pose1 smile
     wren "so, now we're even. "
     # cg wren's poloraid. Its blurred and grainy
+    show wren pose1 pensive
     wren "I mean, it's a photo. "
+    show ines pose_two frustrated
     ines "Hmmph."
+    show wren pose1 woah
     wren "you're sweet for showing it to me. "
+    show ines pose_two pensive one
     ines "I don't really like photography all that much. Camera photos look too real. "
+    show ines pose_two fan
     ines "Drawings, though, capture the feeling of a living thing. I get to remember you how I see you for however long I keep the drawing."
+    show ines pose_two smile
     ines "But polaroids are still pretty cool. I like how grainy they are. It helps to hide the imperfections. "
+    show wren pose1 worried one
     wren "You intend to make it look that blurry? "
+    show ines mlem
     ines "Well, no. But I like the effect. "
-    "A beat of silence." 
+    #"A beat of silence." 
+    show wren pose1 eyesclosed
+    ""
+    show wren pose1 pensive
     wren "What exactly am I doing in the garden today? "
+    show ines laugh one
     ines "Oh, have you forgotten your promise already? "
+    show wren pose1 woah
     wren "I. "
+    show wren pose1 embarrased two
     wren "I was scared you were messing with me. "
+    show ines pose_two shock
     ines "I'm not some high school mean girl! "
+    show ines pose_two fan
     ines "Wren, you have this sort of worldly air to you. Like you know something. I want to find out what it is. "
+    show ines fanatic one
     ines "I must paint you. "
 
     #wren blushes
+    show wren pose1 smile
     wren "If you really want to that bad… "
+    show ines laugh two
     ines "I brought some props from home. I'm so excited! "
 
     # rummage sound effect
+    show ines smile one
     ines "Let's see, lets see"
+    show ines pose_two pensive one
     ines "I have a piece of muslin fabric for draping"
+    show ines pose_two pensive two
     ines "I like doing texture work, so I also have some lace.. "
+    show ines laugh one
     ines "ooh! Or what about something here, from the garden! "
+    show ines laugh two
     ines "paying homage to the flowers you crushed, a mourning piece! "
+    show wren pose1 worried one
     wren "{i}what. "
+    show ines worried
     ines "um or actually "
+    show ines fanatic one
     ines "I brought something I made for you. "
+    show ines smile two
     ines "it took me a while, but I think you'd look just perfect in it. "
     ines "what do you think?? "
+    show wren pose1 worried two
 
     #choices
     menu:
@@ -92,32 +124,47 @@ label garden_day2:
             jump do_i_have_to
     
 label crown_of_leaves:
+    show wren pose1 pensive
     ines "Yes, I thought it would symbolize renewal."
+    show ines pose_two shock
     ines "I knew you had a good eye for the arts."
+    show ines pose_two laugh
     wren "{i}I guess I get how the leaves are renewal. "
     wren "{i}But I don't get those other ideas. "
     wren "{i}Who would mourn a bush? It didn't even die." 
 
+    show wren pose1 eyesclosed
     wren "I'll just go with the crown."
+    show ines pose_two fan
+    show wren pose1 neutralsad
     ines "Yay! I love working with live models. "
+    show ines pose_two at mv(right, center, 0.5), max_y
     # Ines moves closer to Wren "
     ines "Ok. Sit down like that. Spread out your arms a little."
+    show ines pose_two pensive two
     ines "Hm… look up. there we go! "
     # my inspiration is jesus on the crucifix with his crown of thorns lookin up. wowie
     # wren sprite w a green crown
     # humming music 
+    show ines fanatic one
     ines "Perfect. Such a good girl. "
+    show wren pose1 neutralblush
     # pencil scratch noises. "
     ines "Hm hm hmmm."
     # pencil scratch noises "
-    wren "Can ines "
+    show wren pose1 pain
+    wren "Hey ines-"
+    show ines mlem
     ines "Stay still please!! I'm capturing your lips. "
-    wren "(internally) But something is poking me…  "
-    wren "(internally) I can feel something dripping down my face. "
+    wren "{i}But something is poking me…  "
+    wren "{i}I can feel something dripping down my face. "
     # Wren sprite with crown and a line of blood"
+    show wren pose1 woah
     wren "Ines, take it off of me. "
-    ines "la la la ~ (locked in on sketching)"
+    ines "..."
+    show wren pose1 cry
     wren "ines. i think i'm bleeding. "
+    show ines fanatic one
     ines "Don't worry. the red stands out quite nicely on your pallor. "
     ines "Oh! you're just like a real life snow white. "
     wren "it's kinda hurting. "
@@ -140,6 +187,7 @@ label crown_of_leaves:
     jump post_garden_day2
 
 label do_i_have_to:
+    show wren pose1 pain
     wren "Honestly-"
     wren "I don't really like any of these?"
     #ines very sad"

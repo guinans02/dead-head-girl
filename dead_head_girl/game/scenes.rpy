@@ -15,7 +15,7 @@ label start:
     return
 
 label debug:
-    call post_kat_day2
+    call work_day1
     return
 
 label content_warning:
@@ -31,7 +31,7 @@ label content_warning:
         - Terminal Disease (in the form of the fictional Hanahaki Disease.)\n\n
     As well as other NSFW (and potentially offensive) topics.\n
     This game is unsuitable for minors. Please proceed with caution.\n\n
-    Take care of yourself.
+    Take care of yourself. This game has no happy endings.
     """
     nvl clear
     menu:
