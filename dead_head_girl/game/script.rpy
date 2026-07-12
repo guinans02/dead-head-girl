@@ -78,7 +78,7 @@ define mom = Character(
     font="fonts/EBGaramond-VariableFont_wght.ttf", 
     what_font="fonts/EBGaramond-VariableFont_wght.ttf",
     kind=strange,
-    callback=functools.partial(store.voice, character="mom")
+    callback=functools.partial(store.voice, character="message")
     )
 define phone = Character(
     name="Phone", 
@@ -136,11 +136,15 @@ define ambience = renpy.music.register_channel("ambience")
 define audio.house_music        = "audio/music/Insurrection Bimbo - traverse mes mains, mes bras, mon ventre.mp3"
 define audio.garden_amb         = "audio/music/garden_bg_music.opus"
 define audio.garden_music       = "audio/music/Rrrrrose Azerty - Feverish Soundtrack.ogg"
-define audio.research_music     = "audio/music/johnny_ripper - gare du nord.mp3"
-define audio.wren_selfcare      = "audio/music/CXR ATK - Tenfold.mp3"
-define audio.cicadas            = "audio/music/cicadas.wav"
+define audio.wren_room          = "audio/OST/My Own Grave.ogg"
+define audio.kat_theme          = "audio/OST/Theme of Katriel.ogg"
+define audio.ines_theme         = "audio/OST/Theme of Ines.ogg"
+define audio.office_music       = "audio/OST/Office.ogg"
+define audio.big_moment         = "audio/OST/Point A.ogg"
+define audio.obsession          = "audio/music/johnny_ripper - gare du nord.mp3"
 
 define audio.zipper             = "audio/zipper.opus"
+define audio.cicadas            = "audio/music/cicadas.wav"
 
 #declare love interest objects
 default wren_obj = store.MC(wren)

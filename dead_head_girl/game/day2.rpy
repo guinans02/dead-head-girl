@@ -19,16 +19,16 @@ label garden_day2:
     wren "Where is she?? "
     wren "I know I'm late, I'm sorry. "
 
-    show wren at mv(left, center, 0.5)
+    show wren at mv(left, center, 0.5), max_y
     wren "Hello? "
     show wren pose1 pensive
     wren "Shit. "
-    show wren at mv(center, right, 0.5)
+    show wren at mv(center, right, 0.5), max_y
     wren "… "
     # (make her move around the screen a little, like she's walking in thought) 
 
-    show wren pose1 woah at mv(right, left, 0.5)
-    show ines mlem at mv(offscreenright, right, 0.5)
+    show wren pose1 woah at mv(right, left, 0.5), max_y
+    show ines mlem at mv(offscreenright, right, 0.5), max_y
     ines "Say cheese! "
     wren "Cheese…? "
     # camera snap effect
@@ -38,7 +38,7 @@ label garden_day2:
     # cg of a Polaroid of Wren. It hasnt developed yet, so it's black.
 
     #back to Wren Ines in garden
-    show ines pose1 smile one at max_y, right
+    show ines smile one at max_y, right
     ines "You look so pretty. Ephemeral, almost, with the blurry effect. "
     show wren pose1 bashful at max_y
     wren "Do you mean ethereal? "

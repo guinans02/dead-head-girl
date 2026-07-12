@@ -15,7 +15,7 @@ label start:
     return
 
 label debug:
-    call work_day1
+    call wren_returns_home_day1
     return
 
 label content_warning:

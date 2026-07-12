@@ -225,7 +225,7 @@ label work_day1:
     show kat pose2 neutralsad at right, max_y
     # bg change to outside, at night. Kat is already there. "
     #"They are both silent. "
-    play ambience cicadas fadein 2.0
+    play ambience cicadas_quiet fadein 2.0
     wren "..."
     kat "..."
     # cicada noise in bg "
@@ -276,7 +276,8 @@ label work_day1:
     show kat pose2 smile blush
     "{i}Kat smiles.{/i}"
     kat "Bye, Wren. It was wonderful catching up with you!"
-    
+    stop ambience
+    stop music
     return
 
 label garden_day1:
@@ -360,7 +361,7 @@ label garden_day1:
 
     label who_me:
     wren "Who, me?"
-    "*Ines blushes."
+    #"*Ines blushes."
     show ines pose_two shock
     ines "Yes, you!"
     wren """
@@ -375,6 +376,7 @@ label garden_day1:
     ines "Umh! Okay! Wow! Well, let's take care of the gardenias, they need some pruning before they flower."
     "Wren follows Ines to a gardenia bush, covered in buds and a few partial blooms. "
     ines "I like to pinch off the smaller buds, so I can get a few really big blooms."
+    show ines pose_two
     ines "It used to be used as medicine way back, but now people just use it for decoration."
     ines "Look, they are just starting to get the scent."
     "Ines plucks off one of the partially blooming flowers and cups it in her hand."
@@ -383,6 +385,7 @@ label garden_day1:
     wren "I'm not sure…"
     "Ines hold it up to her face and against her better instincts Wren leans in."
     #dreamy music plays, the moment lingers
+    ""
     ines "Could I draw you?"
     jump post_ines_one
 
@@ -644,7 +647,7 @@ label wren_research:
     # scene where wren obsessively researches Hanahaki Disease
     # frenetic. gare du nord? use a movie? animations i think
 
-    play music research_music fadein 1.0 loop
+    #play music research_music fadein 1.0 loop
 
     scene wren_bedroom
     show wren pose1 neutralsad at center, max_y
@@ -825,6 +828,7 @@ label wren_returns_home_day1:
     show wren pose1 neutralsad at mv(left, offscreenright, 1.0)
     scene wren_bedroom
     show wren pose1 neutralsad at mv(offscreenleft, center, 1.0), max_y
+    play music wren_room
 
     "Wren is in her room. "
     wren "Ugh, it feels like something is crawling up my nose. "
@@ -838,7 +842,7 @@ label wren_returns_home_day1:
     call wren_research
 
     stop music
-    play music wren_selfcare
+    play music obsession
     wren "you know what? "
     wren "no. "
     wren "Googles xxxflixx.net"
@@ -864,13 +868,7 @@ label wren_returns_home_day1:
     stop music
 
     wren "I'm done with today."
-    #"Screen goes to black"
-    image black = "#000"
-    scene black
-    "Wren wakes up. Morning bird chirps and eerie humming music. She has blood stains on her mouth and petals in the bed. She slept terribly. "
-
-    #replace with bedroom bg?
-    image white = "#fff"
-    scene white
-    show wren pose1 neutralsad at center, max_y
+    scene wren_bed
+    wren "..."
     wren "how desperate do I have to get? "
+    return

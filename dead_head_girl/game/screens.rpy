@@ -593,29 +593,34 @@ screen about():
 
             hbox:
                 spacing 15
-                text _("{color=#fd9855}Writing") style "about_small"
+                text _("{color=#D52D00}Writing, Additional Art") style "about_small"
                 text _("Valentine Urquiza")
             
             hbox:
                 spacing 15
-                text _("{color=#ffffff}Coding") style "about_small"
+                text _("{color=#EF7627}Coding, Crayon Art :3") style "about_small"
                 text _("Sophie Guinan")
             
             hbox:
                 spacing 15
-                text _("{color=#d161a2}Sprite Artist") style "about_small"
+                text _("{color=#FF9A56}Sprite Artist") style "about_small"
                 text _("G")
                 text _("{a=https://phantomraccoonn.carrd.co/}{color=#99f}(Portfolio){/a}")
     
             hbox:
                 spacing 15
-                text _("Concept") style "about_small"
+                text _("{color=#D162A4}Concept, Additional Art") style "about_small"
                 text _("V")
                 
             hbox:
                 spacing 15
-                text _("Additional Help") style "about_small"
+                text _("{color=#B55690}CGs, Additional Help") style "about_small"
                 text _("Barley")
+            
+            hbox:
+                spacing 15
+                text _("{color=#A30262}Music") style "about_small"
+                text _("Maxim Orlov")
             
 
             # hbox:

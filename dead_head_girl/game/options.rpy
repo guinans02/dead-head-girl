@@ -62,8 +62,8 @@ define config.sample_sound = "/sfx/voices/default/jixaw-metal-pipe-falling-sound
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-define config.main_menu_music = "/music/johnny_ripper - sfhk (mental breakdown).mp3"
-
+#define config.main_menu_music = "/music/johnny_ripper - sfhk (mental breakdown).mp3"
+define config.main_menu_music = "/OST/Main Menu.ogg"
 
 ## Transitions #################################################################
 ##
