@@ -128,6 +128,7 @@ define phone_kat = Character(
 
 define cow1 = Character(name="Coworker 1", kind=strange)
 define cow2 = Character(name="Coworker 2", kind=strange)
+define new_gf = Character(name="Homewrecker", kind=strange)
 
 define reasearcher = Character(name="Researcher", kind=strange)
 
@@ -172,6 +173,7 @@ image wren pose1 worried one        = "images/wren_fgs/wren_pose1_worried.png"
 image wren pose1 worried two        = "images/wren_fgs/wren_pose1_worried_two.png"
 image wren pose1 crown              = "images/wren_fgs/wrencrown.png"
 image wren pose1 crown bloody       = "images/wren_fgs/wrencrownblood.png"
+image wren bush                     = "images/wren_bush.png"
 
 ## ines
 image ines blush two                = "images/ines_fgs/ines_blush_2.png"
