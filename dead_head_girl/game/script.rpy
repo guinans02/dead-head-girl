@@ -114,11 +114,13 @@ define com = Character(
     )
 
 define phone_wren = Character(
+    name="wren",
     kind=nvl,
     color="#ffffff", #white
     callback=functools.partial(store.voice, character="computer") #change?
     )
 define phone_kat = Character(
+    name="kat",
     kind=nvl,
     color=kat_color, #light magenta
     callback=functools.partial(store.voice, character="computer")
@@ -168,6 +170,8 @@ image wren pose1 smile              = "images/wren_fgs/wren_pose1_smile.png"
 image wren pose1 woah               = "images/wren_fgs/wren_pose1_woah.png"
 image wren pose1 worried one        = "images/wren_fgs/wren_pose1_worried.png"
 image wren pose1 worried two        = "images/wren_fgs/wren_pose1_worried_two.png"
+image wren pose1 crown              = "images/wren_fgs/wrencrown.png"
+image wren pose1 crown bloody       = "images/wren_fgs/wrencrownblood.png"
 
 ## ines
 image ines blush two                = "images/ines_fgs/ines_blush_2.png"

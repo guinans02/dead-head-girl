@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/day1.rpy", line 239: expected menuitem
-    show wren pose1 angry
-    ^
+File "game/day2.rpy", line 117: expected '=' not found.
+    default crown
+                 ^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Sat Jul 11 13:14:13 2026
+Sun Jul 12 12:17:54 2026

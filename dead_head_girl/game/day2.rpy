@@ -1,8 +1,6 @@
 label day2:
     call garden_day2
     call kat_texts_wren
-    call post_garden_day2
-    call kat_texts_wren
     call wren_visits_kat
     return
 
@@ -114,6 +112,7 @@ label garden_day2:
     show wren pose1 worried two
 
     #choices
+    default crown = False
     menu:
         "Is that a crown of leaves?":
             # +1 Ines affection
@@ -124,6 +123,7 @@ label garden_day2:
             jump do_i_have_to
     
 label crown_of_leaves:
+    $crown = True
     show wren pose1 pensive
     ines "Yes, I thought it would symbolize renewal."
     show ines pose_two shock
@@ -140,6 +140,7 @@ label crown_of_leaves:
     ines "Yay! I love working with live models. "
     show ines pose_two at mv(right, center, 0.5), max_y
     # Ines moves closer to Wren "
+    show wren pose1 crown
     ines "Ok. Sit down like that. Spread out your arms a little."
     show ines pose_two pensive two
     ines "Hm… look up. there we go! "
@@ -148,21 +149,22 @@ label crown_of_leaves:
     # humming music 
     show ines fanatic one
     ines "Perfect. Such a good girl. "
-    show wren pose1 neutralblush
+    #show wren pose1 neutralblush
     # pencil scratch noises. "
     ines "Hm hm hmmm."
     # pencil scratch noises "
-    show wren pose1 pain
+    #show wren pose1 pain
     wren "Hey ines-"
     show ines mlem
     ines "Stay still please!! I'm capturing your lips. "
+    show wren pose1 crown bloody
     wren "{i}But something is poking me…  "
     wren "{i}I can feel something dripping down my face. "
     # Wren sprite with crown and a line of blood"
-    show wren pose1 woah
+    #show wren pose1 woah
     wren "Ines, take it off of me. "
     ines "..."
-    show wren pose1 cry
+    #show wren pose1 cry
     wren "ines. i think i'm bleeding. "
     show ines fanatic one
     ines "Don't worry. the red stands out quite nicely on your pallor. "
@@ -174,12 +176,15 @@ label crown_of_leaves:
     ines "sigh. "
     ines "alright. if you insist."
     # Ines gets closer to Wren. "
+    show wren pose1 cry
     wren "why are you"
     ines "you are like a real life fairy tale. "
     ines "my princess. "
+    show wren pose1 pain
     wren "you didn't just taste my blood. "
     ines "an artist must know her materials. "
     ines "you really do have such nice color. "
+    show wren pose1 pensive
     wren "umh"
     ines "my thumb print, in your heart's blood on the canvas. "
     ines "now you'll always be with me. "
@@ -244,13 +249,27 @@ label do_i_have_to:
 label post_garden_day2:
     play music garden_bg_music
     # music back to default garden
+    show wren pose1 neutralsad
     ines "Great, I have everything I need. Thank you so much!"
-    wren "(if crown of thorns was picked) - Of course. It's a pleasure. "
-    wren "(if it was the other one) - Sure. You're welcome. "
+    show ines at mv(center, right, 1.0)
+
+    python:
+        if crown == True:
+            renpy.jump("pleasure")
+        else:
+            renpy.jump("welcome")
+    label pleasure:
+    show wren pose1 smile
+    wren "Of course. It's a pleasure. "
+    jump next_week
+    label welcome:
+    show wren pose1 neutralblush
+    wren "Sure. You're welcome. "
+    label next_week:
     ines "I'll see you next week? "
     wren "Okay!"
     ines "Get home safe! "
-    show ines at mv(right, offscreentright, 0.5)
+    show ines at mv(right, offscreenright, 0.5)
     return
 
 label kat_texts_wren:
@@ -259,30 +278,43 @@ label kat_texts_wren:
     stop music
     stop ambience
     scene houses
-    show wren at mv(offscreenright, center, 0.75)
+    show wren pose1 neutralsad at mv(offscreenright, center, 0.75), max_y
 
     wren "{i}That was weird. "
     wren "{i}I mean. "
     wren "{i}That's mean of me. She's a perfectly nice girl. "
+
+    show wren pose1 pensive
     wren "{i}Can I really ignore those dead art subjects though?"
     # phone notification sound"
+    show wren pose1 neutralsad
     wren "Umh?"
     # phone screen bg"
-    phone_wren "wren : Is everything ok? "
-    phone_wren "wren : I'm sorry. Can we talk? "
-    phone_wren "wren : KAT KAT KAT KAT KAT "
-    phone_wren "wren : I saw you walking outside. You're not dead or sick. "
-    phone_wren "wren : Please, Katriel. you're my best friend. "
-    phone_wren "wren : I'll leave you alone if you want?"
+    phone_wren "Is everything ok? "
+    phone_wren "I'm sorry. Can we talk? "
+    phone_wren "KAT KAT KAT KAT KAT "
+    phone_wren "I saw you walking outside. You're not dead or sick. "
+    phone_wren "Please, Katriel. you're my best friend. "
+    phone_wren "I'll leave you alone if you want?"
     phone "You have [1] new message(s)."
     phone_kat  "Swedish researchers have discovered that salmon dosed with benzoylecgonine, a cocaine byproduct, swim almost twice as far as the control group."
 
-    phone_wren "Seriously, Kat? That's your first message to me in three years?"
-    phone_wren "wren : And this is relevant because…? "
-    phone_kat "kat : I have your workbag. Come over when you're first available. "
-    phone_wren "wren : Just leave it on my doorstop. "
+    wren "Seriously, Kat? That's your first message to me in three years?"
+    phone_wren "And this is relevant because…? "
+    phone_wren "I have your workbag. Come over when you're first available. "
+    phone_wren "Just leave it on my doorstop. "
     #pull choice from day one (check kat score?)"
-    phone_kat "kat : No. Don't you want to continue our conversation about <LESBIANs/your family>?"
+    python:
+        if kat_obj.get_score() > 0:
+            renpy.jump("lesbians")
+        else:
+            renpy.jump("family")
+    label lesbians:
+        phone_wren "No. Don't you want to continue our conversation about LESBIANs?"
+        jump go_now
+    label family:
+        phone_wren "No. Don't you want to continue our conversation about your family?"
+    label go_now:
     phone_wren "I'll… just go now. "
     return
 
@@ -290,66 +322,115 @@ label wren_visits_kat:
     # wren in front of kat's house. "
     # DIALOGUE"
     # knocking sound"
+    show wren pose1 neutralsad at center, max_y
     wren "Hello?"
     wren "Hellooooo?"
     wren "Of course Kat still doesn't lock the front door. "
     wren "Katriel? I'm here. "
     wren "Kaaat. Since you're not here, I'm going up to your room! "
     wren "KAT!"
+    show wren pose1 pain
     # coughing sounds"
     wren "I'm he-"
+    show wren pose1 cry at max_y, mv(center, left, 1.0)
     # more coughing sounds. "
     # K comes on screen. "
+    show kat pose2 happy at mv(offscreenright, right, 1.0), max_y
     kat "Hey Wren."
+    show kat pose2 shock
     kat "Oh, that's some blood. "
     kat "Hey, let's come up to my room. "
+    show kat at mv(right, offscreenright, 1.0)
+    show wren at mv(left, offscreenright, 0.5)
+    scene kat_bedroom
+    show kat pose1 neutralsad at mv(offscreenleft, right, 0.5), max_y
+    show wren pose1 neutralsad at mv(offscreenleft, left, 1.0), max_y
     # wren and kat in kat's room. It's pink and girlish. "
+    show wren pose1 pain
     wren "It smells weird in here. "
+    show kat pose2 eyesclosed blush
     kat "I'm not gonna take that from someone with blood in her nose. "
+    show kat pose2 neutral
     kat "Let me clean you up. "
+    show wren pose1 neutralsad
     wren "Okay. "
+    show kat pose2 worried one
     kat "What's with that cough?"
+    show wren pose1 embarrased one
     wren "I… don't really know, actually. "
+    show kat pose2 worried two
     kat "How long have you had it?"
+    show wren pose1 embarrased two
     wren "Um, a few weeks now?"
+    show kat pose2 worried three
     kat "You should really go to a hospital. "
+    show wren pose1 neutralsad
     wren "With what money, exactly?"
+    show kat pose1 sad
     kat "Hm. Well. "
+    show kat pose1 relieved
     kat "Want me to take a look? You know, aspiring toxicologist right here… "
     wren "But-"
+    show kat pose2 happy
     kat "You'll be a nice case study. "
+    show kat pose2 smile blush
     kat "Indulge me?"
+    show wren pose1 woah
     wren ". . ."
+    show kat pose2 smile blush
     kat "Just a joke. so? "
+    show wren pose1 bashful
     wren "Sure. Can't hurt. "
     # Kat moves closer"
     # heartbeat sound"
-
+    show kat pose2 smile blush at mv(right, center, 0.5), max_y
+    show wren pose1 bashful
     wren "You smell like it too. "
+    show kat pose1 sad
     kat "Jesus, it's only the smell of the lab. "
+    show wren pose1 worried two
     wren "It's not bad just strong. "
+    show kat pose2 neutral
     kat "Then, say Aah. "
+    show wren pose1 pensive
     wren "What are you doing?"
+    show kat pose1 relieved
     kat "Open your mouth. "
+    show wren pose1 woah
     wren "Ahh? "
+    show kat pose2 smile blush
     kat "Good girl."
+    show kat pose2 worried sad
     kat "Well. Everything looks normal? "
+    show kat pose1 relieved
     kat "A bit inflamed, though. Have you been eating chips 24/7 or something? "
+    show wren pose1 pensive
     wren "No? "
+    show wren pose1 neutralblush
     wren "…  "
+    show kat pose2 eyesclosed blush
     kat "you-"
     wren "you-"
+    show wren pose1 smile
     wren "You smell nice "
+    show kat pose2 shock
     kat "Did you do this?"
+    show wren pose1 embarrased one
     wren "What?"
     kat "What?"
+    show wren pose1 embarrased two
     wren "I said you smell nice."
+    show kat pose2 smile blush
     kat "Thanks."
     # Kat sprite move back "
+    show kat pose1 relieved
     kat "Okay well, since you're here can you help me study? "
+    show wren pose1 happy
     wren "Ah, I get it now. Got too bored studying all by yourself. "
     #kat blushes
+    show kat pose2 smile blush
     kat "I do actually have your bag!"
+    show wren pose1 bashful
     wren "Could have just left it on my doorstep. "
     kat "It's not a crime to want to see you, Wren. "
     wren "{i}After years of avoiding me with no explanation, it is. "
@@ -740,7 +821,7 @@ label last_decision:
     wren "God. "
     #wrens phone
     nvl clear
-    phone_wren "wren: hey"
+    phone_wren "{color=wren_color}wren{/color}: hey"
     # if affection is 0 with who you picked, go to fail end. 
     # now go to either KATRIEL or INES 
 
@@ -793,7 +874,7 @@ label fail_end:
 
 label kat_end:
     # KATRIEL
-    phone_wren "wren: are you free right now?"
+    phone_wren "{color=wren_color}wren{/color}: are you free right now?"
     phone_kat "maybe. "
     phone_wren "I'm coming over. "
     phone_kat "okay. "

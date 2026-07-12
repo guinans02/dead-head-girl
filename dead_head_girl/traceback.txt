@@ -1,0 +1,44 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/scenes.rpy", line 11, in script call
+    call debug
+  File "game/scenes.rpy", line 18, in script call
+    call wren_visits_kat
+  File "game/day2.rpy", line 338, in script
+    show kat pose2 happy at mv(offscreen, right, 1.0), max_y
+  File "game/day2.rpy", line 338, in <module>
+    show kat pose2 happy at mv(offscreen, right, 1.0), max_y
+                               ^^^^^^^^^                    
+NameError: name 'offscreen' is not defined. Did you mean: 'offscreenleft'?
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "game/scenes.rpy", line 11, in script call
+    call debug
+  File "game/scenes.rpy", line 18, in script call
+    call wren_visits_kat
+  File "game/day2.rpy", line 338, in script
+    show kat pose2 happy at mv(offscreen, right, 1.0), max_y
+  File "renpy/ast.py", line 1364, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ast.py", line 726, in show_imspec
+    at_list = [renpy.python.py_eval(i) for i in at_list]
+               ~~~~~~~~~~~~~~~~~~~~^^^                  
+  File "renpy/python.py", line 1308, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1301, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/day2.rpy", line 338, in <module>
+    show kat pose2 happy at mv(offscreen, right, 1.0), max_y
+                               ^^^^^^^^^                    
+NameError: name 'offscreen' is not defined. Did you mean: 'offscreenleft'?
+
+Linux-6.8.0-134-generic-x86_64-with-glibc2.39 x86_64
+Ren'Py 8.5.3.26051504
+Dead Head Girl 0.1
+Sun Jul 12 14:16:42 2026

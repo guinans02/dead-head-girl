@@ -1,32 +1,141 @@
-2026-07-12 18:44:26 UTC
+2026-07-12 21:15:53 UTC
 Linux-6.8.0-134-generic-x86_64-with-glibc2.39
 Ren'Py 8.5.3.26051504
 
-Early init took 34 ms
-Loading error handling took 13 ms
-Loading script took 87 ms
-Loading save slot metadata took 17 ms
+Early init took 35 ms
+Loading error handling took 14 ms
+Loading script took 110 ms
+Loading save slot metadata took 18 ms
 Loading persistent took 0 ms
 Set script version to: None (alternate path)
-Running init code took 41 ms
+Running init code took 47 ms
 Loading analysis data took 2 ms
 Analyze and compile ATL took 2 ms
-Reloading save slot metadata took 2 ms
-Dump and make backups took 0 ms
+Reloading save slot metadata took 3 ms
+Backing up script files to '/home/sophie/.renpy/backups/dead_head_girl':
+Dump and make backups took 1 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 26 ms
+Initial gc took 28 ms
 DPI scale factor: 1.000000
 Creating interface object took 0 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
-Load screen analysis took 12 ms
-Analyze screens took 1 ms
-Save screen analysis took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 6 ms
+Save screen analysis took 9 ms
 Save pyanalysis took 0 ms
 Save bytecode took 0 ms
 Running _start took 1 ms
-Interface start took 240 ms
+Interface start took 257 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1500, 1000)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'Intel'
+Renderer: 'Mesa Intel(R) Iris(R) Xe Graphics (TGL GT2)'
+Version: '4.6 (Compatibility Profile) Mesa 25.2.8-0ubuntu0.24.04.2'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1500, 'current_h': 1000, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1280, 720) physical=(1500, 844) drawable=(1500, 844)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 3 ms
+Loading error handling took 15 ms
+Loading script took 153 ms
+Loading save slot metadata took 9 ms
+Loading persistent took 0 ms
+Set script version to: None (alternate path)
+Running init code took 34 ms
+Loading analysis data took 2 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 2 ms
+Backing up script files to '/home/sophie/.renpy/backups/dead_head_girl':
+Dump and make backups took 1 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 36 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 7 ms
+Save screen analysis took 8 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 185 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1500, 1000)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'Intel'
+Renderer: 'Mesa Intel(R) Iris(R) Xe Graphics (TGL GT2)'
+Version: '4.6 (Compatibility Profile) Mesa 25.2.8-0ubuntu0.24.04.2'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1500, 'current_h': 1000, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1280, 720) physical=(1500, 844) drawable=(1500, 844)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1500, 931) drawable=(1500, 931)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/scenes.rpy", line 11, in script call
+    call debug
+  File "game/scenes.rpy", line 18, in script call
+    call wren_visits_kat
+  File "game/day2.rpy", line 338, in script
+    show kat pose2 happy at mv(offscreen, right, 1.0), max_y
+  File "renpy/ast.py", line 1364, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "renpy/ast.py", line 726, in show_imspec
+    at_list = [renpy.python.py_eval(i) for i in at_list]
+  File "renpy/python.py", line 1308, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "renpy/python.py", line 1301, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/day2.rpy", line 338, in <module>
+    show kat pose2 happy at mv(offscreen, right, 1.0), max_y
+NameError: name 'offscreen' is not defined. Did you mean: 'offscreenleft'?
+
+While running game code:
+  File "game/scenes.rpy", line 11, in script call
+    call debug
+  File "game/scenes.rpy", line 18, in script call
+    call wren_visits_kat
+  File "game/day2.rpy", line 338, in script
+    show kat pose2 happy at mv(offscreen, right, 1.0), max_y
+  File "game/day2.rpy", line 338, in <module>
+    show kat pose2 happy at mv(offscreen, right, 1.0), max_y
+NameError: name 'offscreen' is not defined. Did you mean: 'offscreenleft'?
+Resetting cache.
+Early init took 3 ms
+Loading error handling took 6 ms
+Loading script took 150 ms
+Loading save slot metadata took 8 ms
+Loading persistent took 0 ms
+Set script version to: None (alternate path)
+Running init code took 33 ms
+Loading analysis data took 2 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 2 ms
+Backing up script files to '/home/sophie/.renpy/backups/dead_head_girl':
+Dump and make backups took 1 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 36 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 6 ms
+Save screen analysis took 8 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 179 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1500, 1000)
@@ -38,3 +147,129 @@ Version: '4.6 (Compatibility Profile) Mesa 25.2.8-0ubuntu0.24.04.2'
 Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1500, 'current_h': 1000, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
 Screen sizes: virtual=(1280, 720) physical=(1500, 931) drawable=(1500, 931)
 Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1500, 931) drawable=(1500, 931)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 3 ms
+Loading error handling took 6 ms
+Loading script took 162 ms
+Loading save slot metadata took 9 ms
+Loading persistent took 0 ms
+Set script version to: None (alternate path)
+Running init code took 34 ms
+Loading analysis data took 2 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 3 ms
+Backing up script files to '/home/sophie/.renpy/backups/dead_head_girl':
+Dump and make backups took 1 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 39 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 7 ms
+Save screen analysis took 8 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 190 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1500, 1000)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'Intel'
+Renderer: 'Mesa Intel(R) Iris(R) Xe Graphics (TGL GT2)'
+Version: '4.6 (Compatibility Profile) Mesa 25.2.8-0ubuntu0.24.04.2'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1500, 'current_h': 1000, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1280, 720) physical=(1500, 931) drawable=(1500, 931)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1500, 931) drawable=(1500, 931)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 3 ms
+Loading error handling took 6 ms
+Loading script took 170 ms
+Loading save slot metadata took 9 ms
+Loading persistent took 0 ms
+Set script version to: None (alternate path)
+Running init code took 34 ms
+Loading analysis data took 2 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 2 ms
+Backing up script files to '/home/sophie/.renpy/backups/dead_head_girl':
+Dump and make backups took 1 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 39 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 8 ms
+Save screen analysis took 8 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 185 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1500, 1000)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'Intel'
+Renderer: 'Mesa Intel(R) Iris(R) Xe Graphics (TGL GT2)'
+Version: '4.6 (Compatibility Profile) Mesa 25.2.8-0ubuntu0.24.04.2'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1500, 'current_h': 1000, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1280, 720) physical=(1500, 931) drawable=(1500, 931)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1500, 931) drawable=(1500, 931)
+Maximum texture size: 4096x4096
+Traceback (most recent call last):
+  File "lib/py3-linux-x86_64/../../renpy.py", line 304, in <module>
+    main()
+  File "lib/py3-linux-x86_64/../../renpy.py", line 300, in main
+    renpy.bootstrap.bootstrap(renpy_base)
+  File "renpy/bootstrap.py", line 401, in bootstrap
+    renpy.main.main()
+  File "renpy/main.py", line 596, in main
+    run(restart)
+  File "renpy/main.py", line 137, in run
+    renpy.execution.run_context(True)
+  File "renpy/execution.py", line 1050, in run_context
+    context.run()
+  File "game/scenes.rpy", line 11, in script call
+    call debug
+  File "game/scenes.rpy", line 18, in script call
+    call wren_visits_kat
+  File "game/day2.rpy", line 406, in script
+    kat "A bit inflamed, though. Have you been eating chips 24/7 or something? "
+  File "renpy/ast.py", line 2935, in execute
+    Say.execute(self)
+  File "renpy/ast.py", line 994, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "renpy/exports/sayexports.py", line 129, in say
+    who(what, *args, **kwargs)
+  File "renpy/character.py", line 1565, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "renpy/character.py", line 1220, in do_display
+    display_say(who, what, self.do_show, **display_args)
+  File "renpy/character.py", line 902, in display_say
+    rv = renpy.ui.interact(mouse="say", type=type, roll_forward=roll_forward)
+  File "renpy/ui.py", line 306, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "renpy/display/core.py", line 2163, in interact
+    repeat, rv = self.interact_core(
+        preloads=preloads,
+    ...<4 lines>...
+        **kwargs,
+    )
+  File "renpy/display/core.py", line 3019, in interact_core
+    ev = self.event_wait()
+  File "renpy/display/core.py", line 1644, in event_wait
+    ev = pygame.event.wait()
+KeyboardInterrupt
