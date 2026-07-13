@@ -1524,7 +1524,7 @@ ines "I'd love to hear it. Finally, you make something worth having. "
 kat "Wren, we're leaving."
 # ines gets closer to wren
 ines "Let her speak for herself. "
-kat "I know wren wants to leave with me. Don't you, wren?"
+kat "I know wren wants to leave with me. Don't you, Wren?"
 wren "Guys, I think I'm about to…"
 ines "Tell this boot-licking bitch off?"
 wren "No, I urgh…"
@@ -1533,7 +1533,7 @@ wren "No, I urgh…"
 ines "Now look what you've done, you've gone ahead and made her even sicker!"
 kat "Are you insane? Wren needs care! Just let me take her to the car at least. "
 ines "Wren is her own person and you're just mad because you can't control her anymore. You know wren doesnt even like you right?"
-kat "well i never–"
+kat "Well i never–"
 # this whole time it's the library CG that gets darker and darker,  until it fade away and
 #End
 
