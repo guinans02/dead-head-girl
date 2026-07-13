@@ -174,6 +174,8 @@ image wren pose1 worried two        = "images/wren_fgs/wren_pose1_worried_two.pn
 image wren pose1 crown              = "images/wren_fgs/wrencrown.png"
 image wren pose1 crown bloody       = "images/wren_fgs/wrencrownblood.png"
 image wren bush                     = "images/wren_bush.png"
+image wren bloody                   = "images/wren_fgs/wren_bloody.png"
+image wren bandage                  = "images/wren_fgs/wrenbandy.png"
 
 ## ines
 image ines blush two                = "images/ines_fgs/ines_blush_2.png"
@@ -201,6 +203,7 @@ image ines mlem                     = "images/ines_fgs/ines_:P.png"
 image ines smile two                = "images/ines_fgs/ines_smile_2.png"
 image ines smile one                = "images/ines_fgs/ines_smile.png"
 image ines worried                  = "images/ines_fgs/ines_worried.png"
+image ines ciggy                    = "images/ines_fgs/inesciggy.png"
 
 ## kat
 image kat pose1 eyesclosed          = 'images/kat_fgs/kat pose1 eyesclosed.png'
@@ -248,8 +251,8 @@ label qte:
             renpy.restart_interaction()
     $ score = 0
     $ time_left = 10
-    "Ready to shoot? Hit as many targets as you can!"
+    #"Ready to shoot? Hit as many targets as you can!"
     $ renpy.pause(1.0)
     call screen target_shooter
     
-    return
+    return score

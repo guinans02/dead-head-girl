@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/day1.rpy", line 15: end of line expected.
-    wren "{i}4 more hours.{\i}
-                                         ^
-
-File "game/day1.rpy", line 273: end of line expected.
-    kat "I could do whatever I want with you.
-                                                                 ^
-
-File "game/day1.rpy", line 308: expected menuitem
-    Hello?
-    ^
+File "game/day2.rpy", line 1012: invalid syntax
+    call qte
+         ^^^
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Mon Jul 13 10:00:12 2026
+Mon Jul 13 13:40:10 2026

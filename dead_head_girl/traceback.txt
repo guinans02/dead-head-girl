@@ -1,41 +1,44 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenes.rpy", line 13, in script call
-    call day2
-  File "game/day2.rpy", line 4, in script call
-    call wren_visits_kat
-  File "game/day2.rpy", line 445, in script
-    scene black with fadein
-  File "game/day2.rpy", line 445, in <module>
-    scene black with fadein
-                     ^^^^^^
-NameError: name 'fadein' is not defined. Did you mean: 'fade'?
+  File "game/scenes.rpy", line 11, in script call
+    call debug
+  File "game/scenes.rpy", line 18, in script call
+    call qte_scene
+  File "game/day2.rpy", line 1024, in script
+    show bloody_vomit at true_center
+  File "game/day2.rpy", line 1024, in <module>
+    show bloody_vomit at true_center
+                         ^^^^^^^^^^^
+NameError: name 'true_center' is not defined. Did you mean: 'truecenter'?
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/scenes.rpy", line 13, in script call
-    call day2
-  File "game/day2.rpy", line 4, in script call
-    call wren_visits_kat
-  File "game/day2.rpy", line 445, in script
-    scene black with fadein
-  File "renpy/ast.py", line 1584, in execute
-    paired = renpy.python.py_eval(self.paired)
-             ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "game/scenes.rpy", line 11, in script call
+    call debug
+  File "game/scenes.rpy", line 18, in script call
+    call qte_scene
+  File "game/day2.rpy", line 1024, in script
+    show bloody_vomit at true_center
+  File "renpy/ast.py", line 1364, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ast.py", line 726, in show_imspec
+    at_list = [renpy.python.py_eval(i) for i in at_list]
+               ~~~~~~~~~~~~~~~~~~~~^^^                  
   File "renpy/python.py", line 1308, in py_eval
     return py_eval_bytecode(code, globals, locals)
            ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/python.py", line 1301, in py_eval_bytecode
     return eval(bytecode, globals, locals)
            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/day2.rpy", line 445, in <module>
-    scene black with fadein
-                     ^^^^^^
-NameError: name 'fadein' is not defined. Did you mean: 'fade'?
+  File "game/day2.rpy", line 1024, in <module>
+    show bloody_vomit at true_center
+                         ^^^^^^^^^^^
+NameError: name 'true_center' is not defined. Did you mean: 'truecenter'?
 
 Linux-6.8.0-134-generic-x86_64-with-glibc2.39 x86_64
 Ren'Py 8.5.3.26051504
 Dead Head Girl 0.1
-Mon Jul 13 10:41:33 2026
+Mon Jul 13 13:39:27 2026

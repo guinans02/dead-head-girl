@@ -8,14 +8,14 @@ label before_main_menu:
 ## The game starts here.
 label start:
     stop music
-    #call debug
+    call debug
     call day1
     call day2
     call end_demo
     return
 
 label debug:
-    call wren_visits_kat
+    call qte_scene
     return
 
 label content_warning:
