@@ -33,9 +33,6 @@ label garden_day2:
     # camera flash
     show wren pose1 angry at max_y
     wren "Ack! Don't do that! "
-    # cg of a Polaroid of Wren. It hasnt developed yet, so it's black.
-
-    #back to Wren Ines in garden
     show ines smile one at max_y, right
     ines "You look so pretty. Ephemeral, almost, with the blurry effect. "
     show wren pose1 bashful at max_y
@@ -47,14 +44,15 @@ label garden_day2:
     show ines blush one
     ines "You're being rude. "
     show wren pose1 smile
-    wren "so, now we're even. "
+    wren "So, now we're even. "
+    ines "Take a look! "
     # cg wren's poloraid. Its blurred and grainy
     show wren pose1 pensive
     wren "I mean, it's a photo. "
     show ines pose_two frustrated
     ines "Hmmph."
     show wren pose1 woah
-    wren "you're sweet for showing it to me. "
+    wren "You're sweet for showing it to me. "
     show ines pose_two pensive one
     ines "I don't really like photography all that much. Camera photos look too real. "
     show ines pose_two fan
@@ -97,18 +95,18 @@ label garden_day2:
     show ines pose_two pensive two
     ines "I like doing texture work, so I also have some lace.. "
     show ines laugh one
-    ines "ooh! Or what about something here, from the garden! "
+    ines "Ooh! Or what about something here, from the garden! "
     show ines laugh two
-    ines "paying homage to the flowers you crushed, a mourning piece! "
+    ines "Paying homage to the flowers you crushed, a mourning piece! "
     show wren pose1 worried one
     wren "{i}what. "
     show ines worried
-    ines "um or actually "
+    ines "Um or actually "
     show ines fanatic one
     ines "I brought something I made for you. "
     show ines smile two
-    ines "it took me a while, but I think you'd look just perfect in it. "
-    ines "what do you think?? "
+    ines "It took me a while, but I think you'd look just perfect in it. "
+    ines "What do you think?? "
     show wren pose1 worried two
 
     #choices
@@ -154,7 +152,7 @@ label crown_of_leaves:
     ines "Hm hm hmmm."
     # pencil scratch noises "
     #show wren pose1 pain
-    wren "Hey ines-"
+    wren "Hey Ines-"
     show ines mlem
     ines "Stay still please!! I'm capturing your lips. "
     show wren pose1 crown bloody
@@ -165,29 +163,29 @@ label crown_of_leaves:
     wren "Ines, take it off of me. "
     ines "..."
     #show wren pose1 cry
-    wren "ines. i think i'm bleeding. "
+    wren "Ines. I think I'm bleeding. "
     show ines fanatic one
     ines "Don't worry. the red stands out quite nicely on your pallor. "
-    ines "Oh! you're just like a real life snow white. "
-    wren "it's kinda hurting. "
-    wren "like bad actually "
-    ines "but I'm almost done! "
+    ines "Oh! You're just like a real life Snow White. "
+    wren "It's kinda hurting. "
+    wren "Like bad actually? "
+    ines "But I'm almost done! "
     wren "… "
-    ines "sigh. "
-    ines "alright. if you insist."
+    ines "Sigh. "
+    ines "Alright, if you insist."
     # Ines gets closer to Wren. "
     show wren pose1 cry
-    wren "why are you"
-    ines "you are like a real life fairy tale. "
-    ines "my princess. "
+    wren "Why are you- "
+    ines "You are like a real life fairy tale. "
+    ines "My princess. "
     show wren pose1 pain
-    wren "you didn't just taste my blood. "
-    ines "an artist must know her materials. "
-    ines "you really do have such nice color. "
+    wren "You didn't just taste my blood. "
+    ines "An artist must know her materials. "
+    ines "You really do have such nice color. "
     show wren pose1 pensive
-    wren "umh"
-    ines "my thumb print, in your heart's blood on the canvas. "
-    ines "now you'll always be with me. "
+    wren "Umh."
+    ines "My thumb print, in your heart's blood on the canvas. "
+    ines "Now you'll always be with me. "
 
     jump post_garden_day2
 
@@ -199,9 +197,9 @@ label do_i_have_to:
     ines "If you have something better to do, you can leave."
     wren "I might get going soon."
     ines "Another promise… broken…."
-    wren "Umh"
+    wren "Umh."
     wren "(thinking) All of these are bad but…"
-    wren "Let's do the piece here, mourning the flower ines "
+    wren "Let's do the piece here, mourning the flower. I guess?"
     ines "Oh, I'm so happy!"
     wren "{size=10}I'm glad. "
     ines "Here, sit here while I prime my canvas and think about the pose."
@@ -230,12 +228,10 @@ label do_i_have_to:
     ines "Lie down like this?"
     ines "There we go. "
     # music change : ines humming a melancholic tune. Painting/sketch noises until scene end. "
-    #https://en.wikipedia.org/wiki/Ophelia_%28Heyser%29#/media/File:Friedrich_Wilhelm_Theodor_Heyser_-_Ophelia.jpg (maybe like this owo. the dead flower goes on wren's eye."
-    # implement if have time. Okay if no. "
-    wren "(thinking) Is this what art models usually do? "
-    wren "(internal) Well, anything flies as long as I'm not back home with Mother. "
-    wren "(internal )It helps that she's a cute girl. "
-    wren "(internal) Wren, don't think like that. "
+    wren "{i}Is this what art models usually do? "
+    wren "{i}Well, anything flies as long as I'm not back home with Mother. "
+    wren "{i}It helps that she's a cute girl. "
+    wren "{i}Wren, don't think like that. "
     ines "Lovely. "
     ines "I can't wait to go deeper into your psyche."
     wren "I'm just your art model. "
@@ -273,7 +269,7 @@ label post_garden_day2:
     return
 
 label kat_texts_wren:
-    # Wren walks to outside. "
+    # Wren walks to outside. 
     show wren at mv(left, offscreenleft, 0.5)
     stop music
     stop ambience
@@ -310,7 +306,7 @@ label kat_texts_wren:
         else:
             renpy.jump("family")
     label lesbians:
-        phone_wren "No. Don't you want to continue our conversation about LESBIANs?"
+        phone_wren "No. Don't you want to continue our conversation about LESBIANS?"
         jump go_now
     label family:
         phone_wren "No. Don't you want to continue our conversation about your family?"
