@@ -428,39 +428,73 @@ label wren_visits_kat:
     kat "I do actually have your bag!"
     show wren pose1 bashful
     wren "Could have just left it on my doorstep. "
+    show kat pose1 neutralsad
     kat "It's not a crime to want to see you, Wren. "
+    show wren pose1 angry
     wren "{i}After years of avoiding me with no explanation, it is. "
+    show wren pose1 bashful
     wren "{i}Ah, I don't care, I just want to talk with you. "
+    show wren pose1 eyesclosed
     wren "You win. Let's study. "
+    show wren pose1 neutralsad
+    show kat pose2 happy
     kat "Let's sit on my bed. "
+    show wren pose1 neutralblush
     wren "… "
+    image black = "#000"
+    scene black with fadein
+    show wren pose1 eyesclosed at mv(left, center, 1.0), max_y
+    wren "{i}snooore..."
     # maybe fade to black? To show time passing or # Wren falling asleep the eeper "
-    # timer sound. "
+    scene black
+    ""
+    # timer sound.
+    scene 
+    show kat pose2 neutral at right, max_y
+    show wren pose1 eyesclosed at left, max_y
     kat "There, just finished up with two hours. "
+    show kat pose2 happy
     kat "Break time. "
+    show wren pose1 shock
     wren "Wuh? "
+    show kat pose1 neutralsad
     kat "You're so tired all the time. "
+    show wren pose1 bashful
     wren "I can't keep awake just watching you study. "
+    show kat pose1 sad
     kat "Bleh. "
+    show wren pose1 neutralsad
     wren "Your room has changed so much…."
+    show kat pose1 relieved
     kat "It's essentially the same. "
+    show wren pose1 bashful
     wren "It's completely different. "
+    show kat pose1 eyesclosed
     kat "It's een at least 5 years since you were last here, so you're likely remembering it wrong."
+    show wren pose1 pensive
     wren "No…"
     wren "I remember you had a… what was it, a model car collection…? You polished them over and over again, all the paint was stripping off. "
+    show kat pose1 regret
     kat "Did I? "
+    show wren pose1 worried one
     wren "I like your room now too, though. It's pretty. "
+    show kat pose2 happy
     kat "Of course."
+    show wren pose1 neutralsad
     wren "Man, whats the point of all this studying? "
 
 
     #(W's very sleepy. Kat's still flipping through a textbook)
-    wren "(internal?) Y'know Kat, it feels like you've changed so much, but at the same time you feel the same. But the old you and the current you… they're both beyond what I could be. Everything you do. I just wonder if you know what you could be. What you want to do."
+    wren "{i}Y'know Kat, it feels like you've changed so much, but at the same time you feel the same. But the old you and the current you… they're both beyond what I could be. Everything you do. I just wonder if you know what you could be. What you want to do."
     wren "why did you go back to toxicology? "
+    show kat pose2 neutralsad
     kat "it's just the best path forward for me. "
     wren "it didn't seem like that when we last spoke."
+    show kat pose1 regret
     kat "gosh, just lay off me already, will you? people change."
+    show wren pose1 worried one
     wren "i know you though. "
+    show wren pose1 bashful
     wren "is this really what you want for yourself? "
     kat "are you fucking serious? "
     kat "of course not. i hate talking to those bitches with their heads up their asses and i hate the stagnance in that fuckass company with their bullshit about reinventing the wheel. "
@@ -817,7 +851,7 @@ label last_decision:
     wren "God. "
     #wrens phone
     nvl clear
-    phone_wren "{color=wren_color}wren{/color}: hey"
+    phone_wren "hey"
     # if affection is 0 with who you picked, go to fail end. 
     # now go to either KATRIEL or INES 
 
@@ -870,7 +904,7 @@ label fail_end:
 
 label kat_end:
     # KATRIEL
-    phone_wren "{color=wren_color}wren{/color}: are you free right now?"
+    phone_wren "are you free right now?"
     phone_kat "maybe. "
     phone_wren "I'm coming over. "
     phone_kat "okay. "
@@ -958,7 +992,7 @@ label kat_bad:
     kat "And so far all she's done is answer questions and take tests! "
     kat "I even brought you the petals and you won't take a look. "
     researcher "That counts as a biohazard, Miss. We have to throw those away. "
-    wren "I - "
+    wren "I-"
     researcher "And has small cell carcinoma been ruled out? "
     kat "Yes, we just got the results a week ago. "
     researcher "Hmm, actually, about those hives and itchiness. "
@@ -1183,3 +1217,322 @@ label kat_worse:
     #END
     return  
 
+label ines_bad_end:
+#Ines Bad:
+wren "Are you okay? "
+wren "I don't want to weird you out, I just wanted to tell you before it was too late. "
+ines "No, no, no"
+ines "I'm okay!!! It's just very overwhelming."
+ines "I'm so happy. I've never, ever had anyone in my life who stayed. "
+wren "Really? But you're so charming. "
+ines "I know I'm ditzy but I can still tell when people look down on me. Which, admittedly, is most people."
+ines "But you're different. With you, I think everything feels realer. You see me. "
+wren "They don't know what they're missing out on. "
+ines "I'm thrilled. Wow, I'm just imagining waking up next to you. The sunlight shining through the curtains illuminating your face, eggs and coffee for breakfast, coordinated matching outfits…"
+wren "That sounds lovely. "
+ines "Oh oh oh, when we both graduate, we can get an apartment together. We'll have a cat and a dog and paint the walls a pretty purple. I'll tape my drawings on the walls and you can put your– "
+ines "Am I being too much? "
+wren "I think it's cute, actually. "
+wren "This disease is awful but, I'm glad I met you. "
+ines "Me too! "
+ines "This situation is a whole romance novel! I feel like I'm at the center of the world– your world. "
+ines "You're my princess in shining armor. "
+wren "I wouldn't say so… "
+ines "I love you, Wren. "
+ines "I'll love you forever and ever and ever. I'm yours and you're mine. "
+ines "Don't get sick of me, okay? "
+wren "I promise. "
+ines "Now, does it feel better already? Your Lover's Bloom? "
+wren "I don't know. I think so? "
+# Wren and Ines sprite get closer 
+ines "Then let's make it official. A true love's kiss. "
+# fade to black, if time Wren and Ines kiss cg here. 
+# party bg. Ines and Wren are at a house party
+ines "Hey, I loveee your outfit!"
+ines "It's just darling. "
+strange "Aww thank you you're so cute. "
+wren "Umh. I think so too. "
+strange "…"
+ines "Haha thanks! "
+ines "This song is so good that I could listen to it forever!! "
+ines "Don't you agree Wrensy? "
+wren "Yep. "
+ines "Dance with me, sweetheart. "
+wren "I'll pass, thanks. "
+ines "Everything okay?"
+wren "Yes."
+ines "Do you want to leave? "
+wren "I'm fine. "
+ines "Yayyy! Ooh, is that punch? "
+# Ines goes off screen
+wren "Ines? "
+# Ines comes back
+ines "What…"
+wren "I'm actually feeling kinda shitty. Like I kind of want to throw up? "
+ines "It's okay, it'll go away soon. "
+ines "Nausea's pretty normal. "
+wren "I'm feeling pretty bad though. Can we leave?"
+ines "Didn't you literally just- "
+wren "It's fine then. "
+ines "…You know what, I'll give you a ride home, how about that? Then I can come back. Alone. I guess. "
+wren "Thanks. l'm really sorry. "
+ines "No worries, let's get going! "
+# Ines and Wren in Ines car. 
+# Ines is singing to a love song on the radio. 
+# possibly https://freemusicarchive.org/music/Sophia_Knapp/Live_on_Dark_Night_of_the_Soul_with_Julie_on_March_13_2012/Sophia_Knapp_-_09_-_Into_The_Waves/
+# but if we want instrumental only that's cool too I'll just write up some fake lyrics lol. 
+ines "Baaa. Da da da. "
+ines "I wish I knew the words better.. Hehe! "
+wren "Thnks nes…zzz"
+# screen fade to black 
+wren "Zzz… "
+# wake up. Ines and Wren are outside of wren's house 
+# Ines is smoking 
+ines "Hey. "
+wren "Wuh?"
+wren "Wha time izzit? "
+ines "Only been an hour or so. "
+wren "Feels like longer. "
+ines "Yeah. "
+wren "I'm sorry we had to leave because of me. "
+ines "It's okay. "
+wren "Do you mind not smoking? My mother won't stand for the smell." 
+# Ines does, in fact, keep smoking 
+ines "How come you haven't told her we're dating? "
+ines "She didn't know who I was when I knocked on the door. "
+ines "You're not ashamed of us, are you? "
+wren "No, of course not! I just haven't found the right time. "
+ines "Right. "
+wren "Mother's really intense and I hate talking to her and—"
+ines "Okay.  "
+wren "Okay. "
+wren "Um. So, how did you like the little drawing of you I made? "
+ines "It was cute. "
+wren "Yeah, I hoped. Thank you.  "
+ines "Umh. "
+ines "I kind of have bad news? We need to put the art modelling on hold for now. All of my classes got really busy all of a sudden. "
+wren "Oh, no worries. It's ok. Um"
+wren "Can you still help me on Monday?"
+ines "Of course. "
+wren "Good night. I love you. "
+ines "Bye. "
+ # fade to Wren room. 
+wren "Do you really think it's a good idea? "
+ines "It can't be worse than the time we tried summoning a demon. "
+wren "We didn't even get to do that. You got busy and cancelled? "
+ines "Oh yeah. "
+# coughing sound
+wren "Urgh. My chest really, really hurts. "
+ines "I think my ideas are good…  why do you always complain? "
+wren "I was itching for hours after the herbal bath."
+wren "And the recipe you sent made a huge batch, so now I'm stuck with a ton. "
+ines "Well, you'll be drinking it this time, so that won't be an issue. "
+wren "{i}At least we're doing it together this time. She can see how much it hurts me. "
+ines "{size=15}Why do I even… "
+ines "Let's go! "
+# Ines garden, Ines and wren are there. Wren has a bloody mouth. 
+ines "So now, you just sit in the place the first moment of passion occurred, and wait. "
+wren "I'm not staying out after dark because of some “cure” you got from a cheesy witch forum. "
+ines "Your lover's bloom was real, so why can't you just trust my judgement? "
+ines "It's like you don't love me anymore."
+wren "I do. I'm sorry. I'll stay."
+wren "How long is this going to take? "
+ines "Just a few hours. I'll be back to check on you later. "
+wren "Bye. I love you. "
+# Ines runs off without replying. W to the garden shed. 
+wren "koff koff"
+# wheezing sounds 
+wren "My…  throat… "
+wren "Itchy! "
+# wheezing sounds increase in speed
+wren "Mfgh! Help me!"
+wren "Ines..! "
+wren "{i}Keep breathing. Fuck fuck fuck! "
+wren "{i}Ines, call 911…"
+wren "{i}Where the fuck is she? "
+wren "{i}If anything, at least my portrait at the funeral will be beautiful… "
+# fade to black. 
+image black = "#000"
+scene black
+# fade back into garden 
+scene garden
+play ambience garden_amb fadein 1.0
+# Ines and new gf are here. It's a sunny and nice day. Wren as a bush is standing in the middle. 
+show wren_bush at center, max_y
+show ines smile one at mv(offscreenright, left, 1.0), max_y
+#show gf
+new_gf "And I was like no, you can't just move in with your boyfriend after only knowing him for a week! But then she got so mad. "
+ines "That's so wild. You're just being honest. "
+new_gf "Yeah, I've been thinking about cutting her off cause the drama is not worth it. "
+ines "Let's not worry about that. "
+ines "I came here to relax away from all the hustle and bustle. "
+new_gf "Okay, okay. You want some of my water? "
+ines "… "
+ines "Hey, are we like that? Moving too fast? "
+new_gf "Aw, but you're different. It's like I've known you for years."
+ines "Hehe. I love you. "
+new_gf "Love you too!! "
+ines "la la la la~"
+ines "Oh, that's new. "
+# Ines move closer to wrenbush
+ines "What a pretty flower. I feel inspired all over again! "
+new_gf "What are you gonna draw now? "
+ines "A portrait of you! Then I'll have you forever and ever."
+new_gf "Aw, you're the cutest thing ever. "
+
+#END 
+
+return
+
+label ines_worse_end:
+#Ines Worse: 
+ines "You're not just saying that, are you?"
+wren "Honestly, I felt something the first day we talked."
+wren "It's hard for me to say."
+ines "I know. I can't wait to solve your mysteries. "
+ines "And I will make a whole gallery based on you!"
+ines "Y'know, they say that those blessed with the bleeding blooms will love forever. "
+wren "Forever…?"
+ines "Have you never been in love before?"
+# fade to black 
+# computer screen
+# wrenpainting on  a phone screen. 
+comp "artaphrodite : Here is food for all my lovelies, a painting of my real life muse! I appreciate the chance to work as the masters, I'm learning so much about the soul of painting. Take care to find the sun where you least expect it today. #art #no-AI #myart"
+# wren and ines in wren's room"
+wren "You really feel okay posting that? It's months old."
+ines "I haven't made anything worth showing to the world in weeks."
+# coughing sound 
+wren "Nngh. "
+ines "Ew, don't spit up near me. "
+# wren in bathroom. 
+wren "{i}I know you made me to promise to tell you if it was getting worse, but I don't think I can deal with your tears right now."
+# wren coughing sound, bloody sprite. 
+wren "{i}Ugh."
+# wren bedroom ines alone, hand washing sound. 
+# wren comes back in
+ines "Wren! Look at how many likes I got!  "
+wren "Yesterday you said you wanted to burn it. "
+ines "I want to throw it into the void of public opinion. "
+wren "I suppose. "
+# knock sound 
+mom "Wren? One of your {i}friends{/i} is here to see you?"
+wren "Coming !"
+ines "Awh, don't go. Stay with me where it's warm and cozy and soft. "
+wren "I don't know who it is. "
+ines "Don't you love your girlfriend, Wrensy?"
+wren "Okay, I'm leaving. "
+# wren fuckin leaves. 
+# downstairs wren's living room. 
+# kat sprite is there! 
+kat "Wren."
+wren "Kat? "
+kat "I'll just get straight to the point. "
+kat "I don't like your new ahem"
+kat "“” girl “”” “””” friend””” "
+wren "Oh.. Kay? "
+kat "Not okay. She's bad for you. You realize if you call out sick one more day you're going to get fired? "
+wren "How do you know that? "
+kat "Because I'm still talking to other people. Ones with their head out their asses. "
+kat "And the obsession! "
+wren "What are you talking about? "
+kat "When was the last time you went somewhere without her? "
+wren "Th-"
+kat "Voluntarily. "
+wren "Now it's a crime to enjoy spending time with your girlfriend?"
+kat "So that's why you're always bailing on our hangouts or canceling last minute. Nice. "
+wren "Haha. "
+kat "What. "
+wren "You're just jealous! "
+kat "I"
+kat "am NOT"
+kat "jealous of that- that-"
+kat "two-timing whore! "
+wren "I think you should leave. "
+kat "That's what I get for being a caring friend I guess!"
+wren "Bye Kat. "
+kat "Bye Wren. "
+# Wren goes back to her room. Ines is upset. 
+ines "I heard all of that. "
+wren "I'm so sorry. "
+ines "Do you like her better than me? "
+wren "No, of course not. "
+ines "Then why did you leave when I asked you to stay? "
+ines "Everyone leaves. Everyone always leaves. "
+wren "No no no, I'm here now. "
+wren "Ines, you're the most special girl in the entire world. "
+wren "I love you the most! "
+ines "You always say that. "
+ines "I feel so eaten up inside. I'm not worth loving. I'm a terrible artist and a stupid, stupid girl. "
+#phone ding
+ines "*sob*! "
+wren "{i}When things are good, they're good. When things are bad… "
+wren "Please don't cut yourself again Ines. "
+ines "I don't want to. "
+wren "Let's go to bed? "
+ines "ok. "
+#fade to black
+# phone typing noises
+ines "Gooooood morning~"
+wren "Yeah. "
+ines "Mwah mwah mwah!! "
+ines "You are just the most gorgeous creature while you sleep. I could stare at you forever. "
+wren "Ah, thank you. "
+ines "By the way we're meeting with Katriel today. "
+wren "Wait, what?"
+ines "Katriel? The jealous bitch who came over yesterday and attacked me?"
+ines "Your ex?"
+wren "She's not my ex. "
+ines "Well, we're going to meet her. "
+wren "When?"
+ines "Right now, I think. What time is it?"
+wren "Why would you…"
+wren "If it makes you happy. "
+ines "Yay! "
+# cut to library bg?
+# kat ines and wren are there. 
+kat "Great, you did end up making it. 30 minutes late. "
+ines "An artist knows how to make an entrance. "
+ines "I want you to see that you're just bitter."
+ines "Leave us alone?"
+kat "Us. "
+kat "You haven't even known her for a year."
+ines "And what did you do with all the years you've known her? I love her, I see her as she is, and she speaks to me on canvas."
+ines "I hate when corporate junkies think they know anything about matters of the heart. "
+kat "I hate pretentious art pricks who delude themselves into thinking they have any contribution to society."
+ines "The world would be better off if people like you killed themselves. Your corpses are better subjects than your soul ever would be. "
+kat "Are you threatening me?"
+ines "Speaking the truth is never a threat. "
+kat "Wren, how do you put up with this asshole?"
+ines "Don't speak to her. Don't look at her. You don't deserve her. "
+wren "Hey, um, I feel really sick. "
+kat "If she's so happy with you, then why isn't she smiling in any of the photos you post?"
+ines "Are you stalking me? That's a crime. "
+kat "Answer the fucking question. "
+ines "Wren just doesn't show emotion like that. That's why I'm the one who brings her to life. "
+wren "Can one of you take me home?"
+kat "Holy shit, look at her, she's miserable! "
+ines "Only because people keep yelling at her to be miserable?"
+ines "You're treating her like her mom does. "
+kat "At least I'm not using her. "
+ines "Impure and frightful. My art-"
+kat "If I hear about “your art” one more time, I will scream. "
+ines "I'd love to hear it. Finally, you make something worth having. "
+kat "Wren, we're leaving."
+# ines gets closer to wren
+ines "Let her speak for herself. "
+kat "I know wren wants to leave with me. Don't you, Wren?"
+wren "Guys, I think I'm about to…"
+ines "Tell this boot-licking bitch off?"
+wren "No, I urgh…"
+# splatter sound effect
+# wren vomits all over library table CG. it's bloody and black and petaled. 
+ines "Now look what you've done, you've gone ahead and made her even sicker!"
+kat "Are you insane? Wren needs care! Just let me take her to the car at least. "
+ines "Wren is her own person and you're just mad because you can't control her anymore. You know wren doesnt even like you right?"
+kat "Well i never–"
+# this whole time it's the library CG that gets darker and darker,  until it fade away and
+#End
+
+#ROLL CREDITS!!! 
+
+return

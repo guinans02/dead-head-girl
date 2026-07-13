@@ -42,16 +42,17 @@ label work_day1:
     scene lab
     show wren pose1 neutralsad at mv(offscreenleft, left, spd=1.0), max_y
     show kat pose2 neutral at right, max_y
+    wren "...?"
     wren "…Kat."
-    wren "No way that's Kat. She was so serious about never going into medicine." 
-    wren "\"I disavow the lab forever!\" and she really believed herself when she said that."
-    wren "But that's unmistakably Kat."
+    wren "{i}No way that's Kat. She was so serious about never going into medicine.{\i}" 
+    wren "{i}\"I disavow the lab forever!\" and she really believed herself when she said that.{\i}"
+    wren "{i}But that's unmistakably Kat.{\i}"
     show kat pose2 shock
     kat "Wren…!?"
     #wren happy
     show wren pose1 smile
     wren "Why are you here?"
-    wren "{i}It's been years and you look so different."
+    wren "{i}It's been years and you look so different.{\i}"
     wren "I really, really missed you."
 
     scene school_library
@@ -163,13 +164,13 @@ label work_day1:
     show wren pose1 neutralsad at left, max_y
     show kat pose2 shock at right, max_y
     kat "It's been a while. "
-    wren "{i}That's all you have to say. Is this how it's going to be with you? "
+    wren "{i}That's all you have to say. Is this how it's going to be with you?{\i}"
     wren "Yes, it has. "
     show kat pose2 neutralsad
     kat "So I'm a lab tech now, mostly been supporting the research and development division."
     wren "Mhm… "
     show kat pose2 happy
-    kat "They're trusting me with a lot of responsibility.I  recently went to a talk given by Dr. Grice, I'm so lucky to work under such a prestigious director. Running the bio- assays is- "
+    kat "They're trusting me with a lot of responsibility. I recently went to a talk given by Dr. Grice, I'm so lucky to work under such a prestigious director. Running the bio- assays is- "
     kat "I hope I'm not boring you. "
     show wren pose1 pensive
     wren "It's interesting, go on. "
@@ -382,9 +383,9 @@ label garden_day1:
     wren """
         ...
 
-        he-
+        He-
 
-        wh-
+        Wh-
         """
     
     show ines pose_two smile
@@ -451,21 +452,21 @@ label garden_day1:
 
     strange "Hey Ines, come say hi to the fresh meat."
     ines "Aw, don't be mean Macy."
-    ines "Hi everyone! I'm Ines, the vice president of the art club here!"
-    ines "“Heya, I'm Ines, the vice president of the art club. You all came at the perfect time! I've just put the final touches on my painting! *spins around* Isn't it pretty?"
+    ines "“Heya, I'm Ines, the vice president of the art club. You all came at the perfect time! I've just put the final touches on my painting! Isn't it pretty?"
     strange "The colors are gorgeous!"
     #wren surprised
     show ines_art at center
     wren "Is that… a dead bird?"
     ines "Yes! What, do you think the shading is off?" 
     wren "Well… the subject matter is…"
-    wren "{i}Wierd. If I went home with paint streaked clothes, or a painting like that… well, mother would certainly be hysterical.{/i}" 
+    wren "{i}Weird. If I went home with paint streaked clothes, or a painting like that… well, mother would certainly be hysterical.{/i}" 
     ines "What? The subject doesn't matter. Whatever I paint will turn out beautiful."
     hide ines_art
     "{i}Ines smiles.{/i}"
     strange "Okay, okay, time to go to the next club. See you around, Ines."
     ines "Bye! Hope to see you all in here again." 
-    "As the students file out, Ines makes eye contact with Wren, smiles, and waves to just her." 
+    #"As the students file out, Ines makes eye contact with Wren, smiles, and waves to just her." 
+    wren "{i}Why is she looking right at me.{/i}" 
     wren "{i}Such a hypocrite. What a liar. It's cruel to make people look at decaying shit like that.{/i}" 
     wren "{i}Why not paint a still life.{/i}"
     wren "{i}Nah, you're too good for that Ms. \"subject matter doesn't matter.\"{/i}"
@@ -575,11 +576,12 @@ label garden_day1:
     wren "Sure."
     show ines pose_two laugh
     ines "You're so super amazing awesome Wren!"
+    ines "Come here. A hug for my special girl." 
 
     stop music
     stop ambience
     show ines blush three
-    "Ines impulsively hugs wren who stiffens, turns red, and feels a twisting in her chest."
+    #"Ines impulsively hugs wren who stiffens, turns red, and feels a twisting in her chest."
     #cut to the visual of a flower stem sprouting in a body
 
     wren """
@@ -604,7 +606,7 @@ label home_day1:
 
     #Wren talks to mom
     scene living_room
-    "*wren steps outside into-*"
+    #"*wren steps outside into-*"
 
     show mom_fg at left, max_y
     show wren pose1 neutralsad at max_y, mv(offscreenleft, right, 1.0)
@@ -624,7 +626,7 @@ label home_day1:
     show wren pose1 neutralsad
     wren "Yes Mother. I'll do that Mother."
 
-    "Wren leaves the house."
+    #"Wren leaves the house."
     hide mom_fg
 
     phone "{sc}bzzz{\sc}"
@@ -661,7 +663,7 @@ label wren_research:
     wren "{i}Hm.{/i}"
     wren "{i}Would surgery work?{/i}"
 
-    "{i} Three hours later. {/i}"
+    #"{I} Three hours later. {/i}"
 
     #Wren is somehow even more exhausted looking.
     wren "{i}Click.{/i}"
@@ -706,7 +708,7 @@ label qte_fail:
     wren "People are all terrible anyways."
 
     #Scary music
-    wren "{i}ragged breath{/i}"
+    wren "{i}Hah... Fuck...{/i}"
 
     wren """
         I hope whoever cleans my body has a ball.
