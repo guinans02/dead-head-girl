@@ -45,10 +45,10 @@ init python:
             return self.ch.name
 
 #Declare colors
-define wren_color  = "#ffffff" #white
-define kat_color   = "#d161a2" #light magenta
-define ines_color  = "#fd9855" #light orange
-define comp_color  = "#097969" #cadmium green
+define wren_color  = "#708090" #slate grey
+define kat_color   = "#8a0303" #blood red
+define ines_color  = "#c8a2c8" #lilac
+define comp_color  = "#9caf88" #sage green
 
 # Declare characters used by this game.
 define strange = Character(
@@ -62,21 +62,21 @@ define wren = Character(
     )
 define ines = Character(
     name="Ines", 
-    color=ines_color, #light orange
-    font="SofiaSans-VariableFont_wght.ttf",
-    what_font="SofiaSans-VariableFont_wght.ttf",
+    color=ines_color, #lilac
+    # font="SofiaSans-VariableFont_wght.ttf",
+    # what_font="SofiaSans-VariableFont_wght.ttf",
     callback=functools.partial(store.voice, character="ines")
     #kind=strange
     )
 define kat = Character(
     name="Katriel", 
-    color=kat_color, #light magenta
+    color=kat_color, #blood red
     callback=functools.partial(store.voice, character="kat")
     )
 define mom = Character(
-    name="Mom", 
-    font="fonts/EBGaramond-VariableFont_wght.ttf", 
-    what_font="fonts/EBGaramond-VariableFont_wght.ttf",
+    name="Mother", 
+    # font="fonts/EBGaramond-VariableFont_wght.ttf", 
+    # what_font="fonts/EBGaramond-VariableFont_wght.ttf",
     kind=strange,
     callback=functools.partial(store.voice, character="message")
     )
@@ -116,18 +116,19 @@ define com = Character(
 define phone_wren = Character(
     name="wren",
     kind=nvl,
-    color="#ffffff", #white
+    color="#708090", 
     callback=functools.partial(store.voice, character="computer") #change?
     )
 define phone_kat = Character(
     name="kat",
     kind=nvl,
-    color=kat_color, #light magenta
+    color=kat_color, 
     callback=functools.partial(store.voice, character="computer")
     )
 
 define cow1 = Character(name="Coworker 1", kind=strange)
 define cow2 = Character(name="Coworker 2", kind=strange)
+define new_gf = Character(name="Homewrecker", kind=strange)
 
 define reasearcher = Character(name="Researcher", kind=strange)
 
@@ -172,6 +173,7 @@ image wren pose1 worried one        = "images/wren_fgs/wren_pose1_worried.png"
 image wren pose1 worried two        = "images/wren_fgs/wren_pose1_worried_two.png"
 image wren pose1 crown              = "images/wren_fgs/wrencrown.png"
 image wren pose1 crown bloody       = "images/wren_fgs/wrencrownblood.png"
+image wren bush                     = "images/wren_bush.png"
 
 ## ines
 image ines blush two                = "images/ines_fgs/ines_blush_2.png"

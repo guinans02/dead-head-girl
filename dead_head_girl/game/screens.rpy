@@ -34,6 +34,7 @@ style button:
 
 style button_text is gui_text:
     properties gui.text_properties("button")
+    xalign 0.5
     yalign 0.5
 
 
@@ -325,44 +326,43 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
-
         spacing gui.navigation_spacing
 
         if main_menu:
-
-            textbutton _("Start") action Start()
+            xalign 0.135
+            yalign 0.70
+            textbutton _("{size=40}Start") action Start()
 
         else:
+            xalign 0.025
+            yalign 0.5
+            textbutton _("{size=40}History") action ShowMenu("history")
 
-            textbutton _("History") action ShowMenu("history")
+            textbutton _("{size=40}Save") action ShowMenu("save")
 
-            textbutton _("Save") action ShowMenu("save")
+        textbutton _("{size=40}Load") action ShowMenu("load")
 
-        textbutton _("Load") action ShowMenu("load")
-
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("{size=40}Preferences") action ShowMenu("preferences")
 
         if _in_replay:
 
-            textbutton _("End Replay") action EndReplay(confirm=True)
+            textbutton _("{size=40}End Replay") action EndReplay(confirm=True)
 
         elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            textbutton _("{size=40}Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        textbutton _("{size=40}About") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            textbutton _("{size=40}Help") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            textbutton _("{size=40}Quit") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -400,14 +400,14 @@ screen main_menu():
     ## contents of the main menu are in the navigation screen.
     use navigation
 
-    if gui.show_name:
+    # if gui.show_name:
 
-        vbox:
-            text "[config.name!t]":
-                style "main_menu_title"
+    #     vbox:
+    #         text "[config.name!t]":
+    #             style "main_menu_title"
 
-            text _("Ren'Py 7+ Edition"):
-                style "main_menu_version"
+    #         text _("Ren'Py 7+ Edition"):
+    #             style "main_menu_version"
 
 
 style main_menu_frame is empty
