@@ -12,7 +12,7 @@ label work_day1:
     scene office_bg
     stop music
     show wren pose1 neutralsad at max_y, center
-    wren "{i}4 more hours.{\i}
+    wren "{i}4 more hours.{\i}"
     cow1 "Hey, do you know why Liza's been out for the past few days?"
     cow2 "Don't tell anyone else I said this, but it's because her daughter eloped with some {i}woman!{/i} She's been going to grief counseling, poor thing. "
     cow1 "And I thought she was normal... How could she do that to her mother?"
@@ -213,7 +213,7 @@ label work_day1:
     wren "{i} Mother, no, it's fine. Yes I'm showing up with my friend who I haven't talked to in years and that I spent an entire month sobbing about. "
     wren "{i} No, I don't want anything. No, I don't know where she gets her clothes from. "
     show wren pose1 eyesclosed
-    wren "{I}Mother, are you fucking stupid? "
+    wren "{i}Mother, are you fucking stupid? "
     show wren pose1 neutralsad
     cow2 "Ahh, the end of another daily grind. "
     show wren at mv(center, offscreenright, 1.0)
@@ -270,15 +270,15 @@ label work_day1:
             kat "Ha. As if, you'd just run out of the room as soon as I got naked. "
             show wren pose1 neutralblush
             wren "You're the nutter."
-            kat "I could do whatever I want with you. 
+            kat "I could do whatever I want with you. "
             wren "So do it."
             kat "The cops will never believe you."
             wren "{b}What???{/b}"
             show wren pose1 neutralsad
 
     kat "Hey, we're here."
-    scene houses 
-    show kat pose2 smile blush
+    #scene houses 
+    show kat pose2 smile blush at max_y, right
     kat "Bye, Wren. It was wonderful catching up with you!"
     wren "I don't get you."
     kat "That's okay."
@@ -289,7 +289,7 @@ label work_day1:
     kat "Well?"
     kat "Wren?"
     #wren twist in the chest scene
-    scene houses
+    #scene houses
     wren "I'll see you at work. Bye."
     stop ambience
     stop music
@@ -323,7 +323,7 @@ label garden_day1:
     wren "{i}Hm.{/i}"
 
     # flower bud post crush
-    scene garden
+    #scene garden
 
     #Sound effect, boss music?
     #show ines_fg at mv(offscreenright, right, 0.25), max_y #ines jumpscare
@@ -446,6 +446,7 @@ label garden_day1:
     # *"""
     show wren pain
     wren "Why do I remember her...?"
+    stop ambience
     scene artclass
     show wren_baby at left, max_y
     show ines_baby at right, max_y
@@ -474,6 +475,7 @@ label garden_day1:
 
     #snap back to reality
     scene garden
+    play ambience garden_amb fadein 1.0
     show wren pose1 cry at left, max_y
     show ines pose_two smile at right, max_y
 
@@ -509,7 +511,7 @@ label garden_day1:
         {i}It's kind of warm and soft and melty.
         It looks like me if I was in love...
 
-        Then why is it so creepy? {\I}
+        Then why is it so creepy? {\i}
         """
     show ines laugh two
     ines "So!!! What do you think?!"
@@ -598,7 +600,7 @@ label home_day1:
     #Intro scene, Wren at home
     scene bathroom #bathroom?
     play music house_music
-    show wren pose1 neutralsad at max_y, center#get more silly with this i think
+    show wren pose1 neutralsad at max_y, center#get more silly with this I think
     
     wren "It's okay."
     wren "It's just odd that it happened twice."
@@ -641,7 +643,7 @@ label home_day1:
 
 label wren_research:
     # scene where wren obsessively researches Hanahaki Disease
-    # frenetic. gare du nord? use a movie? animations i think
+    # frenetic. gare du nord? use a movie? animations I think
 
     #play music research_music fadein 1.0 loop
 
@@ -650,8 +652,8 @@ label wren_research:
     #desk, glow effect from screen
     #Wren clearly hasnt been sleeping.
     wren "Think think think."
-    wren "{i}google why am i vomiting flowers{/i}"
-    user2 "OMG i cant believe that stupid bitch got hanahaki OBVS shes not in love! she doesn't spend enough time outside for that lel"
+    wren "{i}google why am I vomiting flowers{/i}"
+    user2 "OMG I cant believe that stupid bitch got hanahaki OBVS shes not in love! she doesn't spend enough time outside for that lel"
     user1 "dont joke about that?? its real, my aunt almost died from it >:("
     wren "{i}huh?{/i}"
     user1 "my mom made her schedule a surgery but the day before she felt way better."

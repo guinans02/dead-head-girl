@@ -421,7 +421,7 @@ label wren_visits_kat:
     # Kat sprite move back "
     show kat pose1 relieved
     kat "Okay well, since you're here can you help me study? "
-    show wren pose1 happy
+    show wren pose1 smile
     wren "Ah, I get it now. Got too bored studying all by yourself. "
     #kat blushes
     show kat pose2 smile blush
@@ -442,20 +442,20 @@ label wren_visits_kat:
     show wren pose1 neutralblush
     wren "… "
     image black = "#000"
-    scene black with fadein
+    scene black with fade
     show wren pose1 eyesclosed at mv(left, center, 1.0), max_y
     wren "{i}snooore..."
     # maybe fade to black? To show time passing or # Wren falling asleep the eeper "
     scene black
     ""
     # timer sound.
-    scene 
+    scene kat_bedroom with fade
     show kat pose2 neutral at right, max_y
     show wren pose1 eyesclosed at left, max_y
     kat "There, just finished up with two hours. "
     show kat pose2 happy
     kat "Break time. "
-    show wren pose1 shock
+    show wren pose1 woah
     wren "Wuh? "
     show kat pose1 neutralsad
     kat "You're so tired all the time. "
@@ -496,92 +496,153 @@ label wren_visits_kat:
     wren "i know you though. "
     show wren pose1 bashful
     wren "is this really what you want for yourself? "
+    show kat pose2 shock
     kat "are you fucking serious? "
-    kat "of course not. i hate talking to those bitches with their heads up their asses and i hate the stagnance in that fuckass company with their bullshit about reinventing the wheel. "
-    kat "but i've tried my hardest for too long to be left languishing with the rest of the unwashed masses. even if it means devoting myself to something i find completely meaningless or presenting myself as the perfect person or ignoring that gnawing gap inside or that I can never have what I really want-"
+    kat "of course not. I hate talking to those bitches with their heads up their asses and I hate the stagnance in that fuckass company with their bullshit about reinventing the wheel. "
+    show kat pose2 neutralsad
+    kat "but i've tried my hardest for too long to be left languishing with the rest of the unwashed masses. even if it means devoting myself to something I find completely meaningless or presenting myself as the perfect person or ignoring that gnawing gap inside or that I can never have what I really want-"
     #smtg like how she's abt to blurt out she realises internally that she highkey a lesbian but more subtle]"
+    show kat pose1 sad
     kat "it doesn't matter. "
-    kat "i have to succeed. i'll be the best in my field. the first person everyone rushes to talk to when i walk into a room. "
+    kat "i have to succeed. i'll be the best in my field. the first person everyone rushes to talk to when I walk into a room. "
     menu:
 
         "you're the most successful person I know":
             jump most_successful_person
 
         "You're just human too.":
+            $kat_obj.update_score(1)
             jump just_human
 
 label most_successful_person:
+    show wren pose1 neutralsad
+    show kat pose2 neutralsad
     kat "thanks. "
-    kat "still. i always have room to grow. i always have more to improve at. "
+    kat "still. I always have room to grow. I always have more to improve at. "
     #idk smtg abt a spider respinning its web constantly lol until it's left the space to thrive or someone kills it "
     jump post_kat_day2
 
 label just_human:
+    show wren pose1 bashful
     wren "Oh."
     wren "You're just human too. "
-    kat "don't put me down on your level. "
-    kat "you have no goals, no aspirations, no presence. hearing that from you—god, that's such a low bar. few years no see, one word from me and you're back following me around like a sad little dog with nowhere to go and no one to play with."
-    wren "you're talking? you're no one special. you try to sound intelligent but you're really just a pretentious soulless corporate suck up. there's millions of girls like you out there. "
-    kat "at least i have self control. I wouldn't have let some random feelings-"
-    kat "-i mean, a momentary lapse of judgement-"
-    kat "-ruin everything i've built. "
+    show kat pose2 shock
+    kat  "Don't put me down on your level. "
+    show kat pose1 regret
+    kat  "You have no goals, no aspirations, no presence. Hearing that from you—god, that's such a low bar. Few years no see, one word from me and you're back following me around like a sad little dog with nowhere to go and no one to play with."
+    show wren pose1 angry
+    wren "You're talking? you're no one special. You try to sound intelligent but you're really just a pretentious soulless corporate suck up. There's millions of girls like you out there. "
+
+    kat  "At least I have self control. I wouldn't have let some random feelings-"
+    show kat pose1 eyesclosed
+    kat  "-I mean, a momentary lapse of judgement-"
+    show kat pose1 regret
+    kat  "-ruin everything I've built. "
 
 
 label post_kat_day2:
     ## added july 10th
+    show wren pose1 pensive
     wren "It's sad. Why can't you admit that? "
+    show kat pose1 relieved
     kat "I'm sad? What, projecting much? "
+    show wren pose1 woah
     wren "Kat! "
+    show kat pose1 eyesclosed
     kat "Don't say my name like that. "
+    show wren pose1 angry
     wren "Fine then, bitch. "
+    show kat pose2 eyesclosedblush
     kat "You're a bitch. "
+    show kat pose2 neutral
     kat "Worse, actually , you're a stray dog. "
+    show wren pose1 smile
     wren "Do you try to flirt with stray dogs often? "
     # smack sound"
+    show kat pose2 happy at mv(right, center, 0.5)
+    show wren pose1 pain
     kat "Does that feel like flirting to you? "
     # Wren sprite gets closer to Kat sprite. "
     # red screen tint/ chromatic abberation from wren"
+    show wren pose1 angry at mv(left, center, 0.5)
     wren "You want me to be a stray dog? "
+    show kat pose2 shock
     kat "ackth uh"
     wren "I didn't hear you. "
     wren "What was that? "
     wren "Don't make me squeeze harder. "
+    show kat pose2 eyesclosed blush
     kat "whimper"
+    show wren pose1 woah
     wren "Hey, no, I'm sorry. "
+    show wren pose1 pain at mv(center, right, 0.5), max_y
+    show kat pose2 shock at mv(center, left, 1.0), max_y
     kat "gasp"
+    show kat pose2 worried sad
+    show wren pose1 cry
     kat "koff koff"
     kat "Wren, don't cry. "
+    show kat pose2 neutral
     kat "Stop crying, Wren. "
+    show kat pose2 smile blush
     kat "We both know I pissed you off on purpose okay? You know me better than to blame yourself. "
+    show kat pose2 neutralsad
     kat "Dad hasn't been home so it's just been…  me and Taylor. "
+    show wren pose1 pensive
     wren "Your schizo aunt is still around? "
+    show kat pose1 sad
     kat "God willing and the creek don't rise. "
+    show kat pose1 regret
     kat "So. "
+    show kat pose1 eyesclosed
     kat "I really, really need you back in my life right now Wren. "
+    show wren pose1 worried two
     wren "You could literally just fucking ask next time? "
 
+    show kat pose2 smile blush
     kat "Where's the fun in that? "
+    show kat pose2 neutral
     kat "Okay, now get out, I need to hide the marks you just gave me. "
+    show wren pose1 embarrased one
     wren "Didn't you need me in your life? "
+    show kat pose2 eyesclosed blush at mv(left, center, 0.5), max_y
     kat "Yes, I do actually. But I need to change clothes. "
+    show wren pose1 smile
+    show kat pose2 happy  at mv(center, right, 0.5), max_y
     wren "Ha. "
+    show wren pose1 woah
+    show kat pose2 eyesclosed blush
     kat "There, I kissed your booboos all better. "
+    show kat pose2 smile blush
     kat "Now shoo. "
+    show wren pose1 woah at mv(right, offscreenright, 0.5)
+
+    scene houses
+    show wren pose1 smile at mv(offscreenleft, center, 0.5), max_y
     # Wren walks out. "
     # in front of wren's house. "
     wren "I'm the only one who really knows her. "
     wren "I knew it meant something. "
+    show wren pose1 cry
     wren "I knew it! I knew it! I knew it!! "
+    show wren pose1 neutralsad
     wren "I think I need a nap . "
+    show wren pose1 neutralsad at mv(center, offscreenleft, 0.5), max_y
     # bg change to Wren house living room "
+    scene living_room
+    show mom_fg at left, max_y
+    show wren pose1 neutralsad at mv(offscreenright, right, 0.5), max_y
     mom "Wren. "
     wren "Yes, mother?"
     mom "Your room is just filthy. I hate repeating myself; you're not a child anymore. "
     wren "What are you—Of course, mother. My apologies. "
     mom "The flowers, Wren?"
+    show wren pose1 worried one
     wren "{i}The ones with all the blood on them? "
     mom "I hope you aren't seeing anyone. Please do remember that you are living here on my dime. "
+    show wren pose1 eyesclosed
     wren "Right. "
+    show wren pose1 neutralsad
     wren "May I go to my room now? Please? "
     mom "Ah… "
     # (depending on who you have more affection with) "
@@ -589,11 +650,14 @@ label post_kat_day2:
     # more Ines points mom "That girl with the tree club that you joined, the one with the sweater? "
     # equal points  mom "You've been spending a lot of time outdoors, with those people you've met- the girls with the clothes? "
     mom "No matter. "
-    mom "Don't let some girl—I mean, anyone, distract you from what you should be doing. "
+    mom "Don't let some girl— I mean, anyone, distract you from what you should be doing. "
     mom "These youthful affairs never last long, Wren. "
     # Mother leaves"
+    show mom_fg at mv(left, offscreenleft, 0.5), max_y
+    show wren pose1 woah
     wren "What the fuck is she talking about? "
     # screen to black"
+    scene black with fade
     wren "Hnn"
     wren "Can't believe it's nearly the end of the summer. "
     wren "I still don't have nearly enough money to figure out my fucking cough. "
@@ -601,27 +665,51 @@ label post_kat_day2:
     # phone notification sound"
     wren "It couldn't hurt to ask Kat or Ines? "
     # this is fucking lazy but I can't think of another way to transition it."
+    # hey be nice to urself >:|
 
     # Wren move to garden "
     # ines is there"
+    scene garden with fade
+    play ambience garden_amb
+    show ines pose_two at left, max_y
+    show wren pose1 neutralsad at mv(offscreenright, right, 0.5), max_y
     ines "Hey Wren! "
     wren "Hi, Ines. "
+    show wren pose1 pensive
     wren "So what are we going to do today? "
+    show ines pose_two laugh
     ines "The same as always??? "
+    show wren pose1 woah
     wren "Oh. I guess I didn't know you could paint in the rain. "
+    show ines pose_two shock
     ines "IT'S GONNA RAIN?? "
+    show wren pose1 smile
     ines "Aw, boo. "
+    show ines pose_two neutralsad
     ines "Well, there goes another masterpiece. "
+    show wren pose1 neutralsad
     wren "Story of your life. "
+    show ines mlem
     ines "Let's go to a cafe and get something warm! "
+    show wren pose1 neutralsad at mv(right, offscreenright, 1.0), max_y
+    show ines mlem at mv(left, offscreenright, 0.5), max_y
+    ""
+    scene cafe_bg
+    show wren pose1 neutralsad at mv(offscreenright, right, 1.0), max_y
+    show ines mlem at mv(offscreenright, left, 0.5), max_y
     # change to cafe bg "
     ines "and you just have to try the miso coffee they have here, it's mouthwatering. "
+    show ines laugh one
     ines "Oooh! I just remembered I have my pencils on me! Hand me that napkin, please? "
+    show wren pose1 pensive
     wren "Hey, can I ask you something. "
+    show ines pose_two smile
     ines "Certainly <3 "
     wren "Is it possible to identify a flower just from the petal? "
+    show ines pose_two pensive one
     ines "Depends on the freshness. And the flower. Why? "
     wren "Well. Do you know what this one is? "
+    show ines pose_two pensive two
     ines "Oh hm. "
 
     # depends on the route ur on: "
@@ -643,72 +731,122 @@ label post_kat_day2:
             renpy.jump("iberis")
 
 label iberis:
+    show ines pose_two frustrated
     ines "Hmm, it's a little hard to tell. If I had to guess, maybe some kind of Iberis? A candytuft flower."
     jump post_flower_day2
 
 label lilac:
+    show ines pose_two smile
     ines "Oh, that looks like a lilac! They're my favorite flower!! Did you know they're edible? You can't eat too much though, or they'll make you throw up. "
     jump post_flower_day2
 
 label amaryllis:
+    show ines pose_two worried
     ines "I bet that's an Amaryllis? They're commonly confused for lilies cause they look really similar. But they are superrrrr poisonous. "
     jump post_flower_day2
     
 label post_flower_day2:
+    show ines pose_two pensive
     ines "Where'd you get these? "
+    show wren pose1 worried one
     wren "I found them??"
+    show wren pose1 worried two
     wren "In my room after I woke up one day??! "
+    show ines pose_two laugh
     ines "That's fun! "
+    show ines pose_two woah
     ines "Totally reminds me of this urban legend I saw in a video. "
+    show ines pose_two smile
+    show wren pose1 worried one
     ines "It was called like, the Lover's Bloom. "
+    show ines pose_two fan
     ines "You fall SO DEEPLY in love with someone that a flower blooms inside of you."
     ines "And then, when the time is right and it hits midnight, you spit up the bouquet and give it to them. "
+    show ines pose_two smile
+    show wren pose1 worried two
     ines "Ahh! It's so romantic, can you imagine a better way to show your dedication to another!"
+    show ines pose_two pensive one
     ines " Such a shame that it's not real. "
+    show wren pose1 neutralsad
+    show ines pose_two smile
     ines "I wish I could experience it, it sounds so lovely and fun. "
+    show wren pose1 shock
     wren "What the fuck?"
+    show ines pose_two shock
     ines "Huh? "
+    show wren pose1 angry
     wren "That's really fucked up. Why would you ever want that to happen to you?? "
+    show ines pose_two worried
     ines "What's wrong with imagining? "
+    show wren pose1 bashful
     wren "Because it's a dumb-fuck way to waste your time. Imagining suffocating in itchy petals? "
+    show wren pose1 angry
     wren "“ oh em gee I luuuuv pretty toxins seeping into my bloodstream all day teehee” "
     wren "“ La la yaaaay I'm a complete and total idiot now I throw my life at your feet save me LOVE!!! “"
+    show wren pose1 bashful
     wren "That's not how it works. "
     wren "And if they don't love you back? What then, huh? "
+    show ines pose_two sad
     ines "I didn't really read that far. "
+    show wren pose1 eyesclosed
     wren "Of course you didn't. "
+    show ines pose_two worried
     ines "What's with you today? you're being so –"
+    show wren pose1 bashful
     wren "Shut up. "
+    show ines pose_two shock
     ines "I'm literally just trying to make conversation! What's unreasonable about that? "
     wren "Oh, I don't know. "
+    show wren pose1 angry
     wren "Maybe I'm tired of being lectured about what is or isn't pretty by a privileged, spoiled brat? "
     wren "You dedicate your life to to this shit and it's still complete, overwrought, garbage! "
+    show ines pose_two pain one
     ines "No it's not! Take that back! "
     wren "Then why does no one show up to your art shows, huh? "
+    show ines pose_two pain two
     ines "I.. *sniff* told you that in confidence. "
+    show wren pose1 bashful
     wren "Grow up."
+    show ines worried
     ines "I don't—"
+    show ines pose_two pain one
     ines "That was really mean."
+    show wren pose1 neutralsad
     wren "What, want me to apologize for the big, scawy, reality of who you are? "
+    show ines pose_two frustrated
     ines "Fine then. No one respects me. Not the other artists, not the teachers at school, and not even my family. "
+    show ines pose_two grimace
     ines "I thought you would understand. Clearly not."
+    show ines pose_two pain one at mv(left, offscreenright, 0.1), max_y #too fast?
     # Ines runs away"
     # Wren goes out side. "
+    wren "..."
+    show wren pose1 neutralsad at mv(right, offscreenright, 0.5), max_y
+    scene houses
+    show wren pose1 neutralsad at mv(offscreenleft, center, 0.5), max_y
     wren "I wished I smoked so I could have a cigarette right now. "
     # phone notification sound. "
     wren "FUCK. WORK. "
+    show wren pose1 pain at mv(center, offscreenright, 0.1), max_y
     # Wren in her office"
+    scene office_bg
+    play music office_music
+    show wren pose1 neutralsad at center, max_y
     wren "{i}Sick of this shit. "
     wren "{i}It's not my fault. She started it."
     wren "{i}Fuck fuck fuck. Fu-"
     cow1 "Heyyy Mack can you please verify and order this for the new client. Here's the card! "
+    show wren pose1 bashful
     wren "I don't handle transactions? "
     cow1 "Then who does? "
+    show wren pose1 pensive
     wren "I don't know."
     cow1 "Well, Gina told me it was you, so. Here. "
+    show wren pose1 angry
     wren "I'm busy, wait. "
     cow1 "K thx bye ! "
     # coworker leaves"
+    show wren pose1 neutralsad
     wren "… "
     wren "What ever. "
     # type sounds "
@@ -716,78 +854,130 @@ label post_flower_day2:
 
     wren "sigh. "
     # backgroun blurs. "
-    wren "{I}I'm sorry for bieng a dick earlier. "
-    wren "{I}No. "
-    wren "{I}I didn't mean what I said, it's just that you. "
+    show wren pose1 pain
+    wren "{i}I'm sorry for bieng a dick earlier. "
+    wren "{i}No. "
+    wren "{i}I didn't mean what I said, it's just that you- "
     # background unblurs coworker Sprite comes in. "
+    show stranger at mv(offscreenleft, left, 0.5), max_y
     cow1 "You think I wouldn't notice? "
+    show wren pose1 shock
     wren "What? "
     cow1 "Did you seriously order that on the company card?"
+    show wren pose1 embarrased one
     wren "I'm sorry?"
     cow1 "Cigarettes, you daft bint! I'm supposed to explain why 5 cigarette packs showed up to the lab INSTEAD OF THE 5 CENTRIFUGES??"
     # katriel sprite comes in"
+    show kat pose1 neutralsad at mv(offscreenright, right, 0.5), max_y
     cow1 "Hey uh… Kathy, you file the paperwork for this. I'm not dealing with this right now. I got a meeting. "
+    show kat pose2 shock
     kat "I'm not-"
     cow1 "Well it's either you or Danny so. "
+    show kat pose1 sad
     kat "Hand it here. "
+    show kat pose1 neutralsad at mv(right, offscreenright, 0.5), max_y
+    show stranger at mv(left, offscreenleft, 0.5), max_y
     # katriel sprite and coworker sprite leave"
     # music shift. "
     # background blur"
     # Wren chromatic "
     # kat sprite "
+    scene office_outside with fade
+    show kat pose1 regret at right, max_y
+    show wren pose1 neutralsad at left, max_y
     kat "What the fuck was that about? My manager screamed herself hoarse. Could you be a bigger fuck-up if you tried? "
     # outside of work bg "
     wren "I'm. oh. "
     kat "Wren. "
     wren "Hey Kat. "
+    show kat pose1 neutralsad
     kat "Lets just go. "
     # they move to outside wren's house "
+    show kat pose1 neutralsad at mv(right, offscreenright, 1.0), max_y
+    show wren pose1 neutralsad at mv(left, offscreenright, 0.5), max_y
+    scene houses with fade
+    show kat pose1 neutralsad at mv(offscreenleft, right, 0.5), max_y
+    show wren pose1 eyesclosed at mv(offscreenleft, left, 1.0), max_y
     kat "Looks like we're here. "
     kat "Time for me to leave. "
+    show kat pose2 worried one
     kat "Wren? "
+    show wren pose1 neutralsad
     wren "Bye Kat. "
+    show kat pose2 worried two
     kat "You high? "
+    show wren pose1 bashful
     wren "What? "
     kat "Fucking answer my question! "
-    wren "No, I'm not high "
+    wren "No, I'm not high."
+    show kat pose1 regret
     kat "Then. What. Could. Possibly. Be the Reason. For that disaster. "
+    show wren pose1 embarrased one
     wren "Sorry, for being so distracted? "
+    show kat pose1 neutral
     kat "Dude. "
+    show wren pose1 pensive
     wren "My.. mom's sick. "
+    show kat pose1 sad
     kat "Oh. "
+    show wren pose1 neutralsad
     wren "Yeah. "
     kat "I'm really sorry. "
     wren "Thanks. "
+    show wren pose2 worried two
     kat "Is it cancer? "
+    show wren pose1 pensive
     wren "No, the doctors don't know what it is. "
     wren "She's really tired, her throat is sore, and she's fatigued. "
+    show kat pose2 worried sad
     kat "Fuck, that could be anything."
     wren "And, she's coughing up these petals. "
+    show kat pose2 worried three
     kat "Like… ? "
     wren "Like flower petals, yeah. "
+    show kat pose2 shock
     kat "Holy shit. Out her mouth? "
     wren "Covered in blood. It's been really scary for her. "
+    show kat pose1 sad
     kat "I can imagine. "
     # for the next line have it go off screen, and speaking rlly fast"
-    kat "Have the doctors tested her immunoglobulin levels? Maybe it's some kinda Munchausen's? Or a weird blend of pica and a GI bleed that she's too embarrassed to talk about? I wonder if it could be something really obscure, maybe they'll even name a disease after her… "
+    show kat pose2 neutralsad
+    kat "{cps=50}Have the doctors tested her immunoglobulin levels? Maybe it's some kinda Munchausen's? Or a weird blend of pica and a GI bleed that she's too embarrassed to talk about? I wonder if it could be something really obscure, maybe they'll even name a disease after her… "
+    show wren pose1 pain
     wren "Um, I don't really know. "
+    show kat pose2 neutral
     kat "Of course not. Hm. Has she tried some immune boosting tea? "
     kat "What pain management meds is she on? "
+    show wren pose1 cry
     wren ""
+    show kat pose2 worried sad #at mv(right, center, 1.0)
     kat "Can I hug you? "
     wren "yes. "
+    show wren pose1 neutralsad
     wren "thanks. "
+    show kat pose1 relieved
     kat "Of course. "
     kat "You should have told me, I could have helped you cover! "
     kat "I wouldn't have blown up either. "
     wren "It's okay, you didn't know. "
+    show kat pose2 worried one
     kat "Hey, I'm really behind on inputting my data. "
+    show kat pose2 smile blush
     kat "You could come over tonight? "
+    show kat pose2 happy
     kat "I'll even make up a packet of over the counter medicines to give to your mom. "
+    show kat pose2 worried two
     kat "Okay? "
+    show wren pose1 bashful
     wren "I'll…  think about it. "
+    show wren pose1 smile
     wren "Thanks. "
+    show kat pose2 worried sad
     kat "Take care of yourself. "
+    show kat pose2 worried sad at mv(right, offscreenright, 0.5), max_y
+    ""
+    scene wren_bedroom
+    show wren pose1 neutralsad at center, max_y
     # Katriel goes off screen. "
     # Wren up to her room. No convo w mom. The room is dark. "
     wren "I feel too gross to jerk off. "
@@ -1529,7 +1719,7 @@ wren "No, I urgh…"
 ines "Now look what you've done, you've gone ahead and made her even sicker!"
 kat "Are you insane? Wren needs care! Just let me take her to the car at least. "
 ines "Wren is her own person and you're just mad because you can't control her anymore. You know wren doesnt even like you right?"
-kat "Well i never–"
+kat "Well I never–"
 # this whole time it's the library CG that gets darker and darker,  until it fade away and
 #End
 
