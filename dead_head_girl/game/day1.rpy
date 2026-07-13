@@ -13,9 +13,8 @@ label work_day1:
     stop music
     show wren pose1 neutralsad at max_y, center
 
-    "The office is busy and no one says hi to her."
+    "The office is busy."
 
-    "When she sits down at her desk, she overhears a conversation."
     cow1 "Hey, do you know why Liza's been out for the past few days?"
     cow2 "Don't tell anyone else I said this, but it's because her daughter eloped with some {i}woman!{/i}"
     cow1 "And I thought she was normal... How could she do that to her mother?"
@@ -31,7 +30,7 @@ label work_day1:
     #wren aberrates chromatically
     phone "{sc}Riiiiiiing{/sc}"
 
-    wren "(on the phone) yes ma'am. No sir. Let me check that with my supervisor."
+    wren "Yes ma'am. No sir. Let me check that with my supervisor."
     cow1 "Hey um. Uhm. Hey you."
     wren "Yes? "
     cow1 "Mind swinging by the lab and dropping this package off?"
@@ -44,19 +43,19 @@ label work_day1:
     show wren pose1 neutralsad at mv(center, offscreenright, spd=1.0), max_y
 
     scene lab
-    "Wren sees someone familiar through a laboratory window."
     show wren pose1 neutralsad at mv(offscreenleft, left, spd=1.0), max_y
     show kat pose2 neutral at right, max_y
+    wren "...?"
     wren "…Kat."
-    wren "No way that's Kat. She was so serious about never going into medicine." 
-    wren "\"I disavow the lab forever!\" and she really believed herself when she said that."
-    wren "But that's unmistakably Kat."
+    wren "{i}No way that's Kat. She was so serious about never going into medicine.{\i}" 
+    wren "{i}\"I disavow the lab forever!\" and she really believed herself when she said that.{\i}"
+    wren "{i}But that's unmistakably Kat.{\i}"
     show kat pose2 shock
     kat "Wren…!?"
     #wren happy
     show wren pose1 smile
     wren "Why are you here?"
-    wren "{i}It's been years and you look so different."
+    wren "{i}It's been years and you look so different.{\i}"
     wren "I really, really missed you."
 
     scene school_library
@@ -76,9 +75,9 @@ label work_day1:
     show wren pose1 worried one
     wren "let's just stay here then ? "
     show kat pose2 happy
-    kat "fine. Just stop stealing my makeup. If you want it you can just ask. "
+    kat "Fine. Just stop stealing my makeup. If you want it you can just ask. "
     show wren pose1 smile
-    wren "you're so much prettier than me. "
+    wren "You're so much prettier than me. "
     show kat pose2 eyesclosed blush
     kat "LIE. "
     show wren pose1 neutralblush
@@ -90,15 +89,15 @@ label work_day1:
     wren "I'm so jealous."
     kat "Well, if you want to be pretty so bad, lets just do it. "
     show wren pose1 woah
-    wren "what?" 
+    wren "What?" 
     # scenery change supply closet 
     scene broomcloset
     show wren pose1 embarrased two at left, max_y
     show kat pose2 smile blush at right, max_y
     # A moment of silence between the two of them. 
-    wren "you shouldn't do this kinda thing."
+    wren "You shouldn't do this kinda thing."
     show kat pose1 relieved
-    kat "why not. If you want it, you should get it."
+    kat "Why not. If you want it, you should get it."
     wren "I guess."
     show wren pose1 embarrased one
     show kat pose2 happy
@@ -106,13 +105,13 @@ label work_day1:
     wren "…"
     show kat pose2 neutralsad
     kat "It's not like I even really wanted those shorts anyways."
-    kat "she says I do it just to piss her off."
+    kat "She says I do it just to piss her off."
     show kat pose2 worried three
-    kat "thats such bullshit, dont you agree?"
+    kat "That's such bullshit, don't you agree?"
     show wren pose1 bashful
     wren "…"
     show kat pose2 worried one
-    kat "Whats with you. You normally love this kinda thing. "
+    kat "What's with you? You normally love this kinda thing. "
     show wren pose1 eyesclosed
     wren "I don't really know how to say it."
     show kat pose2 worried sad
@@ -120,18 +119,18 @@ label work_day1:
     show kat pose2 neutralsad
     kat "Ill go to hell if I need to. "
     wren "{i}You're so dramatic. "
-    wren "what if-"
+    wren "What if-"
     # foot step sound effect "
     show kat pose2 worried two at mv(right, center, 0.5), max_y
     kat "Shh. "
     # K gets close to w "
     show wren pose1 embarrased one
     kat "..."
-    kat "ok, good. It's clear. . So, what's going on with you?"
+    kat "Ok, good. It's clear. . So, what's going on with you?"
     show kat pose2 happy at mv(center, right, 1.0), max_y
     wren "Um… so…"
     wren "Are you… do you think…"
-    wren "what would you say if two girls dated?"
+    wren "What would you say if two girls dated?"
     show kat pose2 worried two
     wren "I kind of have been thinking about it. "
     show wren pose1 smile
@@ -167,38 +166,38 @@ label work_day1:
     show wren pose1 neutralsad at left, max_y
     show kat pose2 shock at right, max_y
     kat "It's been a while. "
-    wren "{i}That's all you have to say. Is this how it's going to be with you? "
+    wren "{i}That's all you have to say. Is this how it's going to be with you?{\i}"
     wren "Yes, it has. "
     show kat pose2 neutralsad
     kat "So I'm a lab tech now, mostly been supporting the research and development division."
     wren "Mhm… "
     show kat pose2 happy
-    kat "They're trusting me with a lot of responsibility.I recently went to a talk given by Dr. Grice, I'm so lucky to work under such a prestigious director. Running the bio- assays is- "
+    kat "They're trusting me with a lot of responsibility.I recently went to a talk given by Dr. Grice, I'm so lucky to work under such a prestigious director. Running the bio-assays is- "
     kat "I hope I'm not boring you. "
     show wren pose1 pensive
     wren "It's interesting, go on. "
     show kat pose2 neutral
-    kat "no, I don't think so. "
+    kat "No, I don't think so. "
     show wren pose1 bashful
     wren "{size=15}I just thought you were done with this stuff."
 
-    kat "what? Ive never said anything like that "
-    wren "isn't this directly in the medical corporate culture you hated? "
+    kat "What? I've never said anything like that "
+    wren "Isn't this directly in the medical corporate culture you hated? "
     kat "I don't even know why you would bring that up."
     show kat pose2 shock
     kat "I'm not gonna apologize for my success. "
     show wren pose1 neutralsad
     wren "Yes… you're clearly doing well for yourself now."
     show kat pose1 relieved
-    kat "yeah, well, I grinded my ass off to get this position so I'm going to enjoy it. "
-    wren "thats great. "
-    kat "agh! "
+    kat "Yeah, well, I grinded my ass off to get this position so I'm going to enjoy it. "
+    wren "That's great. "
+    kat "Agh! "
     show wren pose1 angry
-    wren "have you changed even a little bit?"
+    wren "Have you changed even a little bit?"
     show kat pose1 eyesclosed
     kat "Wren. "
     show kat pose2 happy
-    kat "you'll join me on my walk home together after work? "
+    kat "You'll join me on my walk home together after work? "
     show wren pose1 embarrased one
     wren "{size=15}Whatever you want."
     show kat pose2 happy
@@ -206,18 +205,18 @@ label work_day1:
     show wren pose1 bashful
     wren "I said yes."
     show kat pose2 smile blush
-    kat "okay. nice. Good. "
-    kat "itll be like old times. "
+    kat "Okay. nice. Good. "
+    kat "It'll be like old times. "
     show kat pose1 relieved
-    kat "by the way, don't mention anything to anyone here. I don't do office rumors and I hate lying bitches."
+    kat "By the way, don't mention anything to anyone here. I don't do office rumors and I hate lying bitches."
     # (Wren back at her desk.) "
     scene office_bg
     show wren pose1 embarrased one at center, max_y
-    wren "{i} mother, no, it's fine. Yes I'm showing up with my friend who I haven't talked to in years and that I spent an entire month sobbing about. No, I don't want anything. No, I don't know where she gets her clothes from. "
+    wren "{i} Mother, no, it's fine. Yes I'm showing up with my friend who I haven't talked to in years and that I spent an entire month sobbing about. No, I don't want anything. No, I don't know where she gets her clothes from.{\i}"
     show wren pose1 eyesclosed
-    wren "{i}mother, are you fucking stupid? "
+    wren "{i}Mother, are you fucking stupid?{\i}"
     show wren pose1 neutralsad
-    cow2 "ahh, end of another daily grind. "
+    cow2 "Ahh, end of another daily grind. "
     show wren at mv(center, offscreenright, 1.0)
     wren "Bye."
     scene houses
@@ -303,11 +302,15 @@ label garden_day1:
 
     wren "{i}What am I supposed to...?{/i}"
 
-    "She starts playing with a flower bud."
+    wren "What an ugly thing." 
+
+    #"She starts playing with a flower bud."
+    # show flower
 
     wren "{i}Hm.{/i}"
 
-    "She's crushed it."
+    #"She's crushed it."
+    # crunching sound effect + flower on screen looks crumpled
 
     #Sound effect, boss music?
     #show ines_fg at mv(offscreenright, right, 0.25), max_y #ines jumpscare
@@ -367,23 +370,26 @@ label garden_day1:
     wren """
         ...
 
-        he-
+        He-
 
-        wh-
+        Wh-
         """
     
     show ines pose_two smile
     ines "Umh! Okay! Wow! Well, let's take care of the gardenias, they need some pruning before they flower."
-    "Wren follows Ines to a gardenia bush, covered in buds and a few partial blooms. "
+    #"Wren follows Ines to a gardenia bush, covered in buds and a few partial blooms. "
+    # show gardenia bush covered in buds/few partial blooms
     ines "I like to pinch off the smaller buds, so I can get a few really big blooms."
     show ines pose_two
     ines "It used to be used as medicine way back, but now people just use it for decoration."
     ines "Look, they are just starting to get the scent."
-    "Ines plucks off one of the partially blooming flowers and cups it in her hand."
+    #"Ines plucks off one of the partially blooming flowers and cups it in her hand."
+    #show a plucked off flower
 
     wren "{i}It looks like a little maggot.{/i}"
     wren "I'm not sure…"
-    "Ines hold it up to her face and against her better instincts Wren leans in."
+    #"Ines hold it up to her face and against her better instincts Wren leans in."
+    show wren pose1 neutralsad at mv(center, left, 0.5), max_y
     #dreamy music plays, the moment lingers
     ""
     ines "Could I draw you?"
@@ -439,21 +445,21 @@ label garden_day1:
 
     strange "Hey Ines, come say hi to the fresh meat."
     ines "Aw, don't be mean Macy."
-    ines "Hi everyone! I'm Ines, the vice president of the art club here!"
-    ines "“Heya, I'm Ines, the vice president of the art club. You all came at the perfect time! I've just put the final touches on my painting! *spins around* Isn't it pretty?"
+    ines "“Heya, I'm Ines, the vice president of the art club. You all came at the perfect time! I've just put the final touches on my painting! Isn't it pretty?"
     strange "The colors are gorgeous!"
     #wren surprised
     show ines_art at center
     wren "Is that… a dead bird?"
     ines "Yes! What, do you think the shading is off?" 
     wren "Well… the subject matter is…"
-    wren "{i}Wierd. If I went home with paint streaked clothes, or a painting like that… well, mother would certainly be hysterical.{/i}" 
+    wren "{i}Weird. If I went home with paint streaked clothes, or a painting like that… well, mother would certainly be hysterical.{/i}" 
     ines "What? The subject doesn't matter. Whatever I paint will turn out beautiful."
     hide ines_art
     "{i}Ines smiles.{/i}"
     strange "Okay, okay, time to go to the next club. See you around, Ines."
     ines "Bye! Hope to see you all in here again." 
-    "As the students file out, Ines makes eye contact with Wren, smiles, and waves to just her." 
+    #"As the students file out, Ines makes eye contact with Wren, smiles, and waves to just her." 
+    wren "{i}Why is she looking right at me.{/i}" 
     wren "{i}Such a hypocrite. What a liar. It's cruel to make people look at decaying shit like that.{/i}" 
     wren "{i}Why not paint a still life.{/i}"
     wren "{i}Nah, you're too good for that Ms. \"subject matter doesn't matter.\"{/i}"
@@ -491,13 +497,13 @@ label garden_day1:
     ines "Can you keep that expression, just like that?"
     wren "Okay."
     #Drawing done
-    "Wren looks at the finished drawing."
+    #"Wren looks at the finished drawing."
     wren """
         {i}It's kind of warm and soft and melty.
 
         It looks like me if I was in love...{\i}
         """
-    "{i}However, the proportions are a little off, and the color makes Wren look like she's not a living body.{/i}"
+    #"{I}However, the proportions are a little off, and the color makes Wren look like she's not a living body.{/i}"
     show ines laugh two
     ines "So!!! What do you think?!"
     wren "It's..."
@@ -517,22 +523,22 @@ label garden_day1:
     label ines_day1_good:
     wren "I've never looked like this." 
     show ines fanatic one
-    ines "yes you do. When I look at you. I can see what you keep hidden underneath that layer of grime"
-    wren "excuse me? I Literally showered this morning?" 
+    ines "Yes you do. When I look at you. I can see what you keep hidden underneath that layer of grime"
+    wren "Excuse me? I Literally showered this morning?" 
     show ines laugh one
-    ines "not like that!"
+    ines "Not like that!"
     show ines blush two
     ines "I mean to say, I see you."
     jump ines_day1_post_choice
 
     label ines_day1_bad:
-    wren "you really weren't lying"
+    wren "You really weren't lying"
     show ines fanatic one
     ines "I love showing people a new way of seeing the world. "
-    ines "it's stupid to not see the beauty in yourself." 
+    ines "It's stupid to not see the beauty in yourself." 
     show ines pose_two frustrated
-    wren "don't call me stupid." 
-    ines "god, I just can't say the right thing."
+    wren "Don't call me stupid." 
+    ines "God, I just can't say the right thing."
     show ines pose_two neutralsad
     ines "I mean to say, I see you."
 
@@ -563,11 +569,12 @@ label garden_day1:
     wren "Sure."
     show ines pose_two laugh
     ines "You're so super amazing awesome Wren!"
+    ines "Come here. A hug for my special girl." 
 
     stop music
     stop ambience
     show ines blush three
-    "Ines impulsively hugs wren who stiffens, turns red, and feels a twisting in her chest."
+    #"Ines impulsively hugs wren who stiffens, turns red, and feels a twisting in her chest."
     #cut to the visual of a flower stem sprouting in a body
 
     wren """
@@ -592,7 +599,7 @@ label home_day1:
 
     #Wren talks to mom
     scene living_room
-    "*wren steps outside into-*"
+    #"*wren steps outside into-*"
 
     show mom_fg at left, max_y
     show wren pose1 neutralsad at max_y, mv(offscreenleft, right, 1.0)
@@ -612,7 +619,7 @@ label home_day1:
     show wren pose1 neutralsad
     wren "Yes mother. I'll do that mother."
 
-    "Wren leaves the house."
+    #"Wren leaves the house."
     hide mom_fg
 
     phone "{sc}bzzz{\sc}"
@@ -653,7 +660,7 @@ label wren_research:
     show wren pose1 neutralsad at center, max_y
     #desk, glow effect from screen
     #Wren clearly hasnt been sleeping.
-    "Wren desperately searches for anything that could help"
+    #"Wren desperately searches for anything that could help"
     wren "{i}google why am i vomiting flowers{/i}"
     user2 "OMG i cant believe that stupid bitch got hanahaki OBVS shes not in love blah blah blah"
     user1 "dont joke about that?? its real, my aunt almost died from it >:("
@@ -668,7 +675,7 @@ label wren_research:
     wren "{i}Hm.{/i}"
     wren "{i}Would surgery work?{/i}"
 
-    "{i} Three hours later. {/i}"
+    #"{I} Three hours later. {/i}"
 
     #Wren is somehow even more exhausted looking.
     wren "{i}Click.{/i}"
@@ -716,7 +723,7 @@ label qte_fail:
     wren "People are all terrible anyways."
 
     #Scary music
-    wren "{i}ragged breath{/i}"
+    wren "{i}Hah... Fuck...{/i}"
 
     wren """
         I hope whoever cleans my body has a ball.
