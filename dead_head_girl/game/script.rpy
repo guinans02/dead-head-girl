@@ -45,42 +45,48 @@ init python:
             return self.ch.name
 
 #Declare colors
-define wren_color  = "#708090" #slate grey
+define wren_color  = "#D3D3D3" #light grey
 define kat_color   = "#8a0303" #blood red
-define ines_color  = "#c8a2c8" #lilac
-define comp_color  = "#9caf88" #sage green
+define ines_color  = "#CCCCFF" #lilac
+define comp_color  = "#90EE90" #sage green
 
 # Declare characters used by this game.
 define strange = Character(
-    name="Stranger",
+    name="Stranger", 
+    color = "#FFFFFF", #white
+    window_background="gui/DHG_GUI_Dialogue_Gardenia.png",
+    namebox_ypos = 10,
+    who_size=25, #namebox size, what_size = dialogue size
     callback=functools.partial(store.voice, character="message")
     )
 define wren = Character(
     name="Wren", 
-    color=wren_color, #white
+    color=wren_color, #light grey
     callback=functools.partial(store.voice, character="wren")
     )
 define ines = Character(
     name="Ines", 
     color=ines_color, #lilac
-    # font="SofiaSans-VariableFont_wght.ttf",
-    # what_font="SofiaSans-VariableFont_wght.ttf",
+    namebox_ypos = 2,
+    window_background="gui/DHG_GUI_Dialogue_Lilac.png",
     callback=functools.partial(store.voice, character="ines")
     #kind=strange
     )
 define kat = Character(
     name="Katriel", 
+    namebox_ypos = 2,
     color=kat_color, #blood red
+    window_background="gui/DHG_GUI_Dialogue_Amaryllis.png",
     callback=functools.partial(store.voice, character="kat")
     )
 define mom = Character(
     name="Mother", 
-    # font="fonts/EBGaramond-VariableFont_wght.ttf", 
-    # what_font="fonts/EBGaramond-VariableFont_wght.ttf",
+    color = wren_color,
     kind=strange,
     callback=functools.partial(store.voice, character="message")
     )
 define phone = Character(
+    namebox_ypos = -2,
     name="Phone", 
     color=comp_color, #cadmium green
     font="fonts/SpaceMono-Regular.ttf", 
@@ -106,6 +112,7 @@ define user2 = Character(
 define com = Character(
     name="Computer", 
     color=comp_color, #cadmium green
+    namebox_xpos = -5,
     font="fonts/SpaceMono-Regular.ttf", 
     what_font="fonts/SpaceMono-Regular.ttf",
     callback=functools.partial(store.voice, character="computer")
@@ -125,12 +132,18 @@ define phone_kat = Character(
     color=kat_color, 
     callback=functools.partial(store.voice, character="computer")
     )
+define phone_ines = Character(
+    name="ines",
+    kind=nvl,
+    color=ines_color, 
+    callback=functools.partial(store.voice, character="computer")
+    )
 
 define cow1 = Character(name="Coworker 1", kind=strange)
 define cow2 = Character(name="Coworker 2", kind=strange)
 define new_gf = Character(name="Homewrecker", kind=strange)
 
-define reasearcher = Character(name="Researcher", kind=strange)
+define researcher = Character(name="Researcher", kind=strange)
 
 #declare ambience audio channel
 define ambience = renpy.music.register_channel("ambience")

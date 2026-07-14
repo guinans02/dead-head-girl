@@ -42,7 +42,7 @@ define gui.hover_color = '#9FA3AF'
 define gui.selected_color = '#ffffff'
 
 ## The color used for a text button when it cannot be selected.
-define gui.insensitive_color = '#5555557f'
+define gui.insensitive_color = '#808080'
 
 ## Colors used for the portions of bars that are not filled in. These are not
 ## used directly, but are used when re-generating bar image files.
@@ -69,13 +69,13 @@ define gui.interface_text_font = "fonts/zt-nature.regular.otf"
 define gui.text_size = 22
 
 ## The size of character names.
-define gui.name_text_size = 35
+define gui.name_text_size = 30
 
 ## The size of text in the game's user interface.
 define gui.interface_text_size = 24
 
 ## The size of labels in the game's user interface.
-define gui.label_text_size = 28
+define gui.label_text_size = 25
 
 ## The size of text on the notify screen.
 define gui.notify_text_size = 16
@@ -86,14 +86,13 @@ define gui.title_text_size = 50
 #title text outline
 define gui.title_text_outlines = [(2, "#000", 0, 0)]
 
-#define gui.title_text_font = "fonts/LexendGiga-VariableFont_wght.ttf"
 define gui.title_text_font = "fonts/EBGaramond-VariableFont_wght.ttf"
 
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.game_menu_background = "gui/main_menu.jpg"
-define gui.main_menu_background = "gui/main_menu.jpg"
+define gui.game_menu_background = "gui/main_menu.png"
+define gui.main_menu_background = "gui/main_menu.png"
 
 ## The color of the main menu.
 define gui.main_menu_text_color = "#404960"
@@ -105,7 +104,7 @@ define gui.main_menu_text_color = "#404960"
 ## time.
 
 ## The height of the textbox containing dialogue.
-define gui.textbox_height = 185
+define gui.textbox_height = 250
 
 ## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
 ## center, and 1.0 is the bottom.
@@ -114,8 +113,8 @@ define gui.textbox_yalign = 1.0
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
-define gui.name_xpos = 240
-define gui.name_ypos = 0
+define gui.name_xpos = 105
+define gui.name_ypos = 10
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -138,11 +137,11 @@ define gui.namebox_tile = False
 ## The placement of dialogue relative to the textbox. These can be a whole
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
-define gui.dialogue_xpos = 268
-define gui.dialogue_ypos = 50
+define gui.dialogue_xpos = 105
+define gui.dialogue_ypos = 80
 
 ## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 744
+define gui.dialogue_width = 1100
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -205,7 +204,13 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ## For example, you can uncomment the following line to set the width of a
 ## navigation button.
 
-# define gui.navigation_button_width = 250
+define gui.navigation_button_spacing = 0
+define gui.navigation_button_text_size = 40
+define gui.navigation_button_width = 200
+define gui.navigation_button_height = 60
+define gui.navigation_button_text_font = "fonts/grenze-gotisch.bold.ttf"
+define gui.navigation_button_text_idle_color = "#D3D3D3"
+define gui.navigation_button_text_hover_color = "#FFFFFF"
 
 
 ## Choice Buttons ##############################################################
@@ -435,7 +440,7 @@ init python:
         gui.notify_text_size = 25
         gui.interface_text_size = 36
         gui.button_text_size = 34
-        gui.label_text_size = 36
+        gui.label_text_size = 34
 
         ## Adjust the location of the textbox.
         gui.textbox_height = 240
@@ -473,4 +478,6 @@ init python:
         gui.nvl_button_xpos = 20
 
         ## Quick buttons.
+        gui.quick_button_height = 25
+        gui.quick_button_text_color = "#FFFFFF"
         gui.quick_button_text_size = 20

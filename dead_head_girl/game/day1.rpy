@@ -27,13 +27,13 @@ label work_day1:
     #wren aberrates chromatically
     phone "{sc}Riiiiiiing{/sc}"
 
-    wren "(on the phone) Yes ma'am. No sir. Let me check that with my supervisor."
-    cow1 "Hey um. Uhm. Hey- you."
+    wren "Yes ma'am. No sir. Let me check that with my supervisor."
+    cow1 "Hey um. Uhm. Hey-you."
     wren "Yes? "
     cow1 "Mind swinging by the lab and dropping this package off?"
     wren "I've never been…"
-    cow1 "Oh, it's gonna lab B, 2 doors down and a left."
-    cow1 "Careful! That lab equipments expensive!"
+    cow1 "Oh, it's in lab B, 2 doors down and a left."
+    cow1 "Careful! That lab equipment is {i}very{/i} expensive!"
     wren "{i}If it matters so much, why don't you take it then?{/i}"
 
     #wren walks to the lab
@@ -67,8 +67,8 @@ label work_day1:
     kat "I told my mom you're a girl now and she doesn't want you in the house. She doesn't want me to get ideas. "
     # (For context, Wren told Kat she was trans long before she was out at school. She came out freshman year to most people, but figured out she was trans in middle school. She only told Kat and her mother.) "
     show wren pose1 pensive
-    wren "Well that fuckin sucks. "
-    kat "Yeah, it fuckin does. "
+    wren "Well that fuckin' sucks. "
+    kat "Yeah, it fuckin' does. "
     show wren pose1 worried one
     wren "Let's just stay here then? "
     show kat pose2 happy
@@ -318,26 +318,36 @@ label garden_day1:
 
     wren "{i}What am I supposed to...?{/i}"
 
+    show target at truecenter
+
+    wren "{i} What an ugly thing. {/i}"
+
     # flower bud pre crush scene
 
+    show crushed at truecenter
+
+    hide target
+
     wren "{i}Hm.{/i}"
+
+    hide crushed with dissolve
 
     # flower bud post crush
     #scene garden
 
     #Sound effect, boss music?
     #show ines_fg at mv(offscreenright, right, 0.25), max_y #ines jumpscare
-    show ines pose_two frustrated at mv(offscreenright, right, 0.25), max_y #ines jumpscare
+    show ines pose2 frustrated at mv(offscreenright, right, 0.25), max_y #ines jumpscare
     strange "I- {b}excuse me!? {/b}{sc}{b}What are you doing??{/b}{/sc}"
     wren "Nothing."
-    strange "Seriously? You didn't even pick it... get out! Open hours are closed!"
+    strange "Seriously? You crushed the flower and didn't even pick it... get out! Open hours are closed!"
     wren "I was supposed to volunteer here..."
     
-    show ines pose_two shock
-    ines "Oh. OH!"
+    show ines pose2 shock
+    strange "Oh. OH!"
     ines "Welcome! I'm Ines, sorry for yelling."
 
-    show ines smile one
+    show ines smile 
     wren "I'm Wren. Thanks."
     ines "This is the Dreamflower Gardens! So, how'd you get started with us here?"
     wren "It's the closest to my house that accepts volunteers."
@@ -348,7 +358,7 @@ label garden_day1:
     ines "Haha ummmm that's okay, I'll teach you! Do you have a favorite plant?"
     wren "No." #Girlboss behavior right there
 
-    show ines fanatic one
+    show ines pose2 fanatic 
     ines "That's..." 
     # Ines nervous smile
     ines "...so..."
@@ -378,7 +388,7 @@ label garden_day1:
     label who_me:
     wren "Who, me?"
     #"*Ines blushes."
-    show ines pose_two shock
+    show ines pose2 shock
     ines "Yes, you!"
     wren """
         ...
@@ -388,15 +398,17 @@ label garden_day1:
         Wh-
         """
     
-    show ines pose_two smile
+    show ines pose2 smile
     ines "Umh! Okay! Wow! Well, let's take care of the gardenias, they need some pruning before they flower."
     ines "I like to pinch off the smaller buds, so I can get a few really big blooms."
-    show ines pose_two
+    show ines pose2
     ines "It used to be used as medicine way back, but now people just use it for decoration."
     ines "Look, they are just starting to get the scent."
     # cg add maggot bud cg
+    show target at truecenter
     wren "{i}It looks like a little maggot.{/i}"
     wren "I'm not sure…"
+    hide target 
     #dreamy music plays, the moment lingers
     ""
     ines "Could I draw you?"
@@ -404,18 +416,18 @@ label garden_day1:
 
     label no_fun:
     wren "I get it already. Stop making fun of me."
-    show ines pose_two frustrated
+    show ines pose2 frustrated
     ines "I'm not making fun of you!"
     wren "How do I know that?"
     ines "First of all, I don't even know you."
     wren "{i}Wow.{/i}"
-    show ines pose_two fan
+    show ines pose2 fan
     ines "Second, look at your face, your hair!"
     ines "...your eyebrows. You'd look so lovely in Matisse's style."
-    wren "Why matisse..."
-    show ines pose_two woah
+    wren "Why Matisse..."
+    show ines pose2 woah
     ines "Ugh, and she knows the Fauvists! Actually-"
-    show ines pose_two smile
+    show ines pose2 smile
     ines "Could I draw you?"
 
     label post_ines_one:
@@ -456,14 +468,15 @@ label garden_day1:
     ines "“Heya, I'm Ines, the vice president of the art club. You all came at the perfect time! I've just put the final touches on my painting! Isn't it pretty?"
     strange "The colors are gorgeous!"
     #wren surprised
-    show ines_art at center
+    show ines_look_at_this_photograph at center:
+        xysize (1280, 720)
     wren "Is that… a dead bird?"
     ines "Yes! What, do you think the shading is off?" 
     wren "Well… the subject matter is…"
     wren "{i}Weird. If I went home with paint streaked clothes, or a painting like that… well, mother would certainly be hysterical.{/i}" 
     ines "What? The subject doesn't matter. Whatever I paint will turn out beautiful."
-    hide ines_art
-    "{i}Ines smiles.{/i}"
+    hide ines_look_at_this_photograph
+    #"{i}Ines smiles.{/i}"
     strange "Okay, okay, time to go to the next club. See you around, Ines."
     ines "Bye! Hope to see you all in here again." 
     #"As the students file out, Ines makes eye contact with Wren, smiles, and waves to just her." 
@@ -477,7 +490,7 @@ label garden_day1:
     scene garden
     play ambience garden_amb fadein 1.0
     show wren pose1 cry at left, max_y
-    show ines pose_two smile at right, max_y
+    show ines pose2 smile at right, max_y
 
     wren "{i}..."
 
@@ -490,29 +503,32 @@ label garden_day1:
     show ines worried
     ines "Do you really hate my garden that bad?"
     show wren pose1 worried one
-    wren "No- I mean yes."
-    show ines pose_two shock
+    wren "No-I mean yes."
+    show ines pose2 shock
     ines "What?!"
     show wren pose1 bashful
     wren "It's not {i}your{\i} garden. It's pretty much any garden."
-    show ines pose_two sad
+    show ines pose2 sad
     ines "Why?"
     show wren pose1 embarrased one
     wren "I stepped in one of those underground wasp's nests. At the botanical garden off Main?"
     wren "It doesn't really matter."
-    show ines pose_two neutralsad
+    show ines pose2 neutralsad
     ines "If you say so."
     show wren pose1 neutralsad
     show ines smile one
     ines "Can you keep that expression, just like that?"
     wren "Okay."
     #Drawing done
+    show ines_wren_sketch at truecenter: 
+        zoom 0.5
     wren """
         {i}It's kind of warm and soft and melty.
         It looks like me if I was in love...
 
         Then why is it so creepy? {\i}
         """
+    hide ines_wren_sketch
     show ines laugh two
     ines "So!!! What do you think?!"
     wren "It's..."
@@ -530,53 +546,53 @@ label garden_day1:
             
 
     label ines_day1_good:
-    wren "I've never looked like this." 
-    show ines fanatic one
-    ines "Yes you do. When I look at you. I can see what you keep hidden underneath that layer of grime. "
-    wren "Excuse me? I literally showered this morning?" 
-    show ines laugh one
-    ines "Not like that!"
-    show ines blush two
-    ines "I mean to say, I see you."
-    jump ines_day1_post_choice
+        wren "I've never looked like this." 
+        show ines fanatic one
+        ines "Yes you do. When I look at you. I can see what you keep hidden underneath that layer of grime. "
+        wren "Excuse me? I literally showered this morning?" 
+        show ines laugh one
+        ines "Not like that!"
+        show ines blush two
+        ines "I mean to say, I see you."
+        jump ines_day1_post_choice
 
     label ines_day1_bad:
-    wren "You really weren't lying"
-    show ines fanatic one
-    ines "I love showing people a new way of seeing the world. "
-    ines "It's stupid to not see the beauty in yourself." 
-    show ines pose_two frustrated
-    wren "Don't call me stupid." 
-    ines "God, I just can't say the right thing."
-    show ines pose_two neutralsad
-    ines "I mean to say, I see you."
+        wren "You really weren't lying"
+        show ines fanatic one
+        ines "I love showing people a new way of seeing the world. "
+        ines "It's stupid to not see the beauty in yourself." 
+        show ines pose2 frustrated
+        wren "Don't call me stupid." 
+        ines "God, I just can't say the right thing."
+        show ines pose2 neutralsad
+        ines "I mean to say, I see you."
 
     label ines_day1_post_choice:
     #Phone alert
     phone "{i}{sc}Bzzzzzzz."
     wren "And that's time. I'm out of here."
-    show ines pose_two shock
+    show ines pose2 shock
     ines "What?!"
-    show ines pose_two worried
+    show ines pose2 worried
     ines "You're going to come back, right?"
     wren "I have to. I committed to the hours."
     wren "{i}And I need to do something that isn't staying at home.{/i}"
-    show ines pose_two laugh
+    show ines pose2 laugh
     ines "I knew you didn't hate me! It'll be so much fun to work with you!!"
     wren "Work?"
-    show ines pose_two smile
+    show ines pose2 smile
     ines "I want a really big piece for my portfolio, so I need someone to pose for me an oil painting?"
     wren "Um?"
-    show ines pose_two worried
+    show ines pose2 worried
     ines "Oh..."
     wren "I gotta go now."
-    show ines pose_two pain one
+    show ines pose2 pain 
     ines "Fine! I'll do your part of the garden work! Just let me draw you! I promise, it'll be really easy!"
     wren "Whatever."
-    show ines pose_two shock
+    show ines pose2 shock
     ines "That's a yes?!"
     wren "Sure."
-    show ines pose_two laugh
+    show ines pose2 laugh
     ines "You're so super amazing awesome Wren!"
     ines "Come here. A hug for my special girl." 
 
@@ -809,7 +825,7 @@ label wren_chooses:
 
 label wren_returns_home_day1:
     scene living_room
-    show mom_fg at right, max_y
+    show mom_fg at right, max_y, Transform(xzoom=-1.0)
     show wren pose1 neutralsad at mv(offscreenleft, left, 0.5), max_y
 
     wren "Hello Mother. "
@@ -843,8 +859,7 @@ label wren_returns_home_day1:
     play music obsession
     wren "You know what? "
     wren "No. "
-    wren "Googles xxxflixx.net"
-    wren "Sounding on xxxflixx.net "
+    wren "google xxxflixx.net"
     com "{b}SISSYBOY GETS URETHRA POUNDED AND STRETCHED BY MISTRESSES ELECTRIFIED IRON ROD{/b}"
     wren "Sigh. "
     play ambience zipper noloop

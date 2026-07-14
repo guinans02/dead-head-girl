@@ -28,7 +28,6 @@ style hyperlink_text:
 style gui_text:
     properties gui.text_properties("interface")
 
-
 style button:
     properties gui.button_properties("button")
 
@@ -161,16 +160,16 @@ style ines_window:
     xfill True
     yalign gui.textbox_yalign
     ysize gui.textbox_height
-    background Image("gui/ines_textbox.png", xalign=0.5, yalign=1.0)
+    background Image("gui/DHG_GUI_Dialogue_Lilac.png", xalign=0.5, yalign=1.0)
 
-style ines_window is default
+style kat_window is default
 
-style ines_window:
+style kat_window:
     xalign 0.5
     xfill True
     yalign gui.textbox_yalign
     ysize gui.textbox_height
-    background Image("gui/kat_textbox.png", xalign=0.5, yalign=1.0)
+    background Image("gui/DHG_GUI_Dialogue_Amaryllis.png", xalign=0.5, yalign=1.0)
 
 
 style namebox:
@@ -180,7 +179,7 @@ style namebox:
     ypos gui.name_ypos
     ysize gui.namebox_height
 
-    background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    #background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
 style say_label:
@@ -306,6 +305,9 @@ style quick_button is default
 style quick_button_text is button_text
 
 style quick_button:
+    idle_background Solid("#1A1A2E85")
+    insensitive_background Solid("#1A1A2E85")
+    hover_background Solid("#8b000090")
     properties gui.button_properties("quick_button")
 
 style quick_button_text:
@@ -321,55 +323,74 @@ style quick_button_text:
 ## This screen is included in the main and game menus, and provides navigation
 ## to other menus, and to start the game.
 
-screen navigation():
-
-    vbox:
+screen main_menu_nav():
+    hbox:
         style_prefix "navigation"
+        xalign 0.5 yalign 0.95
+        spacing gui.navigation_spacing
+        textbutton _("start") action Start()
+        textbutton _("load") action ShowMenu("load")
+        textbutton _("preferences") action ShowMenu("preferences")
+        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+            ## Help isn't necessary or relevant to mobile devices.
+            textbutton _("help") action ShowMenu("help")
+        if renpy.variant("pc"):
+            ## The quit button is banned on iOS and unnecessary on Android and Web.
+            textbutton _("quit") action Quit(confirm=not main_menu)
+
+screen navigation():
+    vbox:
+        style_prefix "game_navigation"
 
         spacing gui.navigation_spacing
 
-        if main_menu:
-            xalign 0.135
-            yalign 0.70
-            textbutton _("{size=40}Start") action Start()
+        xalign 0.025
+        yalign 0.5
+        textbutton _("History") text_font "fonts/zt-nature.regular.otf" text_size 22 ysize 15 action ShowMenu("history")
 
-        else:
-            xalign 0.025
-            yalign 0.5
-            textbutton _("{size=40}History") action ShowMenu("history")
+        textbutton _("Save") text_font "fonts/zt-nature.regular.otf" text_size 22 ysize 15 action ShowMenu("save")
 
-            textbutton _("{size=40}Save") action ShowMenu("save")
+        textbutton _("Load") text_font "fonts/zt-nature.regular.otf" text_size 22 ysize 15 action ShowMenu("load")
 
-        textbutton _("{size=40}Load") action ShowMenu("load")
-
-        textbutton _("{size=40}Preferences") action ShowMenu("preferences")
+        textbutton _("Preferences") text_font "fonts/zt-nature.regular.otf" text_size 22 ysize 15 action ShowMenu("preferences")
 
         if _in_replay:
 
-            textbutton _("{size=40}End Replay") action EndReplay(confirm=True)
+            textbutton _("End Replay") text_font "fonts/zt-nature.regular.otf" text_size 22 ysize 15 action EndReplay(confirm=True)
 
         elif not main_menu:
 
-            textbutton _("{size=40}Main Menu") action MainMenu()
+            textbutton _("Main Menu") text_font "fonts/zt-nature.regular.otf" text_size 22 ysize 15 action MainMenu()
 
-        textbutton _("{size=40}About") action ShowMenu("about")
+        textbutton _("About") text_font "fonts/zt-nature.regular.otf" text_size 22 ysize 15 action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("{size=40}Help") action ShowMenu("help")
+            textbutton _("Help") text_font "fonts/zt-nature.regular.otf" text_size 22 ysize 15 action ShowMenu("help")
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and Web.
-            textbutton _("{size=40}Quit") action Quit(confirm=not main_menu)
+            textbutton _("Quit") text_font "fonts/zt-nature.regular.otf" text_size 22 ysize 15 action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
+style game_navigation_button is gui_button
+style game_navigation_button_text is gui_button_text
+
+style game_navigation_button:
+    size_group "game_navigation"
+    properties gui.button_properties("navigation_button")
+
+style game_navigation_button_text:
+    properties gui.text_properties("navigation_button")
 
 style navigation_button:
     size_group "navigation"
+    idle_background Solid("#1A1A2E")
+    hover_background Solid("#8b000090")
     properties gui.button_properties("navigation_button")
 
 style navigation_button_text:
@@ -389,7 +410,7 @@ screen main_menu():
 
     style_prefix "main_menu"
 
-    add gui.main_menu_background
+    add gui.main_menu_background size (1280, 720)   
 
     ## This empty frame darkens the main menu.
     frame:
@@ -398,16 +419,7 @@ screen main_menu():
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
-    use navigation
-
-    # if gui.show_name:
-
-    #     vbox:
-    #         text "[config.name!t]":
-    #             style "main_menu_title"
-
-    #         text _("Ren'Py 7+ Edition"):
-    #             style "main_menu_version"
+    use main_menu_nav
 
 
 style main_menu_frame is empty
@@ -420,7 +432,6 @@ style main_menu_frame:
     xsize 280
     yfill True
 
-    background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -457,7 +468,7 @@ screen game_menu(title, scroll=None):
     if main_menu:
         add gui.main_menu_background
     else:
-        add gui.game_menu_background
+        add gui.game_menu_background size (1280, 720) 
 
     frame:
         style "game_menu_outer_frame"
@@ -507,6 +518,7 @@ screen game_menu(title, scroll=None):
 
     textbutton _("Return"):
         style "return_button"
+        text_size 18
 
         action Return()
 
@@ -526,8 +538,8 @@ style game_menu_scrollbar is gui_vscrollbar
 style game_menu_label is gui_label
 style game_menu_label_text is gui_label_text
 
-style return_button is navigation_button
-style return_button_text is navigation_button_text
+style return_button is game_navigation_button
+style return_button_text is game_navigation_button_text
 
 style game_menu_outer_frame:
     bottom_padding 30
@@ -558,7 +570,7 @@ style game_menu_label:
     ysize 120
 
 style game_menu_label_text:
-    size gui.title_text_size
+    size 22
     color gui.accent_color
     yalign 0.5
 
@@ -609,7 +621,7 @@ screen about():
     
             hbox:
                 spacing 15
-                text _("{color=#D162A4}Concept, Additional Art") style "about_small"
+                text _("{color=#D162A4}Concept, Additional Help") style "about_small"
                 text _("V")
                 
             hbox:
@@ -622,49 +634,6 @@ screen about():
                 text _("{color=#A30262}Music") style "about_small"
                 text _("Maxim Orlov")
             
-
-            # hbox:
-            #     spacing 15
-            #     text _("Updated Character Art") style "about_small"
-            #     text _("Deji")
-
-            # hbox:
-            #     spacing 15
-            #     text _("Original Character Art") style "about_small"
-            #     text _("Derik")
-
-            # null height 15
-
-            # hbox:
-            #     spacing 15
-            #     text _("Updated Background Art") style "about_small"
-            #     text _("Mugenjohncel")
-
-            # hbox:
-            #     spacing 15
-            #     text _("Original Background Art") style "about_small"
-            #     text _("DaFool")
-
-            # null height 15
-
-            # hbox:
-            #     spacing 15
-            #     text _("Music By") style "about_small"
-            #     text _("Alessio")
-
-            # null height 15
-
-            # hbox:
-            #     spacing 15
-            #     text _("Update Written By") style "about_small"
-            #     text _("Lore")
-
-            # hbox:
-            #     spacing 15
-            #     text _("Originally Written By ") style "about_small"
-            #     text _("mikey (ATP Projects)")
-
-
             text _("\nMade with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only]")
             null height 15
             text _("[renpy.license!t]") size 20
@@ -874,17 +843,8 @@ screen preferences():
                     label _("Language")
 
                     textbutton "English" text_font "DejaVuSans.ttf" action Language(None)
-                    textbutton "Česky" text_font "DejaVuSans.ttf" action Language("czech")
-                    textbutton "Dansk" text_font "DejaVuSans.ttf" action Language("danish")
                     textbutton "Français" text_font "DejaVuSans.ttf" action Language("french")
-                    textbutton "Italiano" text_font "DejaVuSans.ttf" action Language("italian")
-                    textbutton "Bahasa Melayu" text_font "DejaVuSans.ttf" action Language("malay")
                     textbutton "Русский" text_font "DejaVuSans.ttf" action Language("russian")
-
-                vbox:
-                    style_prefix "radio"
-                    label _(" ")
-
                     textbutton "Español" text_font "DejaVuSans.ttf" action Language("spanish")
                     textbutton "Українська" text_font "DejaVuSans.ttf" action Language("ukrainian")
                     textbutton "日本語" text_font "SourceHanSansLite.ttf" action Language("japanese")
@@ -1578,15 +1538,11 @@ screen quick_menu():
 
 style window:
     variant "small"
-    background "gui/phone/textbox.png"
+    background "gui/textbox.png"
 
 style nvl_window:
     variant "small"
     background "gui/phone/nvl.png"
-
-style main_menu_frame:
-    variant "small"
-    background "gui/phone/overlay/main_menu.png"
 
 style game_menu_outer_frame:
     variant "small"
