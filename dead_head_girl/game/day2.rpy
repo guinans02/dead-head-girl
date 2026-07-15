@@ -652,6 +652,7 @@ label post_kat_day2:
     wren "I think I need a nap. "
     show wren pose1 neutralsad at mv(center, offscreenleft, 0.5), max_y
     # bg change to Wren house living room "
+    stop ambience
     scene living_room
     show mom_fg at left, max_y
     show wren pose1 neutralsad at mv(offscreenright, right, 0.5), max_y
