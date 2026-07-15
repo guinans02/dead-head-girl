@@ -8,7 +8,6 @@ label before_main_menu:
 ## The game starts here.
 label start:
     stop music
-    call debug
     call day1
     call day2
     call end_demo

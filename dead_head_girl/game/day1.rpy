@@ -432,7 +432,7 @@ label garden_day1:
 
     label post_ines_one:
     #Transition back to normal garden 
-    show ines smile 2
+    show ines smile2
     wren "What? Why?"  
     ines "I'm taking a portraiture class and I'm behind."
     ines "Well, actually I'm not, but my portfolio makes me want to vomit and I need new pieces." 

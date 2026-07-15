@@ -87,7 +87,7 @@ label garden_day2:
     #wren blushes
     show wren pose1 smile
     wren "If you really want to that bad… "
-    show ines laugh two
+    show ines laugh two at center, max_y
     ines "I brought some props from home. I'm so excited! "
 
     # rummage sound effect
@@ -125,9 +125,9 @@ label garden_day2:
     
 label crown_of_leaves:
     $crown = True
-    show wren pose1 pensive
+    show wren pose1 pensive at right, max_y
     ines "Yes, I thought it would symbolize renewal."
-    show ines pose2 shock
+    show ines pose2 shock at right, max_y
     ines "I knew you had a good eye for the arts."
     show ines pose2 laugh
     wren "{i}I guess I get how the leaves are renewal. "
