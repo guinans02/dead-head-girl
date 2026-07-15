@@ -421,7 +421,7 @@ label garden_day1:
     wren "How do I know that?"
     ines "First of all, I don't even know you."
     wren "{i}Wow.{/i}"
-    show ines pose2 fan
+    show ines pose2 fanatic
     ines "Second, look at your face, your hair!"
     ines "...your eyebrows. You'd look so lovely in Matisse's style."
     wren "Why Matisse..."
