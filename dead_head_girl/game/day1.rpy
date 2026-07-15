@@ -354,7 +354,7 @@ label garden_day1:
     ines "Oh. Okay. Do you have any experience gardening?"
     wren "No."
 
-    show ines worried
+    show ines pose2 worried
     ines "Haha ummmm that's okay, I'll teach you! Do you have a favorite plant?"
     wren "No." #Girlboss behavior right there
 
@@ -425,15 +425,15 @@ label garden_day1:
     ines "Second, look at your face, your hair!"
     ines "...your eyebrows. You'd look so lovely in Matisse's style."
     wren "Why Matisse..."
-    show ines pose2 woah
+    show ines pose2 laugh
     ines "Ugh, and she knows the Fauvists! Actually-"
     show ines pose2 smile
     ines "Could I draw you?"
 
     label post_ines_one:
     #Transition back to normal garden 
-    show ines smile two
-    wren "what? Why?"  
+    show ines smile 2
+    wren "What? Why?"  
     ines "I'm taking a portraiture class and I'm behind."
     ines "Well, actually I'm not, but my portfolio makes me want to vomit and I need new pieces." 
     ines "C'mon, you clearly don't like the garden." 
@@ -516,7 +516,7 @@ label garden_day1:
     show ines pose2 neutralsad
     ines "If you say so."
     show wren pose1 neutralsad
-    show ines smile one
+    show ines smile one 
     ines "Can you keep that expression, just like that?"
     wren "Okay."
     #Drawing done
