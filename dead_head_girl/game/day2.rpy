@@ -652,8 +652,8 @@ label post_kat_day2:
     wren "I think I need a nap. "
     show wren pose1 neutralsad at mv(center, offscreenleft, 0.5), max_y
     # bg change to Wren house living room "
-    stop ambience
     scene living_room
+    stop ambience
     show mom_fg at left, max_y
     show wren pose1 neutralsad at mv(offscreenright, right, 0.5), max_y
     mom "Wren. "
@@ -1260,7 +1260,7 @@ label kat_bad:
     stop music
     stop ambience
     play music kat_theme
-    show kat pose1 relieved at mv(right, center, 0.5), max_y, Transform(x=-1.0)
+    show kat pose1 relieved at mv(right, center, 0.5), max_y, Transform(xzoom=-1.0)
     kat "Okay. It's just. It's just a lot okay? "
     kat "I wish you weren't sick!"
     show wren pose1 woah
@@ -1273,7 +1273,7 @@ label kat_bad:
     kat "What. Didn't you JUST confess to me. "
     kat "Why are you doing this to me this now? "
     wren "How about let's.. go inside? "
-    show kat pose2 shock
+    show kat pose2 shock at mv (left, right, 0.8)
     kat "FUCK YOU WREN! "
     show wren pose1 pain
     wren "No? "
@@ -1327,7 +1327,7 @@ label kat_bad:
     researcher "Well. Umh."
     wren "Not that. Just- isn't there anything else? "
     researcher "Well, I suppose we could do a liquid biopsy. "
-    show kat pose2 worried sad
+    show kat pose2 worried sad at right, max_y
     kat "Wren. "
     wren "Yes. Let's do that. "
     # go to outside Kat's house. Wren and katriel are there. 
@@ -1365,44 +1365,60 @@ label kat_bad:
     wren "I should really go and apologize… "
     # katriel room kay is already there Wren sprite comes in. 
     scene kat_bedroom
-    show wren pose1 pensive 
-    show kat pose2 worriedsad
+    show wren pose1 pensive at center, max_y
+    show kat pose2 worriedsad at right, max_y
     kat "Sniff! Sob! "
     wren "Hey. "
+    show kat pose1 regret
     kat "Mmfh. "
     wren "I got pretty heated. "
+    show wren pose1 eyesclosed
     wren "I'm actually um. "
     wren "really grateful for everything you do for me. "
+    show wren pose1 pain
     wren "You're amazing Kat. "
+    show kat pose1 relieved
     kat "You mean it? "
     wren "Yeah. "
+    show kat pose2 worried two
     kat "I just want to help you. You're so special to me, I love you so much. "
     wren "I know. Hey, I know. "
+    show kat pose2 worried three
     kat "Do you love me as much as I love you? "
+    show wren pose1 pensive
     wren "You're the best person in my life right now. "
     kat "That's not a yes. "
+    show wren pose1 smile
     wren "I love you. "
+    show kat pose2 worried sad
     kat "Then why won't you let me help you get better? "
+    show wren pose1 pensive
     wren "It's not about that. "
     kat "Then what is it about? "
     wren "…  "
     show kat pose2 shock
     kat "You don't want to feel better. "
     wren "I'd kill to have my lungs work again. "
+    show kat pose2 worried two
     kat "So. You don't want to be with me."
     wren "Where are you pulling this from? "
     kat "I can't think of any other reason why you fight against a cure at every turn. "
     wren "I just hate the doctors poking and prodding and stealing bits of me away. "
     wren "I'm so tired of filling out papers about when the last time I shit was. "
     wren "I just keep getting worse. "
+    show kat pose2 worried one
     kat "This could have been the one to help. "
     wren "It's not your fault. "
+    show kat pose2 worried three
     kat "You know, if I had known, I wouldn't have played doctor for you. "
     wren "Please don't stop."
     kat "But you just said? "
+    show wren pose1 worried one
     wren "It's not okay for strangers to do it. "
+    show wren pose1 pensive
     wren "You're…  more gentle than them. "
     wren "…"
+    show wren pose1 neutralsad
     wren "Do you want to take the sample?"
     show kat pose2 worried two
     kat "Really? "
@@ -1416,6 +1432,7 @@ label kat_bad:
     kat "Lie on the bed for me, okay? "
     kat "I don't have any of my fancy tools with me, but I sterilized the box cutter. "
     wren "Are you sure? "
+    show kat pose2 happy
     kat "If you are. "
     show wren pose1 smile
     wren "Okay. Do it. "
@@ -1480,7 +1497,7 @@ label kat_worse:
     # W Face tightens. 
     # Door open sound. 
     show wren pose1 eyesclosed 
-    show kat pose1 relieved at right, max_y, Transform(x=-1.0)
+    show kat pose1 relieved at right, max_y, Transform(xzoom=-1.0)
     kat "Wren! How are you feeling! "
     kat "Oh, gosh, you knocked over your cup. Not good, not good. "
     kat "Here, we need to change your bandages. "
