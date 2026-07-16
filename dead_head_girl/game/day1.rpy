@@ -616,7 +616,7 @@ label home_day1:
     #Intro scene, Wren at home
     scene bathroom #bathroom?
     play music house_music
-    show wren pose1 neutralsad at max_y, center#get more silly with this I think
+    show wren bloody at max_y, center#get more silly with this I think
     
     wren "It's okay."
     wren "It's just odd that it happened twice."
@@ -648,7 +648,7 @@ label home_day1:
     hide mom_fg
 
     phone "{sc}bzzz{\sc}"
-    phone "Reminder: volunteer at greenhouse1!!"
+    phone "Reminder: volunteer at greenhouse!!"
     show wren pose1 angry
     wren "{i}Why did they HAVE to assign me to the garden? Was there really nothing else?{/i}"
     show wren at max_y, mv(right, offscreenright, 0.5)
@@ -680,6 +680,7 @@ label wren_research:
     user1 "what?"
     wren "{i}Hm.{/i}"
     wren "{i}Would surgery work?{/i}"
+    wren "{i} Yawn... {/i}"
 
     #"{I} Three hours later. {/i}"
 
