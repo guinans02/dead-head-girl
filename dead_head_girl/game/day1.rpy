@@ -218,7 +218,7 @@ label work_day1:
     cow2 "Ahh, the end of another daily grind. "
     show wren at mv(center, offscreenright, 1.0)
     wren "Bye."
-    scene houses
+    scene houses_day
     show wren pose1 neutralsad at mv(offscreenleft, left, 0.5), max_y
     show kat pose2 neutralsad at right, max_y
     # bg change to outside, at night. Kat is already there. "

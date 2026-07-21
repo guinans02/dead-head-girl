@@ -276,7 +276,7 @@ label kat_texts_wren:
     show wren at mv(left, offscreenleft, 0.5)
     stop music
     stop ambience
-    scene houses
+    scene houses_day
     play ambience cicadas
     show wren pose1 neutralsad at mv(offscreenright, center, 0.75), max_y
 
@@ -641,12 +641,12 @@ label post_kat_day2:
     kat "Now shoo. "
     show wren pose1 woah at mv(right, offscreenright, 0.5)
 
-    scene houses
+    scene houses_night
     play ambience cicadas
     show wren pose1 smile at mv(offscreenleft, center, 0.5), max_y
     wren "I'm the only one who really knows her. "
     wren "I knew it meant something. "
-    show wren pose1 cry
+    show wren pose1 neutralblush
     wren "I knew it! I knew it! I knew it!!!"
     show wren pose1 neutralsad
     wren "I think I need a nap. "
@@ -869,7 +869,7 @@ label post_flower_day2:
     # Wren goes out side. "
     wren "..."
     show wren pose1 neutralsad at mv(right, offscreenright, 0.5), max_y
-    scene houses
+    scene houses_day
     play ambience cicadas
     show wren pose1 neutralsad at mv(offscreenleft, center, 0.5), max_y
     wren "I wished I smoked so I could have a cigarette right now. "
@@ -949,7 +949,7 @@ label post_flower_day2:
     # they move to outside wren's house "
     show kat pose1 neutralsad at mv(right, offscreenright, 1.0), max_y
     show wren pose1 neutralsad at mv(left, offscreenright, 0.5), max_y
-    scene houses with fade
+    scene houses_night with fade
     play ambience cicadas
     show kat pose1 neutralsad at mv(offscreenleft, right, 0.5), max_y
     show wren pose1 eyesclosed at mv(offscreenleft, left, 1.0), max_y
@@ -979,7 +979,7 @@ label post_flower_day2:
     wren "Yeah. "
     kat "I'm really sorry. "
     wren "Thanks. "
-    show wren pose1 worried 
+    show wren pose1 worried two
     kat "Is it cancer? "
     show wren pose1 pensive
     wren "No, the doctors don't know what it is. "
@@ -1188,7 +1188,7 @@ label kat_end:
     phone_kat "okay. "
     # Wren outside katriels house. 
     # katriel comes out. 
-    scene houses
+    scene houses_night
     play ambience cicadas
     show wren pose1 neutralsad at left, max_y
     show kat pose2 worried one at right, max_y
@@ -1302,7 +1302,7 @@ label kat_bad:
     # [] if have time write Kat and Wren sex scene? 
     # fade to into a hospital clinic. 
     # Wren and Kat are next to each other, talking to a researcher. Wren is pale and sickly. 
-    scene hopital
+    scene hospital
     show wren bandage at center, max_y
     show kat pose2 neutralsad at right, max_y
     show stranger at left, max_y
@@ -1331,7 +1331,7 @@ label kat_bad:
     kat "Wren. "
     wren "Yes. Let's do that. "
     # go to outside Kat's house. Wren and katriel are there. 
-    scene houses
+    scene houses_night
     show wren bandage at left, max_y
     show kat pose1 regret at right, max_y
     wren "Are you still mad at me? "
@@ -1577,12 +1577,13 @@ label kat_worse:
     kat "Good night. "
     wren "Night."
     kat "Are you sure you're okay? "
-    wren "I love you. "
-    kat "I love you too. "
     # We zoom out and see Kat and Wren spooning, Kat bieng little spoon, Wren big. Kat makes a happy sound and nuzzles closer to Wren. 
     
     image kat_worse = "images/DHG_Kat_Worse.png"
     scene kat_worse with fade
+    wren "I love you. "
+    kat "I love you too. "
+
     # Wren doesn't react. We see the back of her head, which is filled with roots and flowers. 
 
     #END
@@ -1599,7 +1600,7 @@ label ines_end:
     phone_wren "I'm really, really sorry. I didn't mean what I said. "
     phone_wren "I'm heading over okay? "
 
-    scene houses
+    scene houses_day
     show wren pose1 neutralsad at center, max_y
     wren "Fuckity fuck fuck. "
     wren "Fuck today. "
@@ -1765,7 +1766,7 @@ label ines_bad_end:
     wren "Thnks nes…zzz"
     # screen fade to black 
     wren "Zzz… "
-    scene houses with fade
+    scene houses_night with fade
     show wren pose1 eyesclosed at left, max_y
     show inesciggy at right, max_y
     # wake up. Ines and Wren are outside of wren's house 
@@ -1882,7 +1883,7 @@ label ines_worse_end:
     #Ines Worse: 
     scene garden
     show wren pose1 neutralsad at right, max_y
-    show ines pose1 fanatic at left, max_y
+    show ines pose2 fanatic at left, max_y
     ines "Oh. So that's why you were so upset earlier. "
     wren "I suppose… "
     ines "Have you told her yet? "
@@ -1948,14 +1949,18 @@ label ines_worse_end:
     show wren pose1 neutralsad at max_y, mv(offscreenleft, left, 0.5)
     kat "Wren."
     wren "Kat? "
+    show kat pose1 eyesclosed
     kat "I'll just get straight to the point. "
     kat "I don't like your new ahem"
-    kat "“” girl “”” “””” friend””” "
+    show kat pose2 worried two
+    kat "“girlfriend”"
     wren "Oh.. Kay? "
+    show kat pose1 neutralsad
     kat "Not okay. She's bad for you. You realize if you call out sick one more day you're going to get fired? "
     wren "How do you know that? "
     kat "Because I'm still talking to other people. Ones with their head out their asses. "
     kat "And the obsession! "
+    show wren pose1 embarrased one 
     wren "What are you talking about? "
     kat "When was the last time you went somewhere without her? "
     wren "Th-"
@@ -1985,7 +1990,7 @@ label ines_worse_end:
     wren "No, of course not. "
     ines "Then why did you leave when I asked you to stay? "
     ines "Everyone leaves. Everyone always leaves. "
-    show wren pose1 worried
+    show wren pose1 worried two
     wren "No no no, I'm here now. "
     wren "Ines, you're the most special girl in the entire world. "
     wren "I love you the most! "
@@ -1994,7 +1999,9 @@ label ines_worse_end:
     #phone ding
     ines "sob! "
     wren "{i}When things are good, they're good. When things are bad… "
+    show wren pose1 worried one
     wren "Please don't cut yourself again Ines. "
+    show ines pose2 smile
     ines "I don't want to. "
     wren "Let's go to bed? "
     ines "ok. "
@@ -2031,22 +2038,29 @@ label ines_worse_end:
     ines "An artist knows how to make an entrance. "
     ines "I want you to see that you're just bitter."
     ines "Leave us alone?"
+    show kat pose2 worried sad
     kat "Us. "
     kat "You haven't even known her for a year."
     ines "And what did you do with all the years you've known her? I love her, I see her as she is, and she speaks to me on canvas."
+    show ines pose2 grimace
     ines "I hate when corporate junkies think they know anything about matters of the heart. "
     kat "I hate pretentious art pricks who delude themselves into thinking they have any contribution to society."
+    show ines pose2 fanatic
     ines "The world would be better off if people like you killed themselves. Your corpses are better subjects than your soul ever would be. "
+    show kat pose2 shock
     kat "Are you threatening me?"
     ines "Speaking the truth is never a threat. "
     kat "Wren, how do you put up with this asshole?"
     ines "Don't speak to her. Don't look at her. You don't deserve her. "
+    show wren pose1 eyesclosed
     wren "Hey, um, I feel really sick. "
     kat "If she's so happy with you, then why isn't she smiling in any of the photos you post?"
     ines "Are you stalking me? That's a crime. "
     kat "Answer the fucking question. "
     ines "Wren just doesn't show emotion like that. That's why I'm the one who brings her to life. "
+    show wren pose1 pain
     wren "Can one of you take me home?"
+    show kat pose1 regret
     kat "Holy shit, look at her, she's miserable! "
     ines "Only because people keep yelling at her to be miserable?"
     ines "You're treating her like her mom does. "
@@ -2058,15 +2072,15 @@ label ines_worse_end:
     # ines gets closer to wren
     ines "Let her speak for herself. "
     kat "I know Wren wants to leave with me. Don't you, Wren?"
-    wren "Guys, I think I'm about to…"
+    wren "Hey, I think I'm about to..."
     ines "Tell this boot-licking bitch off?"
-    wren "No, I urgh…"
+    wren "No, I urgh..."
     # splatter sound effect
     # wren vomits all over library table CG. it's bloody and black and petaled. 
     show bloody_vomit at truecenter
     ines "Now look what you've done, you've gone ahead and made her even sicker!"
     kat "Are you insane? Wren needs care! Just let me take her to the car at least. "
-    ines "Wren is her own person and you're just mad because you can't control her anymore. You know wren doesnt even like you right?"
+    ines "Wren is her own person and you're just mad because you can't control her anymore. You know Wren doesnt even like you, right?"
     kat "Well I never–"
     image black = "#000"
     scene black with fade
