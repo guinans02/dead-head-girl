@@ -36,10 +36,10 @@ define gui.about = _("""""")
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "por"
+define build.name = "deadheadgirl"
 
 ## Change the version used by the build system.
-define build.version = "7.0"
+define build.version = "1.2"
 
 ## Sounds and music ############################################################
 
